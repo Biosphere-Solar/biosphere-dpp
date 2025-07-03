@@ -78,5 +78,5 @@ This repository contains the prototype for Biosphere Solar’s Digital Product P
 
 ## ✅ Contact
 
-For questions or contributions, contact [Your Name] at [your.email@example.com].
+For questions or contributions, contact Abdul at abdul_a@biosphere.solar.
 
