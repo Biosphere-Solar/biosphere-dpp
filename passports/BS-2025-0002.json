@@ -1,0 +1,40 @@
+{
+  "uid": "urn:bs:pv:BS-2025-0002",
+  "version": "1.1",
+  "last_updated": "2025-09-12",
+  "model": "TOPCon 410W",
+  "manufacturer": "Biosphere Solar",
+  "manufacture_date": "2025-07-04",
+  "power_w": 410,
+  "cell_type": "TOPCon",
+  "dimensions_mm": "1722 x 1134 x 30",
+  "weight_kg": 19.8,
+  "efficiency_pct": 21.3,
+  "co2e_kg": 450,
+  "lifetime_years": 25,
+  "warranty_years": 25,
+  "certifications": ["IEC 61215", "IEC 61730"],
+  "materials": {
+    "Glass": "Tempered low-iron (≥30% recycled)",
+    "Cells": "Monocrystalline TOPCon (Germany, 30% recycled silicon mix)",
+    "Frame": "Aluminium (Italy, 70% recycled)",
+    "Encapsulant": "Liquid encapsulation (reversible sealing)",
+    "Junction Box": "Field-replaceable; diodes; halogen-free"
+  },
+  "datasheet_url": "https://biosphere-solar.github.io/datasheets/TOPCon410.pdf",
+  "installation_manual_url": "https://biosphere-solar.github.io/docs/installation-TOPCon410.pdf",
+  "disassembly_guide_url": "https://biosphere-solar.github.io/docs/disassembly-TOPCon410.pdf",
+  "eol_guidance_url": "https://biosphere-solar.github.io/docs/eol-TOPCon410.pdf",
+  "hs_code": "8541.43",
+  "origin": "EU",
+  "compliance": ["Reg. (EU) 2024/1781 framework", "IEC 61215", "IEC 61730"],
+  "hazardous_substances": ["Lead solder (SnPb) <0.1%", "No PFAS in encapsulant"],
+  "recycled_content": {
+    "Glass": "30%",
+    "Aluminium frame": "70%"
+  },
+  "recyclability": "≥90% by weight via standard PV recycling with disassembly route",
+  "updates": [
+    "2025-09-01: Junction box replaced by Installer Co."
+  ]
+}
