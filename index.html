@@ -3,119 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DPP - BS-2025-0001</title>
+  <title>DPP – <span id="title-serial">Serial</span></title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 2em;
-      max-width: 800px;
-      line-height: 1.5;
-    }
-    h1 {
-      color: #1565c0;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 1em;
-    }
-    table, th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-    }
-    th {
-      background-color: #f5f5f5;
-    }
-    .footer {
-      margin-top: 2em;
-      font-size: 0.9em;
-      color: #666;
-    }
+    :root { --brand:#1565c0; --muted:#666; --bg:#f7f9fc; }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 900px; line-height: 1.55; background: var(--bg); padding: 0 1rem; }
+    header { display: flex; align-items: center; gap: 1rem; }
+    header img { height: 56px; }
+    h1 { color: var(--brand); margin: 0.25rem 0 0; font-size: 1.8rem; }
+    .meta { color: var(--muted); font-size: 0.95rem; }
+    .card { background: #fff; border: 1px solid #e6e9ef; border-radius: 12px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    table { border-collapse: collapse; width: 100%; margin-top: 0.5rem; }
+    th, td { border: 1px solid #e6e9ef; padding: 10px; vertical-align: top; }
+    th { background: #f2f5fa; text-align: left; width: 32%; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 900px){ .grid { grid-template-columns: 2fr 1fr; } }
+    .section-title { margin: 1.25rem 0 0.5rem; font-size: 1.15rem; color: #123; }
+    .footer { margin-top: 2rem; font-size: 0.9rem; color: var(--muted); text-align: center; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; border:1px solid #e6e9ef; font-size: 0.8rem; color:#123; background:#fff; }
+    code { background:#f2f5fa; padding: 2px 6px; border-radius:6px; }
+    .updates li { margin-bottom: 0.35rem; }
+    .qr { text-align:center; }
+    .pill { background:#eef6ff; color:#0b4aa2; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; border:1px solid #d6e7ff; }
+    .muted { color: var(--muted); }
+    a { color:#0b4aa2; }
   </style>
 </head>
 <body>
-  <img src="https://biosphere-solar.github.io/biosphere-dpp/logo.png" alt="Biosphere Solar Logo" width="200">
+  <header>
+    <img src="https://biosphere-solar.github.io/biosphere-dpp/logo.png" alt="Biosphere Solar Logo">
+    <div>
+      <h1>Digital Product Passport</h1>
+      <div class="meta">Serial: <span id="serial">–</span> · Version <span id="version">1.0</span> · Last updated <span id="lastUpdated">–</span></div>
+    </div>
+  </header>
 
-  <h1>Digital Product Passport</h1>
-  <h2>Panel Serial: BS-2025-0001</h2>
-  <table>
-    <tr>
-      <th>Field</th>
-      <th>Value</th>
-    </tr>
-    <tr>
-      <td>Model</td>
-      <td>TOPCon 410W</td>
-    </tr>
-    <tr>
-      <td>Manufacturer</td>
-      <td>Biosphere Solar</td>
-    </tr>
-    <tr>
-      <td>Manufacture Date</td>
-      <td>2025-07-03</td>
-    </tr>
-    <tr>
-      <td>Power Rating (W)</td>
-      <td>410</td>
-    </tr>
-    <tr>
-      <td>Cell Type</td>
-      <td>TOPCon</td>
-    </tr>
-    <tr>
-      <td>Dimensions (mm)</td>
-      <td>1722 x 1134 x 30</td>
-    </tr>
-    <tr>
-      <td>Weight (kg)</td>
-      <td>19.8</td>
-    </tr>
-    <tr>
-      <td>Efficiency (%)</td>
-      <td>21.3</td>
-    </tr>
-    <tr>
-      <td>CO₂ eq per panel (kg)</td>
-      <td>450</td>
-    </tr>
-    <tr>
-      <td>Lifetime (years)</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <td>Warranty (years)</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <td>Certifications</td>
-      <td>IEC 61215, IEC 61730</td>
-    </tr>
-    <tr>
-      <td>Materials</td>
-      <td>
-        Silicon cells from Germany (30% recycled)<br>
-        Aluminum frame from Italy (70% recycled)
-      </td>
-    </tr>
-    <tr>
-      <td>Datasheet</td>
-      <td>
-        <a href="https://biospheresolar.github.io/datasheets/TOPCon410.pdf" target="_blank">
-          Download Datasheet
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>Updates</td>
-      <td>
-        2025-09-01: Replaced junction box by Installer Co.
-      </td>
-    </tr>
-  </table>
+  <div class="grid" style="margin-top:1rem;">
+    <section class="card">
+      <div class="section-title">Core Details</div>
+      <table id="coreTable"></table>
 
-  <div class="footer">
-    © 2025 Biosphere Solar. All rights reserved.
+      <div class="section-title">Composition & Materials</div>
+      <table id="materialsTable"></table>
+
+      <div class="section-title">Instructions & Documents</div>
+      <table id="docsTable"></table>
+
+      <div class="section-title">Updates & Maintenance Log</div>
+      <ul class="updates" id="updatesList"></ul>
+    </section>
+
+    <aside class="card">
+      <div class="section-title">Passport Info</div>
+      <table>
+        <tr><th>Product UID</th><td id="uid">–</td></tr>
+        <tr><th>HS / CN Code</th><td id="hs">–</td></tr>
+        <tr><th>Country of Origin</th><td id="origin">–</td></tr>
+        <tr><th>Compliance</th><td id="compliance">–</td></tr>
+        <tr><th>Hazardous Substances</th><td id="haz">–</td></tr>
+        <tr><th>Recycled Content</th><td id="recycled">–</td></tr>
+        <tr><th>Recyclability</th><td id="recyclability">–</td></tr>
+      </table>
+
+      <div class="section-title">QR (share this passport)</div>
+      <div class="qr">
+        <img id="qr" alt="QR code" width="160" height="160" />
+        <div class="muted">Scan to open this DPP</div>
+      </div>
+
+      <div class="section-title">API</div>
+      <p class="muted">This page fetches <code>./passports/&lt;serial&gt;.json</code>. Update the JSON to update the passport.</p>
+      <span class="badge">Static · No cookies</span>
+    </aside>
   </div>
+
+  <div class="footer">© <span id="year"></span> Biosphere Solar. All rights reserved.</div>
+
+  <script>
+    // --- Utilities
+    const $ = (sel) => document.querySelector(sel);
+    const set = (sel, val) => { const el = $(sel); if (el) el.textContent = val; };
+
+    function tableFromObject(tableEl, obj) {
+      tableEl.innerHTML = Object.entries(obj)
+        .map(([k,v]) => `<tr><th>${k}</th><td>${formatValue(v)}</td></tr>`)
+        .join("");
+    }
+
+    function formatValue(v){
+      if (v == null) return "–";
+      if (Array.isArray(v)) return v.map(formatValue).join("<br>");
+      if (typeof v === 'object') {
+        // pretty key: value lines
+        return '<div style="display:grid;gap:6px;">' + Object.entries(v).map(([k,val]) => `<div><span class="pill">${k}</span> ${formatValue(val)}</div>`).join("") + '</div>';
+      }
+      if (/^https?:\/\//.test(String(v))) return `<a href="${v}" target="_blank" rel="noopener">Open</a>`;
+      return String(v);
+    }
+
+    function listFromArray(listEl, arr){
+      if (!arr || !arr.length){ listEl.innerHTML = '<li class="muted">No updates yet.</li>'; return; }
+      listEl.innerHTML = arr.map(item => `<li>${formatValue(item)}</li>`).join("");
+    }
+
+    // --- Main loader
+    (async function(){
+      const params = new URLSearchParams(location.search);
+      const serial = params.get('serial') || 'BS-2025-0001';
+      const url = `./passports/${encodeURIComponent(serial)}.json`;
+      set('#serial', serial);
+      document.title = `DPP – ${serial}`;
+
+      try {
+        const res = await fetch(url, {cache:'no-store'});
+        if (!res.ok) throw new Error(`Missing JSON for ${serial}`);
+        const data = await res.json();
+
+        // Header/meta
+        set('#version', data.version || '1.0');
+        set('#lastUpdated', data.last_updated || '–');
+
+        // Core table
+        tableFromObject($('#coreTable'), {
+          Model: data.model,
+          Manufacturer: data.manufacturer,
+          'Manufacture Date': data.manufacture_date,
+          'Power Rating (W)': data.power_w,
+          'Cell Type': data.cell_type,
+          'Dimensions (mm)': data.dimensions_mm,
+          'Weight (kg)': data.weight_kg,
+          'Efficiency (%)': data.efficiency_pct,
+          'CO₂ eq per panel (kg)': data.co2e_kg,
+          'Lifetime (years)': data.lifetime_years,
+          'Warranty (years)': data.warranty_years,
+          'Certifications': data.certifications,
+        });
+
+        // Materials table
+        tableFromObject($('#materialsTable'), data.materials || {});
+
+        // Docs table
+        tableFromObject($('#docsTable'), {
+          Datasheet: data.datasheet_url,
+          'Installation Manual': data.installation_manual_url,
+          'Disassembly Guide': data.disassembly_guide_url,
+          'End-of-Life Guidance': data.eol_guidance_url
+        });
+
+        // Updates list
+        listFromArray($('#updatesList'), data.updates);
+
+        // Sidebar fields
+        set('#uid', data.uid || serial);
+        set('#hs', data.hs_code || '8541.43');
+        set('#origin', data.origin || 'EU');
+        set('#compliance', (data.compliance && data.compliance.join ? data.compliance.join(', ') : data.compliance) || 'IEC 61215, IEC 61730');
+        set('#haz', (data.hazardous_substances && data.hazardous_substances.join ? data.hazardous_substances.join(', ') : data.hazardous_substances) || 'None declared');
+        set('#recycled', data.recycled_content || '—');
+        set('#recyclability', data.recyclability || '—');
+
+      } catch (err){
+        $('#coreTable').innerHTML = `<tr><td><em>Could not load passport JSON.</em></td></tr>`;
+        console.error(err);
+      }
+
+      // QR code
+      const dppUrl = location.origin + location.pathname + `?serial=${encodeURIComponent(serial)}`;
+      $('#qr').src = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(dppUrl)}`;
+
+      // Footer year
+      set('#year', new Date().getFullYear());
+    })();
+  </script>
 </body>
 </html>
