@@ -161,11 +161,11 @@
         set('#haz', (data.hazardous_substances && data.hazardous_substances.join ? data.hazardous_substances.join(', ') : data.hazardous_substances) || 'None declared');
         set('#recycled', data.recycled_content || '—');
         set('#recyclability', data.recyclability || '—');
-
-      } catch (err){
-        $('#coreTable').innerHTML = `<tr><td><em>Could not load passport JSON.</em></td></tr>`;
-        console.error(err);
-      }
+       } catch (err) {
+         const box = document.querySelector('#coreTable');
+         box.innerHTML = `<tr><td><em>Error loading JSON:</em> ${String(err && err.message || err)}</td></tr>`;
+         console.error('DPP load error', err);
+       }
 
       // QR code
       const dppUrl = location.origin + location.pathname + `?serial=${encodeURIComponent(serial)}`;
