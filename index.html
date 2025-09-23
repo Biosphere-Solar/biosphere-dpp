@@ -11,15 +11,11 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
     :root{
+       /* DARK (default) */
       --brand:#00d18f; --brand-2:#6f7dff;
       --bg1:#0b0e1a; --bg2:#14213d; --card:#0f1326; --line:#20274a; --muted:#9aa3b2; --text:#e5e9f0;
     }
-    :root{
-      --brand:#22c55e; --brand-2:#3b82f6;
-      --bg1:#0a0f1a; --bg2:#0f172a;
-      --card:#0b1220; --line:#1e293b;
-      --muted:#94a3b8; --text:#e2e8f0;
-    }
+    
     :root[data-theme="light"]{
       --brand:#166534; --brand-2:#1d4ed8;
       --bg1:#f7fafc; --bg2:#eef2f7;
@@ -126,9 +122,25 @@
     table, td, th{
       font-size: 14.5px;
     }
+    .theme-toggle{
+      position: fixed;
+      top: 16px;          /* change to bottom:16px for bottom-right */
+      right: 16px;
+      z-index: 1000;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      cursor: pointer;
+    }
+    .theme-toggle:hover{ filter: brightness(1.1); }
+
   </style>
 </head>
 <body>
+  <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">🌗</button>
   <div class="wrap">
     <section class="hero">
       <div>
@@ -137,7 +149,6 @@
         <div class="cta">
           <a id="openDatasheet" class="btn" href="#" target="_blank" rel="noopener">Open datasheet</a>
           <a class="btn outline" href="#materials">View materials</a>
-          <button id="themeToggle" class="btn outline" type="button">Light</button>
           <span id="serialBadge" class="badge">Serial: —</span>
         </div>
       </div>
@@ -443,14 +454,32 @@
       buildExplorer(data);
     })();
 
-    const themeBtn = document.getElementById('themeToggle');
-    themeBtn?.addEventListener('click', () => {
-      const root = document.documentElement;
-      const isLight = root.dataset.theme === 'light';
-      root.dataset.theme = isLight ? '' : 'light';
-      themeBtn.textContent = isLight ? 'Light' : 'Dark';
-    });
 
+    (() => {
+      const btn  = document.getElementById('themeToggle');
+      if (!btn) return;
+
+      const root = document.documentElement;
+
+      // Load saved theme or user OS preference as a fallback
+      const saved = localStorage.getItem('theme');
+      if (saved !== null) {
+        root.dataset.theme = saved;              // '' or 'light'
+      } else if (window.matchMedia &&
+                 window.matchMedia('(prefers-color-scheme: light)').matches) {
+        root.dataset.theme = 'light';
+      }
+
+      // Optional label text; using emoji by default
+      // btn.textContent = (root.dataset.theme === 'light') ? 'Dark' : 'Light';
+
+      btn.addEventListener('click', () => {
+        const next = root.dataset.theme === 'light' ? '' : 'light';
+        root.dataset.theme = next;
+        localStorage.setItem('theme', next);
+        // btn.textContent = (next === 'light') ? 'Dark' : 'Light';
+      });
+    })();
   </script>
 </body>
 </html>
