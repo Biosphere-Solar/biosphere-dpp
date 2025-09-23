@@ -51,6 +51,31 @@
     .muted{color:var(--muted)}
     .badge{background:#0e1531; border:1px solid #283264; padding:6px 9px; border-radius:999px; color:#a7b6e2; font-size:12px}
 
+    /* === Hero spacing overrides === */
+    .wrap{ padding: 16px 20px 40px; }                 /* move everything up a bit */
+    .hero{ gap: 20px; align-items: flex-start; }      /* tighter gap; top-align vs center */
+    .hero > div:first-child{ max-width: 56ch; }       /* nicer line length for text */
+
+    .hero h1{
+      margin: 0 0 6px;   /* space below the heading */
+      line-height: 1.05; /* keep it punchy */
+    }
+    .hero p{
+      margin: 4px 0 12px;  /* space above/below paragraph */
+      font-size: 17px;     /* optional: slightly smaller */
+    }
+
+    /* Optional: make the whole hero sit closer to the top */
+    section.hero{ margin-top: -6px; }  /* use positive value if you want more gap */
+
+    /* Mobile tuning */
+    @media (max-width: 960px){
+      .wrap{ padding: 14px 16px 36px; }
+      .hero{ gap: 16px; }
+      .hero h1{ font-size: 36px; margin-bottom: 8px; }
+      .hero p{ margin-bottom: 10px; }
+    }
+
     /* Circularity bars */
     .bars{display:grid;gap:10px;margin-top:10px}
     .bar{background:#0d1228;border:1px solid #2a356a;border-radius:10px;overflow:hidden;height:12px}
