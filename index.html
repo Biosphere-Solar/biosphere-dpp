@@ -73,7 +73,7 @@
   <div class="wrap">
     <section class="hero">
       <div>
-        <h1>Digital product passports for ESPR compliance</h1>
+        <h1>Digital product passports for SiR Solar Panels- ESPR compliance</h1>
         <p>The EU Ecodesign for Sustainable Products Regulation (ESPR) requires transparent, durable, repairable products. Biosphere’s DPP shares verified specs, circularity metrics, and end-of-life guidance per panel.</p>
         <div class="cta">
           <a id="openDatasheet" class="btn" href="#" target="_blank" rel="noopener">Open datasheet</a>
@@ -93,13 +93,15 @@
           <div class="stat"><div class="k" id="co2e">—</div><div class="muted">CO₂e / panel</div></div>
         </div>
 
-        <div class="card" style="margin-top:14px">
-          <canvas id="compositionChart" height="170"></canvas>
-          <div class="muted" style="margin-top:6px">Material composition</div>
+      <div class="card" style="margin-top:14px">
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+          <button class="pill active" id="btnMat">Material</button>
+          <button class="pill" id="btnChem">Chemical</button>
         </div>
-
-        <div class="muted" style="margin-top:10px" id="uid">—</div>
+        <canvas id="compositionChart" height="170"></canvas>
+        <div class="muted" style="margin-top:6px" id="compLabel">Material composition</div>
       </div>
+
     </section>
 
     <section class="grid" style="margin-top:28px">
@@ -341,10 +343,41 @@
       renderCircularity(data);
 
       // Composition chart
-      const comp = data.material_composition_pct || null;
-      const ctx = document.getElementById('compositionChart');
-      const chart = buildCompositionChart(ctx, comp);
-      if(!chart && ctx && ctx.parentElement){ ctx.parentElement.style.display = 'none'; }
+
+      const mat = data.material_composition_pct || null;
+      const chem = data.chemical_composition_pct || null;
+      const canvas = document.getElementById('compositionChart');
+      const labelEl = document.getElementById('compLabel');
+      const btnMat = document.getElementById('btnMat');
+      const btnChem = document.getElementById('btnChem');
+
+      let donut;
+      function show(dataset, label){
+        if(!canvas) return;
+        if(donut) { donut.destroy(); }
+        donut = buildCompositionChart(canvas, dataset);
+        labelEl.textContent = label;
+        if(!donut) {
+          canvas.parentElement.style.display = 'none';
+        } else {
+          canvas.parentElement.style.display = '';
+        }
+      }
+
+      btnMat.addEventListener('click', () => {
+        btnMat.classList.add('active'); btnChem.classList.remove('active');
+        show(mat, 'Material composition');
+      });
+      btnChem.addEventListener('click', () => {
+        btnChem.classList.add('active'); btnMat.classList.remove('active');
+        show(chem, 'Chemical composition');
+      });
+
+      // initial view: prefer Material; if missing, fall back to Chemical
+      if (mat) { show(mat, 'Material composition'); }
+      else if (chem) { btnChem.classList.add('active'); btnMat.classList.remove('active'); show(chem, 'Chemical composition'); }
+      else { canvas.parentElement.style.display = 'none'; }
+
 
       // NEW: Explorer
       buildExplorer(data);
