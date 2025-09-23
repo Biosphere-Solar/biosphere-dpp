@@ -21,6 +21,12 @@
     "Encapsulant": "Liquid encapsulation (reversible sealing)",
     "Junction Box": "Field-replaceable; diodes; halogen-free"
   },
+  "material_composition_pct": {
+    "Glass": 65,
+    "Cells": 20,
+    "Frame": 12,
+    "Junction Box": 3
+  },
   "datasheet_url": "https://biosphere-solar.github.io/datasheets/TOPCon410.pdf",
   "installation_manual_url": "https://biosphere-solar.github.io/docs/installation-TOPCon410.pdf",
   "disassembly_guide_url": "https://biosphere-solar.github.io/docs/disassembly-TOPCon410.pdf",
@@ -36,5 +42,34 @@
   "recyclability": "≥90% by weight via standard PV recycling with disassembly route",
   "updates": [
     "2025-09-01: Junction box replaced by Installer Co."
+  ],
+  "components": [
+    {
+      "name": "Final sample panel",
+      "categories": {
+        "Component/Specimen information": {
+          "Part details": [
+            { "label": "Length", "value": 1722, "unit": "mm", "datatype": "number", "description": "Per IEC 61215" },
+            { "label": "Width",  "value": 1134, "unit": "mm", "datatype": "number" },
+            { "label": "Height", "value": 30,   "unit": "mm", "datatype": "number" }
+          ]
+        },
+        "Sourcing composition": {
+          "—": [
+            { "label": "Pre-consumer recycled material (%)", "value": 30, "unit": "%", "datatype": "number", "comments": "Supplier cert X23", "files": ["https://example.com/certX23.pdf"] }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Solar cells",
+      "categories": {
+        "Chemical composition": {
+          "—": [
+            { "label": "Lead in solder", "value": 0.08, "unit": "%", "datatype": "number", "description": "<0.1% RoHS threshold" }
+          ]
+        }
+      }
+    }
   ]
 }
