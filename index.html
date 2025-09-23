@@ -7,15 +7,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <style>
     :root{
       --brand:#00d18f; --brand-2:#6f7dff;
       --bg1:#0b0e1a; --bg2:#14213d; --card:#0f1326; --line:#20274a; --muted:#9aa3b2; --text:#e5e9f0;
     }
+    :root{
+      --brand:#22c55e; --brand-2:#3b82f6;
+      --bg1:#0a0f1a; --bg2:#0f172a;
+      --card:#0b1220; --line:#1e293b;
+      --muted:#94a3b8; --text:#e2e8f0;
+    }
+    :root[data-theme="light"]{
+      --brand:#166534; --brand-2:#1d4ed8;
+      --bg1:#f7fafc; --bg2:#eef2f7;
+      --card:#ffffff; --line:#e2e8f0;
+      --muted:#475569; --text:#0f172a;
+    }
+
     *{box-sizing:border-box}
     body{
-      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text);
+      margin:0; font-family:Outfit,Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text);
       background:
         radial-gradient(1200px 600px at 20% -10%, #1b2757 0%, transparent 60%),
         radial-gradient(1000px 500px at 110% 10%, #1a3b2e 0%, transparent 60%),
@@ -55,7 +69,8 @@
     .wrap{ padding: 16px 20px 40px; }                 /* move everything up a bit */
     .hero{ gap: 20px; align-items: flex-start; }      /* tighter gap; top-align vs center */
     .hero > div:first-child{ max-width: 56ch; }       /* nicer line length for text */
-
+    <button id="themeToggle" class="btn outline" type="button">Light</button>
+    
     .hero h1{
       margin: 0 0 6px;   /* space below the heading */
       line-height: 1.05; /* keep it punchy */
@@ -91,6 +106,26 @@
       .hero{grid-template-columns:1fr}
       .grid{grid-template-columns:1fr}
       .phone{min-height:auto}
+    }
+    /* === Type scale overrides === */
+    .hero h1{
+      font-size: clamp(36px, 5vw, 56px);  /* smaller on phones, big on desktop */
+      line-height: 1.05;
+      margin: 0 0 8px;
+    }
+    .hero p{
+      font-size: clamp(15px, 1.6vw, 18px);
+      margin: 4px 0 14px;
+    }
+    .card h3{
+      font-size: 15px; /* section titles */
+      letter-spacing: .2px;
+    }
+    .stat .k{
+      font-size: clamp(20px, 2.4vw, 28px); /* KPI numbers on the phone card */
+    }
+    table, td, th{
+      font-size: 14.5px;
     }
   </style>
 </head>
@@ -407,6 +442,15 @@
       // NEW: Explorer
       buildExplorer(data);
     })();
+
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn?.addEventListener('click', () => {
+      const root = document.documentElement;
+      const isLight = root.dataset.theme === 'light';
+      root.dataset.theme = isLight ? '' : 'light';
+      themeBtn.textContent = isLight ? 'Light' : 'Dark';
+    });
+
   </script>
 </body>
 </html>
