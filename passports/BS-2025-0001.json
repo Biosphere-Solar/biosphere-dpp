@@ -261,7 +261,7 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": 5600, "unit": "", "datatype": "text" },
+          { "label": "Length", "value": 5600, "unit": "mm", "datatype": "number" },
           { "label": "Width",  "value": 11, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 0, "unit": "mm", "datatype": "number" }
         ]
@@ -295,7 +295,7 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": 4, "unit": "", "datatype": "text" },
+          { "label": "Length", "value": 4, "unit": "mm", "datatype": "number" },
           { "label": "Width",  "value": 4, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 2, "unit": "mm", "datatype": "number" }
         ]
@@ -374,7 +374,7 @@
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
-          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean" "comments": "Lead" },
+          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "Lead" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
@@ -408,7 +408,7 @@
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
-          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean" "comments": "Lead" },
+          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "Lead" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
