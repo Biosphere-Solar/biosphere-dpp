@@ -61,6 +61,20 @@
           { "label": "Height", "value": 35,   "unit": "mm", "datatype": "number" }
         ]
       },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+
       "Sourcing composition": {
         "—": [
           { "label": "Virgin/Fossil (%)",                   "value": 100,  "unit": "%", "datatype": "number" },
@@ -80,6 +94,19 @@
           { "label": "Length", "value": 166,   "unit": "mm", "datatype": "number" },
           { "label": "Width",  "value": 166,   "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 0.152, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -103,6 +130,19 @@
           { "label": "Height", "value": 3.2, "unit": "mm", "datatype": "number" }
         ]
       },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
       "Sourcing composition": {
         "—": [
           { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
@@ -122,6 +162,19 @@
           { "label": "Length", "value": 1759, "unit": "mm", "datatype": "number" },
           { "label": "Width",  "value": 1041, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 3.2, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -145,6 +198,19 @@
           { "label": "Height", "value": 30, "unit": "mm", "datatype": "number" }
         ]
       },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
       "Sourcing composition": {
         "—": [
           { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
@@ -164,6 +230,19 @@
           { "label": "Length", "value": 1046, "unit": "mm", "datatype": "number" },
           { "label": "Width",  "value": 0, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 30, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -187,6 +266,19 @@
           { "label": "Height", "value": 0, "unit": "mm", "datatype": "number" }
         ]
       },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
       "Sourcing composition": {
         "—": [
           { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
@@ -206,6 +298,19 @@
           { "label": "Length", "value": 4, "unit": "", "datatype": "text" },
           { "label": "Width",  "value": 4, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 2, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -229,6 +334,19 @@
           { "label": "Height", "value": 13.5, "unit": "mm", "datatype": "number" }
         ]
       },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
       "Sourcing composition": {
         "—": [
           { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
@@ -250,6 +368,19 @@
           { "label": "Height", "value": 0, "unit": "mm", "datatype": "number" }
         ]
       },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
       "Sourcing composition": {
         "—": [
           { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
@@ -269,6 +400,19 @@
           { "label": "Length", "value": 0, "unit": "", "datatype": "text" },
           { "label": "Width",  "value": 5, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 0.4, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
