@@ -145,6 +145,9 @@
     .tag.yes{ background:var(--bad-bg); color:var(--bad-fg); border-color: color-mix(in oklab, var(--bad-fg) 30%, transparent) }
     .tag.no { background:var(--ok-bg);  color:var(--ok-fg);  border-color: color-mix(in oklab, var(--ok-fg) 30%, transparent) }
 
+    /* Hide auto-inserted category headings inside the extra section */
+    #extraCats > h4 { display: none; }
+
   </style>
 </head>
 <body>
@@ -191,6 +194,9 @@
         <h3 id="materials">Composition & Materials</h3>
         <table id="materialsTable"></table>
 
+        //Additional categories
+        <div id="extraCats"></div>
+        
         <h3>Instructions & Documents</h3>
         <table id="docsTable"></table>
 
@@ -549,7 +555,7 @@
 
       // NEW: Explorer
       buildExplorer(data);
-     // renderExtraCategories(data);
+      renderExtraCategories(data);
     })();
 
 
