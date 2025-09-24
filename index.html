@@ -191,6 +191,9 @@
         <h3 id="materials">Composition & Materials</h3>
         <table id="materialsTable"></table>
 
+        <h3>Additional categories</h3>
+        <div id="extraCats"></div>
+
         <h3>Instructions & Documents</h3>
         <table id="docsTable"></table>
 
@@ -384,6 +387,59 @@
         renderTabs();
       }
 
+    // Render extra (non-explorer) categories from data.extra_categories
+    function renderExtraCategories(data){
+      const container = document.getElementById('extraCats');
+      if (!container) return;
+    
+      const extra = data.extra_categories || {};
+      const esc = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    
+      function rowHtml(f){
+        const label = esc(f.label || '');
+        const val   = (f.value === '' || f.value == null) ? '—' : esc(f.value);
+        const unit  = f.unit ? ` <span class="muted">${esc(f.unit)}</span>` : '';
+        const tip   = f.description ? `<span title="${esc(f.description)}" style="margin-left:6px;color:#9fb1d9">ℹ️</span>` : '';
+        const files = (f.files||[]).map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">file</a>`).join(' · ');
+        const extras = [files && `Files: ${files}`, f.comments && `Comments: ${esc(f.comments)}`, f.note && `Note: ${esc(f.note)}`]
+                        .filter(Boolean).join('<br>');
+        return `<tr>
+          <th style="text-align:left;padding:8px 6px;color:#9fb1d9;width:38%">${label}${tip}</th>
+          <td style="padding:8px 6px">${val}${unit}${extras ? `<div class="muted" style="margin-top:6px">${extras}</div>`:''}</td>
+        </tr>`;
+      }
+    
+      const catNames = Object.keys(extra);
+      if (!catNames.length){
+        container.innerHTML = `<div class="muted">No additional categories yet.</div>`;
+        return;
+      }
+    
+      container.innerHTML = catNames.map(catName => {
+        const byComponent = extra[catName] || {};
+        const compBlocks = Object.keys(byComponent).map(compName => {
+          const groups = byComponent[compName] || {};
+          const groupHtml = Object.keys(groups).map(groupName => {
+            const fields = groups[groupName] || [];
+            const title = esc(groupName === '—' ? 'Details' : groupName);
+            return `<details open>
+              <summary><b>${title}</b></summary>
+              <table style="width:100%;border-collapse:collapse;margin-top:6px">
+                ${fields.map(rowHtml).join('')}
+              </table>
+            </details>`;
+          }).join('');
+          return `<div class="card" style="margin-top:10px">
+            <div class="pill" style="margin-bottom:8px">${esc(compName)}</div>
+            ${groupHtml || `<div class="muted">No data.</div>`}
+          </div>`;
+        }).join('');
+    
+        return `<h4 style="margin:12px 0 6px">${esc(catName)}</h4>${compBlocks || `<div class="muted">No data.</div>`}`;
+      }).join('');
+    }
+
+    
     (async function(){
       const params = new URLSearchParams(location.search);
       const serial = (params.get('serial')||'BS-2025-0001').toUpperCase();
