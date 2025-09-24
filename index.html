@@ -137,6 +137,14 @@
     }
     .theme-toggle:hover{ filter: brightness(1.1); }
 
+    /* Boolean badges for chemical presence */
+    :root{ --ok-bg:#112217; --ok-fg:#22c55e; --bad-bg:#2a1114; --bad-fg:#ef4444; }
+    :root[data-theme="light"]{ --ok-bg:#e8f7ee; --ok-fg:#166534; --bad-bg:#fde8ea; --bad-fg:#991b1b; }
+    
+    .tag{ display:inline-block; padding:4px 10px; border-radius:999px; font-size:12px; border:1px solid var(--line) }
+    .tag.yes{ background:var(--bad-bg); color:var(--bad-fg); border-color: color-mix(in oklab, var(--bad-fg) 30%, transparent) }
+    .tag.no { background:var(--ok-bg);  color:var(--ok-fg);  border-color: color-mix(in oklab, var(--ok-fg) 30%, transparent) }
+
   </style>
 </head>
 <body>
@@ -296,15 +304,31 @@
         function escapeHtml(s){ return String(s).replace(/[&<>\"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m])); }
       
         function renderRow(f){
+          const isBool = f?.datatype === 'boolean' || typeof f?.value === 'boolean' ||
+                         /^(yes|no)$/i.test(String(f?.value ?? ''));
           const label = escapeHtml(f.label || '');
-          const val   = (f.value === '' || f.value == null) ? '—' : escapeHtml(f.value);
-          const unit  = f.unit ? ` <span class="muted">${escapeHtml(f.unit)}</span>` : '';
           const tip   = f.description ? `<span title="${escapeHtml(f.description)}" style="margin-left:6px;color:#9fb1d9">ℹ️</span>` : '';
+        
+          let valueHtml, unitHtml = '';
+          if (isBool) {
+            const present = (typeof f.value === 'boolean') ? f.value : /^yes$/i.test(String(f.value));
+            valueHtml = `<span class="tag ${present ? 'yes' : 'no'}">${present ? 'Yes' : 'No'}</span>`;
+          } else {
+            const val = (f.value === '' || f.value == null) ? '—' : escapeHtml(f.value);
+            valueHtml = val;
+            unitHtml  = f.unit ? ` <span class="muted">${escapeHtml(f.unit)}</span>` : '';
+          }
+        
           const files = (f.files||[]).map(u => `<a href="${escapeHtml(u)}" target="_blank" rel="noopener">file</a>`).join(' · ');
-          const extra = [files && `Files: ${files}`, f.comments && `Comments: ${escapeHtml(f.comments)}`, f.note && `Note: ${escapeHtml(f.note)}`].filter(Boolean).join('<br>');
+          const extra = [
+            files && `Files: ${files}`,
+            f.comments && `Comments: ${escapeHtml(f.comments)}`,
+            f.note && `Note: ${escapeHtml(f.note)}`
+          ].filter(Boolean).join('<br>');
+        
           return `<tr>
             <th style="text-align:left;padding:8px 6px;color:#9fb1d9;width:38%">${label}${tip}</th>
-            <td style="padding:8px 6px">${val}${unit}${extra ? `<div class="muted" style="margin-top:6px">${extra}</div>`:''}</td>
+            <td style="padding:8px 6px">${valueHtml}${unitHtml}${extra ? `<div class="muted" style="margin-top:6px">${extra}</div>`:''}</td>
           </tr>`;
         }
 
