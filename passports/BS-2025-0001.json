@@ -49,50 +49,230 @@
   "updates": [
     "2025-09-01: Junction box replaced by Installer Co."
   ],
+
   "components": [
-    {
-      "name": "Final sample panel",
-      "categories": {
-        "Component/Specimen information": {
-          "Part details": [
-            { "label": "Length", "value": 1952, "unit": "mm", "datatype": "number" },
-            { "label": "Width",  "value": 1134, "unit": "mm", "datatype": "number" },
-            { "label": "Height", "value": 35,   "unit": "mm", "datatype": "number" }
-          ]
-        }
-      }
-    }, 
-    {
-      "name": "Solar cells",
-      "categories": {
-        "Component/Specimen information": {
-          "Part details": [
-            { "label": "Length", "value": 166, "unit": "mm", "datatype": "number" },
-            { "label": "Width",  "value": 166, "unit": "mm", "datatype": "number" },
-            { "label": "Height", "value": 0.152,   "unit": "mm", "datatype": "number" }              
-          ]
-        }
-      }
-    },
-        "Sourcing composition": {
-          "—": [
-            { "label": "Virgin/Fossil (%)", "value": 0, "unit": "%", "datatype": "number" }, 
-            { "label": "Pre-consumer recycled material (%)", "value": 0, "unit": "%", "datatype": "number" }, 
-            { "label": "Post-consumer recycled material (%)", "value": 0, "unit": "%", "datatype": "number" }, 
-            { "label": "Renewable (%)", "value": 0, "unit": "%", "datatype": "number" }
-          ]
-        }
-      }
-    },
-    {
-      "name": "Solar cells",
-      "categories": {
-        "Chemical composition": {
-          "—": [
-            { "label": "Lead in solder", "value": 0.08, "unit": "%", "datatype": "number", "description": "<0.1% RoHS threshold" }
-          ]
-        }
+  {
+    "name": "Final sample panel",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 1952, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 1134, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 35,   "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
       }
     }
-  ]
-}
+  },
+
+  {
+    "name": "Solar cells",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 166,   "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 166,   "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 0.152, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 70, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 30, "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Front glass",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 1952, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 1134, "unit": "mm", "datatype": "number" },
+          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 70, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 30, "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Back glass",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 1952, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 1134, "unit": "mm", "datatype": "number" },
+          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 70, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 30, "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Long frame",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 1952, "unit": "mm", "datatype": "number" },
+          { "label": "Profile height", "value": null, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 30, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 70, "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Short frame",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 1134, "unit": "mm", "datatype": "number" },
+          { "label": "Profile height", "value": null, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 30, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 70, "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Edge seal",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Type", "value": null, "unit": "", "datatype": "text" },
+          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Spacer Dot",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Diameter", "value": null, "unit": "mm", "datatype": "number" },
+          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Junction Box",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": null, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": null, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": null, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Tabbing wire",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Width",  "value": null, "unit": "mm", "datatype": "number" },
+          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Busbar wire",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Width",  "value": null, "unit": "mm", "datatype": "number" },
+          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  }
+]
