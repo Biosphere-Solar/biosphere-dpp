@@ -425,8 +425,9 @@
       }
     }
   }
-]
-}
+],
+  
+
 "extra_categories": {
   "General composition": {
     "Spacer Dot": {
@@ -438,4 +439,6 @@
       ]
     }
   }
+}
+
 }
