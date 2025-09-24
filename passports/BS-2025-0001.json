@@ -65,7 +65,7 @@
     {
       "name": "Solar cells",
       "categories": {
-        "Componenet/Specimen informationn": {
+        "Component/Specimen information": {
           "Part details": [
             { "label": "Length", "value": 166, "unit": "mm", "datatype": "number" },
             { "label": "Width",  "value": 166, "unit": "mm", "datatype": "number" },
