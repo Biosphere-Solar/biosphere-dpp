@@ -427,3 +427,15 @@
   }
 ]
 }
+"extra_categories": {
+  "General composition": {
+    "Spacer Dot": {
+      "Resin system": [
+        { "label": "Resin details", "value": "Acrylate Resin mixture", "datatype": "text" }
+      ],
+      "Fibre": [
+        { "label": "Fibre type", "value": null, "datatype": "text" }
+      ]
+    }
+  }
+}
