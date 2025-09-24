@@ -267,42 +267,99 @@
     }
 
     /* NEW: Component Explorer */
-    function buildExplorer(data){
-      const root = document.getElementById('specExplorer');
-      const comps = (data.components || []).map(c => c.name);
-      if (!root || !comps.length) { if(root) root.style.display='none'; return; }
 
-      // Header + component selector + tabs + pane
-      root.innerHTML = `
-        <h3>Component Explorer</h3>
-        <div style="display:flex;gap:10px;align-items:center;margin:8px 0 12px">
-          <label class="muted">Component</label>
-          <select id="compSel" class="select"></select>
-        </div>
-        <div id="catTabs" class="tabs"></div>
-        <div id="catPane" class="accordion"></div>
-      `;
+      function buildExplorer(data){
+        const root = document.getElementById('specExplorer');
+        const comps = (data.components || []).map(c => c.name);
+        if (!root || !comps.length) { if(root) root.style.display='none'; return; }
 
-      const map = {}; (data.components||[]).forEach(c => map[c.name] = c);
-      const sel = root.querySelector('#compSel');
-      comps.forEach(n => { const o=document.createElement('option'); o.value=o.textContent=n; sel.appendChild(o); });
+        // Remember the last-selected category (per component + global fallback)
+        let currentComp = comps[0];
+        const compMap = {}; (data.components||[]).forEach(c => compMap[c.name] = c);
+        const catByComp = {};   // e.g., { "Solar cells": "Sourcing composition" }
+        let globalCat = null;   // last picked category, used as a fallback
 
-      sel.addEventListener('change', () => renderTabs(sel.value));
-      renderTabs(comps[0]);
+        root.innerHTML = `
+          <h3>Component Explorer</h3>
+          <div style="display:flex;gap:10px;align-items:center;margin:8px 0 12px">
+            <label class="muted">Component</label>
+            <select id="compSel" class="select"></select>
+          </div>
+          <div id="catTabs" class="tabs"></div>
+          <div id="catPane" class="accordion"></div>
+        `;
+      
+        const sel = root.querySelector('#compSel');
+        comps.forEach(n => { const o=document.createElement('option'); o.value=o.textContent=n; sel.appendChild(o); });
+        sel.addEventListener('change', () => { currentComp = sel.value; renderTabs(); });
 
-      function renderTabs(compName){
-        const comp = map[compName]; if(!comp){ return; }
-        const cats = Object.keys(comp.categories||{});
-        const tabs = root.querySelector('#catTabs');
-        tabs.innerHTML = '';
-        cats.forEach((cn, i) => {
-          const b = document.createElement('button');
-          b.textContent = cn; b.className = 'pill';
-          b.onclick = () => renderCategory(comp, cn, tabs, b);
-          tabs.appendChild(b);
-          if(i===0) renderCategory(comp, cn, tabs, b);
-        });
+        function escapeHtml(s){ return String(s).replace(/[&<>\"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m])); }
+      
+        function renderRow(f){
+          const label = escapeHtml(f.label || '');
+          const val   = (f.value === '' || f.value == null) ? '—' : escapeHtml(f.value);
+          const unit  = f.unit ? ` <span class="muted">${escapeHtml(f.unit)}</span>` : '';
+          const tip   = f.description ? `<span title="${escapeHtml(f.description)}" style="margin-left:6px;color:#9fb1d9">ℹ️</span>` : '';
+          const files = (f.files||[]).map(u => `<a href="${escapeHtml(u)}" target="_blank" rel="noopener">file</a>`).join(' · ');
+          const extra = [files && `Files: ${files}`, f.comments && `Comments: ${escapeHtml(f.comments)}`, f.note && `Note: ${escapeHtml(f.note)}`].filter(Boolean).join('<br>');
+          return `<tr>
+            <th style="text-align:left;padding:8px 6px;color:#9fb1d9;width:38%">${label}${tip}</th>
+            <td style="padding:8px 6px">${val}${unit}${extra ? `<div class="muted" style="margin-top:6px">${extra}</div>`:''}</td>
+          </tr>`;
+        }
+
+        function renderFields(comp, catName){
+          const groups = comp.categories[catName] || {};
+          const pane = root.querySelector('#catPane');
+          pane.innerHTML = '';
+          Object.keys(groups).forEach(groupName => {
+            const group = groups[groupName] || [];
+            const box = document.createElement('details');
+            box.open = true;
+            box.innerHTML = `
+              <summary><h4 style="display:inline">${escapeHtml(groupName === '—' ? 'Details' : groupName)}</h4></summary>
+              <table style="width:100%;border-collapse:collapse;margin-top:6px">
+                ${group.map(renderRow).join('')}
+              </table>
+            `;
+            pane.appendChild(box);
+          });
+        }
+
+        function renderTabs(){
+          const comp = compMap[currentComp]; if(!comp) return;
+          const cats = Object.keys(comp.categories||{});
+          const tabs = root.querySelector('#catTabs');
+          tabs.innerHTML = '';
+      
+          // Prefer the last-used category if present; else global; else first
+          const preferred = catByComp[currentComp] || globalCat;
+          const active = (preferred && cats.includes(preferred)) ? preferred : cats[0];
+      
+          cats.forEach(cn => {
+            const b = document.createElement('button');
+            b.textContent = cn; b.className = 'pill';
+            b.onclick = ()=> {
+              [...tabs.children].forEach(x=>x.classList.remove('active'));
+              b.classList.add('active');
+              catByComp[currentComp] = cn;  // remember for this component
+              globalCat = cn;               // remember globally too
+              renderFields(comp, cn);
+            };
+            tabs.appendChild(b);
+          });
+
+          // Activate the right tab and render fields
+          const btnToActivate = [...tabs.children].find(x => x.textContent === active) || tabs.firstChild;
+          if (btnToActivate) {
+            btnToActivate.classList.add('active');
+            renderFields(comp, btnToActivate.textContent);
+          }
+        }
+      
+        renderTabs();
       }
+
 
       function renderCategory(comp, catName, tabs, btn){
         [...tabs.children].forEach(x => x.classList.remove('active'));
