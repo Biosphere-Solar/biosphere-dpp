@@ -5,7 +5,7 @@
   "model": "TOPCon 410W",
   "manufacturer": "Biosphere Solar",
   "manufacture_date": "2025-07-03",
-  "power_w": 410,
+  "power_w": 392,
   "cell_type": "TOPCon",
   "dimensions_mm": "1722 x 1134 x 30",
   "weight_kg": 19.8,
@@ -62,7 +62,7 @@
         },
         "Sourcing composition": {
           "—": [
-            { "label": "Pre-consumer recycled material (%)", "value": 30, "unit": "%", "datatype": "number", "comments": "Supplier cert X23", "files": ["https://example.com/certX23.pdf"] }
+            { "label": "Virgin/Fosil (%)", "Value": 0, "unit": "%", "datatype": "number", "Pre-consumer recycled material (%)", "value": 0, "unit": "%", "datatype": "number", "Post-consumer recycled material (%)", "value": 0, "unit": "%", "datatype": "number", "Renewable (%)", "value": 0, "unit": "%", "datatype": "number" }
           ]
         }
       }
