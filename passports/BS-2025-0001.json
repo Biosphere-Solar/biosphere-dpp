@@ -63,7 +63,7 @@
       },
       "Sourcing composition": {
         "—": [
-          { "label": "Virgin/Fossil (%)",                   "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Virgin/Fossil (%)",                   "value": 100,  "unit": "%", "datatype": "number" },
           { "label": "Pre-consumer recycled material (%)",  "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
@@ -84,7 +84,7 @@
       },
       "Sourcing composition": {
         "—": [
-          { "label": "Virgin/Fossil (%)",                   "value": 70, "unit": "%", "datatype": "number" },
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
           { "label": "Pre-consumer recycled material (%)",  "value": 30, "unit": "%", "datatype": "number" },
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
@@ -98,15 +98,15 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": 1952, "unit": "mm", "datatype": "number" },
-          { "label": "Width",  "value": 1134, "unit": "mm", "datatype": "number" },
-          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+          { "label": "Length", "value": 1759, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 1041, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 3.2, "unit": "mm", "datatype": "number" }
         ]
       },
       "Sourcing composition": {
         "—": [
-          { "label": "Virgin/Fossil (%)",                   "value": 70, "unit": "%", "datatype": "number" },
-          { "label": "Pre-consumer recycled material (%)",  "value": 30, "unit": "%", "datatype": "number" },
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0, "unit": "%", "datatype": "number" },
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
         ]
@@ -119,15 +119,15 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": 1952, "unit": "mm", "datatype": "number" },
-          { "label": "Width",  "value": 1134, "unit": "mm", "datatype": "number" },
-          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+          { "label": "Length", "value": 1759, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 1041, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 3.2, "unit": "mm", "datatype": "number" }
         ]
       },
       "Sourcing composition": {
         "—": [
-          { "label": "Virgin/Fossil (%)",                   "value": 70, "unit": "%", "datatype": "number" },
-          { "label": "Pre-consumer recycled material (%)",  "value": 30, "unit": "%", "datatype": "number" },
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0, "unit": "%", "datatype": "number" },
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
         ]
@@ -140,14 +140,15 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": 1952, "unit": "mm", "datatype": "number" },
-          { "label": "Profile height", "value": null, "unit": "mm", "datatype": "number" }
+          { "label": "Length", "value": 1764, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 0, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 30, "unit": "mm", "datatype": "number" }
         ]
       },
       "Sourcing composition": {
         "—": [
-          { "label": "Virgin/Fossil (%)",                   "value": 30, "unit": "%", "datatype": "number" },
-          { "label": "Pre-consumer recycled material (%)",  "value": 70, "unit": "%", "datatype": "number" },
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0, "unit": "%", "datatype": "number" },
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
         ]
@@ -160,14 +161,15 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": 1134, "unit": "mm", "datatype": "number" },
-          { "label": "Profile height", "value": null, "unit": "mm", "datatype": "number" }
+          { "label": "Length", "value": 1046, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 0, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 30, "unit": "mm", "datatype": "number" }
         ]
       },
       "Sourcing composition": {
         "—": [
-          { "label": "Virgin/Fossil (%)",                   "value": 30, "unit": "%", "datatype": "number" },
-          { "label": "Pre-consumer recycled material (%)",  "value": 70, "unit": "%", "datatype": "number" },
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0, "unit": "%", "datatype": "number" },
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
         ]
@@ -180,8 +182,9 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Type", "value": null, "unit": "", "datatype": "text" },
-          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+          { "label": "Length", "value": 5600, "unit": "", "datatype": "text" },
+          { "label": "Width",  "value": 11, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 0, "unit": "mm", "datatype": "number" }
         ]
       },
       "Sourcing composition": {
@@ -200,8 +203,9 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Diameter", "value": null, "unit": "mm", "datatype": "number" },
-          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+          { "label": "Length", "value": 4, "unit": "", "datatype": "text" },
+          { "label": "Width",  "value": 4, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 2, "unit": "mm", "datatype": "number" }
         ]
       },
       "Sourcing composition": {
@@ -220,9 +224,9 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": null, "unit": "mm", "datatype": "number" },
-          { "label": "Width",  "value": null, "unit": "mm", "datatype": "number" },
-          { "label": "Height", "value": null, "unit": "mm", "datatype": "number" }
+          { "label": "Length", "value": 66.5, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 24.8, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 13.5, "unit": "mm", "datatype": "number" }
         ]
       },
       "Sourcing composition": {
@@ -241,8 +245,9 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Width",  "value": null, "unit": "mm", "datatype": "number" },
-          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+          { "label": "Length", "value": 0, "unit": "", "datatype": "text" },
+          { "label": "Width",  "value": 0, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 0, "unit": "mm", "datatype": "number" }
         ]
       },
       "Sourcing composition": {
@@ -261,8 +266,9 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Width",  "value": null, "unit": "mm", "datatype": "number" },
-          { "label": "Thickness", "value": null, "unit": "mm", "datatype": "number" }
+          { "label": "Length", "value": 0, "unit": "", "datatype": "text" },
+          { "label": "Width",  "value": 5, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 0.4, "unit": "mm", "datatype": "number" }
         ]
       },
       "Sourcing composition": {
