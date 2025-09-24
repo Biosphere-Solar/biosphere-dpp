@@ -65,9 +65,9 @@
         "Presence (Yes/No)": [
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
-          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean"},
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
-          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "Lead" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
@@ -100,7 +100,7 @@
         "Presence (Yes/No)": [
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
-          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
@@ -134,7 +134,7 @@
         "Presence (Yes/No)": [
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
-          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
@@ -168,7 +168,7 @@
         "Presence (Yes/No)": [
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
-          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
@@ -202,7 +202,7 @@
         "Presence (Yes/No)": [
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
-          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
@@ -236,7 +236,7 @@
         "Presence (Yes/No)": [
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
-          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
@@ -270,7 +270,7 @@
         "Presence (Yes/No)": [
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
-          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
@@ -304,7 +304,7 @@
         "Presence (Yes/No)": [
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
-          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
@@ -338,7 +338,7 @@
         "Presence (Yes/No)": [
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
-          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
@@ -372,9 +372,9 @@
         "Presence (Yes/No)": [
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
-          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
-          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean" "comments": "Lead" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
@@ -406,9 +406,9 @@
         "Presence (Yes/No)": [
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
-          { "label": "Additives",                              "value": true,  "datatype": "boolean", "comments": "UV stabilizer" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
-          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean" "comments": "Lead" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
