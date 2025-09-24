@@ -58,17 +58,22 @@
             { "label": "Length", "value": 1952, "unit": "mm", "datatype": "number" },
             { "label": "Width",  "value": 1134, "unit": "mm", "datatype": "number" },
             { "label": "Height", "value": 35,   "unit": "mm", "datatype": "number" }
-
-      {
-        "name": "Solar cells",
-        "categories": {
-          "Componenet/Specimen informationn": {
-            "Part details": [
-              { "label": "Length", "value": 166, "unit": "mm", "datatype": "number" },
-              { "label": "Width",  "value": 166, "unit": "mm", "datatype": "number" },
-              { "label": "Height", "value": 0.152,   "unit": "mm", "datatype": "number" }              
           ]
-        },
+        }
+      }
+    }, 
+    {
+      "name": "Solar cells",
+      "categories": {
+        "Componenet/Specimen informationn": {
+          "Part details": [
+            { "label": "Length", "value": 166, "unit": "mm", "datatype": "number" },
+            { "label": "Width",  "value": 166, "unit": "mm", "datatype": "number" },
+            { "label": "Height", "value": 0.152,   "unit": "mm", "datatype": "number" }              
+          ]
+        }
+      }
+    },
         "Sourcing composition": {
           "—": [
             { "label": "Virgin/Fossil (%)", "value": 0, "unit": "%", "datatype": "number" }, 
