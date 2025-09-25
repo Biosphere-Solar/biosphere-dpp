@@ -148,6 +148,10 @@
     /* Hide auto-inserted category headings inside the extra section */
     #extraCats > h4 { display: none; }
 
+    /* Keep extra cards in the right column without touching Passport Info */
+    .rightcol-item { grid-column: 2; }
+    @media (max-width:960px){ .rightcol-item { grid-column: auto; } }
+
   </style>
 </head>
 <body>
@@ -220,6 +224,12 @@
         </table>
         <!-- Circularity bars will be appended here -->
       </aside>
+      <!-- Existing Component Explorer -->
+      <div id="specExplorer" class="card rightcol-item"></div>
+      
+      <!-- NEW: Mechanical properties explorer -->
+      <div id="mechExplorer" class="card rightcol-item"></div>
+
     </section>
   </div>
 
@@ -460,6 +470,99 @@
         return;
       }
 
+      function buildMechanicalExplorer(data){
+        const root = document.getElementById('mechExplorer');
+        const extra = data.extra_categories || {};
+        let catNames = Object.keys(extra);
+        if (!root || !catNames.length){ if(root) root.style.display='none'; return; }
+      
+        // Show only Mechanical properties tab if present; else show the first extra category
+        const preferred = "Mechanical properties";
+        const hasPreferred = catNames.includes(preferred);
+        if (hasPreferred) catNames = [preferred];
+      
+        root.innerHTML = `
+          <h3 style="margin-top:0">${hasPreferred ? 'Mechanical properties' : catNames[0]}</h3>
+          <div id="meTabs" class="tabs" style="${hasPreferred?'display:none':''}"></div>
+          <div style="display:flex;gap:10px;align-items:center;margin:8px 0 12px">
+            <label class="muted">Component</label>
+            <select id="meComp" class="select"></select>
+          </div>
+          <div id="mePane"></div>
+        `;
+      
+        const esc = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+        const tabs = root.querySelector('#meTabs');
+        const sel  = root.querySelector('#meComp');
+        const pane = root.querySelector('#mePane');
+      
+        let currentCat = hasPreferred ? preferred : catNames[0];
+        let currentComp = null;
+      
+        function listComps(cat){ return Object.keys(extra[cat] || {}); }
+      
+        function row(f){
+          const files = (f.files||[]).map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">file</a>`).join(' · ');
+          const extraTxt = [files && `Files: ${files}`, f.comments && `Comments: ${esc(f.comments)}`, f.note && `Note: ${esc(f.note)}`]
+            .filter(Boolean).join('<br>');
+          if (f.datatype === 'boolean'){
+            const yes = !!f.value;
+            return `<tr>
+              <th style="text-align:left;padding:8px 6px;color:#9fb1d9;width:38%">${esc(f.label||'')}</th>
+              <td style="padding:8px 6px"><span class="badge bool ${yes?'yes':'no'}">${yes?'Yes':'No'}</span>${extraTxt?`<div class="muted" style="margin-top:6px">${extraTxt}</div>`:''}</td>
+            </tr>`;
+          }
+          const label = esc(f.label || '');
+          const val   = (f.value === '' || f.value == null) ? '—' : esc(f.value);
+          const unit  = f.unit ? ` <span class="muted">${esc(f.unit)}</span>` : '';
+          const tip   = f.description ? `<span title="${esc(f.description)}" style="margin-left:6px;color:#9fb1d9">ℹ️</span>` : '';
+          return `<tr>
+            <th style="text-align:left;padding:8px 6px;color:#9fb1d9;width:38%">${label}${tip}</th>
+            <td style="padding:8px 6px">${val}${unit}${extraTxt?`<div class="muted" style="margin-top:6px">${extraTxt}</div>`:''}</td>
+          </tr>`;
+        }
+      
+        function render(){
+          const compObj = (extra[currentCat] || {})[currentComp] || {};
+          pane.innerHTML = '';
+          Object.keys(compObj).forEach(groupName => {
+            const fields = compObj[groupName] || [];
+            const det = document.createElement('details');
+            det.open = true;
+            det.innerHTML = `
+              <summary><b>${esc(groupName === '—' ? 'Details' : groupName)}</b></summary>
+              <table style="width:100%;border-collapse:collapse;margin-top:6px">
+                ${fields.map(row).join('')}
+              </table>
+            `;
+            pane.appendChild(det);
+          });
+        }
+      
+        function fillComp(){
+          const comps = listComps(currentCat);
+          sel.innerHTML = '';
+          comps.forEach(n => { const o=document.createElement('option'); o.value=o.textContent=n; sel.appendChild(o); });
+          currentComp = comps[0];
+        }
+      
+        function fillTabs(){
+          tabs.innerHTML = '';
+          catNames.forEach(name => {
+            const b=document.createElement('button');
+            b.className = 'pill'; b.textContent = name;
+            b.onclick = ()=>{ currentCat = name; [...tabs.children].forEach(x=>x.classList.remove('active')); b.classList.add('active'); fillComp(); render(); };
+            tabs.appendChild(b);
+          });
+          tabs.firstChild?.classList.add('active');
+        }
+      
+        if (!hasPreferred) fillTabs();
+        fillComp(); render();
+      
+        sel.addEventListener('change', ()=>{ currentComp = sel.value; render(); });
+      }
+
       // Header bits
       setText('#modelTitle', data.model || '—');
       setText('#countryYear', `${data.origin||'—'} • ${ (data.manufacture_date||'—').toString().slice(0,4) }`);
@@ -555,6 +658,7 @@
 
       // NEW: Explorer
       buildExplorer(data);
+      buildMechanicalExplorer(data);
       renderExtraCategories(data);
     })();
 
