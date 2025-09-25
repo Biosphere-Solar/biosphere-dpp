@@ -501,8 +501,9 @@
       { "label": "Machine used",         "value": "Stringer S-300", "datatype": "text" },
       { "label": "Operator responsible", "value": "A. Smith",       "datatype": "text" },
       { "label": "Manufacturing time",   "value": "2025-06-28 14:40","datatype": "text" }
-        ]
-      }
+      ]
     }
+  }
 }
 }
+
