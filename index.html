@@ -163,6 +163,21 @@
     .rightcol-item { grid-column: 2; }
     @media (max-width:960px){ .rightcol-item { grid-column: auto; } }
 
+    /* Limit the doughnut size on desktop and mobile */
+    .chartBox{
+      position: relative;
+      width: 100%;
+      max-width: 520px;   /* cap width on large screens */
+      height: 360px;      /* controls the donut diameter */
+      margin: 0 auto;     /* center in the card */
+    }
+    
+    /* Smaller chart on narrow screens */
+    @media (max-width: 960px){
+      .chartBox{ max-width: 100%; height: 260px; }
+    }
+
+
   </style>
 </head>
 <body>
@@ -189,15 +204,21 @@
           <div class="stat"><div class="k" id="effPct">—</div><div class="muted">Efficiency</div></div>
           <div class="stat"><div class="k" id="co2e">—</div><div class="muted">CO₂e / panel</div></div>
         </div>
-
-      <div class="card" style="margin-top:14px">
-        <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
-          <button class="pill active" id="btnMat">Material</button>
-          <button class="pill" id="btnChem">Chemical</button>
+        
+        <div class="card" style="margin-top:14px">
+          <div class="tabs" style="margin-bottom:8px">
+            <button id="btnMat"  class="pill active">Material</button>
+            <button id="btnChem" class="pill">Chemical</button>
+          </div>
+        
+          <!-- NEW: sized wrapper -->
+          <div class="chartBox">
+            <canvas id="compositionChart"></canvas>
+          </div>
+        
+          <div class="muted" style="margin-top:6px" id="compLabel">Material composition</div>
         </div>
-        <canvas id="compositionChart" height="170"></canvas>
-        <div class="muted" style="margin-top:6px" id="compLabel">Material composition</div>
-      </div>
+
 
     </section>
 
@@ -292,18 +313,29 @@
       }
     }
 
+
     function buildCompositionChart(ctx, comp){
-      if(!ctx || !comp || !Object.keys(comp).length) return null;
+      if (!ctx || !comp || !Object.keys(comp).length) return null;
       const labels = Object.keys(comp);
-      const values = Object.values(comp).map(v=>pctToNumber(v));
-      if(values.some(v=>v==null)) return null;
-      const colors = ['#00d18f','#6f7dff','#f6c760','#f472b6','#60a5fa','#34d399'];
+      const values = Object.values(comp).map(v => pctToNumber(v));
+      if (values.some(v => v == null)) return null;
+    
       return new Chart(ctx, {
-        type:'doughnut',
-        data:{ labels, datasets:[{ data: values, backgroundColor: colors.slice(0, values.length), borderWidth: 2, hoverOffset: 8 }] },
-        options:{ plugins:{ legend:{ position:'bottom', labels:{ color:'#cdd6f4' } }, tooltip:{ callbacks:{ label:(tt)=> `${tt.label}: ${tt.formattedValue}%` } } }, cutout:'64%' }
+        type: 'doughnut',
+        data: { labels, datasets: [{ data: values, backgroundColor: ['#00d18f','#6f7dff','#f6c760','#f472b6','#60a5fa','#34d399'].slice(0, values.length), borderWidth: 2 }] },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '68%',
+          layout: { padding: 8 },
+          plugins: {
+            legend: { position: 'bottom', labels: { color: '#cdd6f4' } },
+            tooltip: { callbacks: { label: (tt) => `${tt.label}: ${tt.formattedValue}%` } }
+          }
+        }
       });
     }
+
 
     /* NEW: Component Explorer */
 
