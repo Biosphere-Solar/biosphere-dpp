@@ -82,6 +82,27 @@
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
         ]
+      },
+    
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
+            "comments": "Rev B, 2025-07-01"
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
+        ]
       }
     }
   },
@@ -115,6 +136,27 @@
           { "label": "Pre-consumer recycled material (%)",  "value": 30, "unit": "%", "datatype": "number" },
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
+            "comments": "Rev B, 2025-07-01"
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
         ]
       }
     }
@@ -150,6 +192,27 @@
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
         ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
+            "comments": "Rev B, 2025-07-01"
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
+        ]
       }
     }
   },
@@ -183,6 +246,27 @@
           { "label": "Pre-consumer recycled material (%)",  "value": 0, "unit": "%", "datatype": "number" },
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
+            "comments": "Rev B, 2025-07-01"
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
         ]
       }
     }
@@ -218,6 +302,27 @@
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
         ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
+            "comments": "Rev B, 2025-07-01"
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
+        ]
       }
     }
   },
@@ -252,6 +357,27 @@
           { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
         ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
+            "comments": "Rev B, 2025-07-01"
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
+        ]
       }
     }
   },
@@ -285,6 +411,27 @@
           { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
           { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+        ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
+            "comments": "Rev B, 2025-07-01"
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
         ]
       }
     }
