@@ -85,6 +85,17 @@
       .hero h1{ font-size: 36px; margin-bottom: 8px; }
       .hero p{ margin-bottom: 10px; }
     }
+    /* two-column layout */
+    .grid{ display:grid; grid-template-columns:2fr 1fr; gap:24px; }
+    
+    /* right column stacks its cards tightly */
+    .rightcol{ display:grid; gap:18px; align-content:start; }
+    
+    /* mobile: single column */
+    @media (max-width: 960px){
+      .grid{ grid-template-columns:1fr; }
+    }
+
 
     /* Circularity bars */
     .bars{display:grid;gap:10px;margin-top:10px}
@@ -191,46 +202,50 @@
     </section>
 
     <section class="grid" style="margin-top:28px">
+      <!-- LEFT column -->
       <div class="card">
         <h3>General</h3>
         <table id="generalTable"></table>
-
+    
         <h3 id="materials">Composition & Materials</h3>
         <table id="materialsTable"></table>
-
-        <h3>General composition</h3>
-        <div id="extraCats"></div>
-        
+    
+        <!-- remove the old extraCats block -->
+        <!-- <h3>General composition</h3> -->
+        <!-- <div id="extraCats"></div> -->
+    
         <h3>Instructions & Documents</h3>
         <table id="docsTable"></table>
-
+    
         <h3>Updates & Maintenance Log</h3>
         <ul id="updatesList" class="muted" style="padding-left:18px"></ul>
       </div>
-
-      <!-- NEW: Component Explorer card (left column, below the first card) -->
-      <div class="card" id="specExplorer"></div>
-
-      <aside class="card">
-        <h3>Passport Info</h3>
-        <table>
-          <tr><th>UID</th><td id="pi_uid">—</td></tr>
-          <tr><th>HS / CN Code</th><td id="pi_hs">—</td></tr>
-          <tr><th>Country of Origin</th><td id="pi_origin">—</td></tr>
-          <tr><th>Compliance</th><td id="pi_compliance">—</td></tr>
-          <tr><th>Hazardous Substances</th><td id="pi_haz">—</td></tr>
-          <tr><th>Recycled Content</th><td id="pi_recycled">—</td></tr>
-          <tr><th>Recyclability</th><td id="pi_recyclability">—</td></tr>
-        </table>
-        <!-- Circularity bars will be appended here -->
-      </aside>
-      <!-- Existing Component Explorer -->
-      <div id="specExplorer" class="card rightcol-item"></div>
-      
-      <!-- NEW: Mechanical properties explorer -->
-      <div id="mechExplorer" class="card rightcol-item"></div>
-
+    
+      <!-- RIGHT column: stack cards here -->
+      <div class="rightcol">
+        <aside class="card">
+          <h3>Passport Info</h3>
+          <table>
+            <tr><th>UID</th><td id="pi_uid">—</td></tr>
+            <tr><th>HS / CN Code</th><td id="pi_hs">—</td></tr>
+            <tr><th>Country of Origin</th><td id="pi_origin">—</td></tr>
+            <tr><th>Compliance</th><td id="pi_compliance">—</td></tr>
+            <tr><th>Hazardous Substances</th><td id="pi_haz">—</td></tr>
+            <tr><th>Recycled Content</th><td id="pi_recycled">—</td></tr>
+            <tr><th>Recyclability</th><td id="pi_recyclability">—</td></tr>
+          </table>
+          <!-- Circularity bars will be appended here -->
+        </aside>
+    
+        <!-- ONE Component Explorer only -->
+        <div id="specExplorer" class="card"></div>
+    
+        <!-- Mechanical properties explorer -->
+        <div id="mechExplorer" class="card"></div>
+      </div>
     </section>
+
+    
   </div>
 
   <script>
@@ -659,7 +674,7 @@
       // NEW: Explorer
       buildExplorer(data);
       buildMechanicalExplorer(data);
-      renderExtraCategories(data);
+      // renderExtraCategories(data); //
     })();
 
 
