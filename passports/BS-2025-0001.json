@@ -447,10 +447,8 @@
           { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
           { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
         ]
-      }
-    }
-  }
-] , 
+      },
+  
 "extra_categories": {
   "General composition": {
     "Spacer Dot": {
