@@ -524,7 +524,7 @@
         if (!root) return;
       
         // Only show these categories in this card
-        const ALLOWED = ["Mechanical properties", "Use", "End of life (EoL)"];
+        const ALLOWED = ["Mechanical properties", "Use", "End of life (EoL)", "Sorting"];
         let catNames = Object.keys(extra).filter(n => ALLOWED.includes(n));
         if (!catNames.length){ root.style.display = 'none'; return; }
       
