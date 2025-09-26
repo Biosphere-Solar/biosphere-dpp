@@ -607,6 +607,92 @@
       ]
     }
   },
+  
+    "Use": {
+    "Final sample panel": {
+      "Instructions of use and assembly": [
+        {
+          "label": "Instructions (PDF)",
+          "datatype": "file",
+          "files": [
+            "https://biosphere-solar.github.io/biosphere-dpp/files/use_and_assembly_instructions.pdf"
+          ],
+          "description": "Installation & assembly guidance"
+        }
+      ],
+      "Usage data": [
+        {
+          "label": "Power generation (kWh)",
+          "value": null,
+          "datatype": "text",
+          "note": "Per module; optionally record kWh/day, /week, /month, /year"
+        },
+        {
+          "label": "System/Plant Operation",
+          "value": null,
+          "datatype": "text",
+          "note": "Will only be present after installation"
+        }
+      ]
+    }
+  },
+  "End of life (EoL)": {
+    "Final sample panel": {
+      "Decommissioning": [
+        {
+          "label": "Party/organization that decommissions the module",
+          "value": "—",
+          "datatype": "text"
+        }
+      ],
+      "Reuse": [
+        {
+          "label": "Power (W)",
+          "value": null,
+          "unit": "W",
+          "datatype": "number",
+          "note": "Power after X years of usage to check for reusability"
+        },
+        {
+          "label": "Reuse information (PDF)",
+          "datatype": "file",
+          "files": [
+            "https://biosphere-solar.github.io/biosphere-dpp/files/reuse_information.pdf"
+          ]
+        }
+      ],
+      "Disassembly": [
+        {
+          "label": "Instructions for disassembly (PDF)",
+          "datatype": "file",
+          "files": [
+            "https://biosphere-solar.github.io/biosphere-dpp/files/reuse_information.pdf"
+          ],
+          "comments": "Same document as Reuse information"
+        }
+      ],
+      "Recycling": [
+        { "label": "Recycler name", "value": "—", "datatype": "text" },
+  
+        { "label": "Can the product be mechanically recycled?", "value": true,  "datatype": "boolean" },
+        { "label": "Can the product be chemically recycled?",   "value": true,  "datatype": "boolean" },
+  
+        { "label": "Name(s) of chemical input", "value": null,  "datatype": "text" },
+        { "label": "Mass of chemical input",    "value": null,  "unit": "kg",  "datatype": "number" },
+        { "label": "Process electricity input", "value": null,  "unit": "kWh", "datatype": "number" },
+        { "label": "Process electricity renewable energy ratio", "value": null, "unit": "%", "datatype": "number" }
+      ],
+      "Other": [
+        {
+          "label": "Waste prevention benefits",
+          "value": "Repairable and upgradable module design. Hypothesis: hyper value recovered and lower cost for recycling",
+          "datatype": "text",
+          "note": "Repairable and upgradable module design. Hypothesis: hyper value recovered and lower cost for recycling"
+        }
+      ]
+    }
+  },
+
 
   "Mechanical properties": {
     "Final sample panel": {
