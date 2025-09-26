@@ -734,6 +734,29 @@
         { "label": "Manufacturing time",   "value": "2025-06-28 14:40","datatype": "text" }
         ]
       }
+    },
+
+    "Sorting": {
+    "Final sample panel": {
+      "NDT Results": [
+        { "label": "NDT", "value": "Yes", "datatype": "text" },
+        { "label": "Which tests were performed?", "value": "A flash test and electroluminescence test have been done", "datatype": "text" },
+        { "label": "Were there any defects found?", "value": "PER PANEL, TO ADD", "datatype": "text" }
+      ],
+      "DT Results": [
+        { "label": "Was there any destructive testing performed?", "value": "Yes", "datatype": "text" },
+        { "label": "Which destructive tests were performed?", "value": "Static mechanical load test; Breakage test", "datatype": "text" },
+        {
+          "label": "Test data path",
+          "value": null,
+          "datatype": "text",
+          "description": "Please include the link for the test results and further information"
+        }
+      ],
+      "Test Overview": [
+        { "label": "Indicate any further tests", "value": "Other IEC 61215 and IEC 61730 tests", "datatype": "text" }
+      ]
     }
   }
+}
 }
