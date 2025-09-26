@@ -517,20 +517,20 @@
         return;
       }
 
+      // Right-column explorer for Mechanical + Use + EoL
       function buildMechanicalExplorer(data){
-        const root = document.getElementById('mechExplorer');
+        const root  = document.getElementById('mechExplorer');
         const extra = data.extra_categories || {};
-        let catNames = Object.keys(extra);
-        if (!root || !catNames.length){ if(root) root.style.display='none'; return; }
+        if (!root) return;
       
-        // Show only Mechanical properties tab if present; else show the first extra category
-        const preferred = "Mechanical properties";
-        const hasPreferred = catNames.includes(preferred);
-        if (hasPreferred) catNames = [preferred];
+        // Only show these categories in this card
+        const ALLOWED = ["Mechanical properties", "Use", "End of life (EoL)"];
+        let catNames = Object.keys(extra).filter(n => ALLOWED.includes(n));
+        if (!catNames.length){ root.style.display = 'none'; return; }
       
         root.innerHTML = `
-          <h3 style="margin-top:0">${hasPreferred ? 'Mechanical properties' : catNames[0]}</h3>
-          <div id="meTabs" class="tabs" style="${hasPreferred?'display:none':''}"></div>
+          <h3 style="margin-top:0">Mechanical properties</h3>
+          <div id="meTabs" class="tabs"></div>
           <div style="display:flex;gap:10px;align-items:center;margin:8px 0 12px">
             <label class="muted">Component</label>
             <select id="meComp" class="select"></select>
@@ -538,12 +538,13 @@
           <div id="mePane"></div>
         `;
       
-        const esc = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+        const esc  = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
         const tabs = root.querySelector('#meTabs');
         const sel  = root.querySelector('#meComp');
         const pane = root.querySelector('#mePane');
       
-        let currentCat = hasPreferred ? preferred : catNames[0];
+        // Default tab = Mechanical properties if present
+        let currentCat  = catNames.includes("Mechanical properties") ? "Mechanical properties" : catNames[0];
         let currentComp = null;
       
         function listComps(cat){ return Object.keys(extra[cat] || {}); }
@@ -552,6 +553,7 @@
           const files = (f.files||[]).map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">file</a>`).join(' · ');
           const extraTxt = [files && `Files: ${files}`, f.comments && `Comments: ${esc(f.comments)}`, f.note && `Note: ${esc(f.note)}`]
             .filter(Boolean).join('<br>');
+      
           if (f.datatype === 'boolean'){
             const yes = !!f.value;
             return `<tr>
@@ -559,6 +561,7 @@
               <td style="padding:8px 6px"><span class="badge bool ${yes?'yes':'no'}">${yes?'Yes':'No'}</span>${extraTxt?`<div class="muted" style="margin-top:6px">${extraTxt}</div>`:''}</td>
             </tr>`;
           }
+      
           const label = esc(f.label || '');
           const val   = (f.value === '' || f.value == null) ? '—' : esc(f.value);
           const unit  = f.unit ? ` <span class="muted">${esc(f.unit)}</span>` : '';
@@ -596,19 +599,27 @@
         function fillTabs(){
           tabs.innerHTML = '';
           catNames.forEach(name => {
-            const b=document.createElement('button');
+            const b = document.createElement('button');
             b.className = 'pill'; b.textContent = name;
-            b.onclick = ()=>{ currentCat = name; [...tabs.children].forEach(x=>x.classList.remove('active')); b.classList.add('active'); fillComp(); render(); };
+            b.onclick = () => {
+              currentCat = name;
+              [...tabs.children].forEach(x => x.classList.remove('active'));
+              b.classList.add('active');
+              fillComp(); render();
+            };
             tabs.appendChild(b);
           });
-          tabs.firstChild?.classList.add('active');
+          // activate default tab
+          ([...tabs.children].find(x => x.textContent === currentCat) || tabs.firstChild)?.classList.add('active');
         }
       
-        if (!hasPreferred) fillTabs();
-        fillComp(); render();
+        sel.addEventListener('change', () => { currentComp = sel.value; render(); });
       
-        sel.addEventListener('change', ()=>{ currentComp = sel.value; render(); });
+        fillTabs();
+        fillComp();
+        render();
       }
+
 
       // Header bits
       setText('#modelTitle', data.model || '—');
