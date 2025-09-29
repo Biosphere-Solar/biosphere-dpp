@@ -31,9 +31,10 @@
     "Busbar wire": 4
   },
   "chemical_composition_pct": {
-    "Lead (Pb)": 0.08,
-    "Tin (Sn)": 0.92,
-    "Silver (Ag)": 0.30
+    "Copper (cu)": 0.45,
+    "Phosphorus (po)": 0.23,
+    "Silicon (si)": 0.34,
+    "Lead (Pb)": 0.08
   },
 
   "datasheet_url": "https://biosphere-solar.github.io/datasheets/TOPCon410.pdf",
