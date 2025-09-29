@@ -41,10 +41,10 @@
     "lead (pb)": 0.08
   },
 
-  "datasheet_url": "https://biosphere-solar.github.io/datasheets/TOPCon410.pdf",
-  "installation_manual_url": "https://biosphere-solar.github.io/docs/installation-TOPCon410.pdf",
-  "disassembly_guide_url": "https://biosphere-solar.github.io/docs/disassembly-TOPCon410.pdf",
-  "eol_guidance_url": "https://biosphere-solar.github.io/docs/eol-TOPCon410.pdf",
+  "safety_datasheet_url": "https://biosphere-solar.github.io/files/Biosphere-Solar-Safety-Datasheet.pdf",
+  "esg_statement_url": "https://biosphere-solar.github.io/files/BiosphereSolar's-Statement-on-ESG.docx.pdf",
+  "lca_report_url": "https://biosphere-solar.github.io/files/LCA-of-traditional-and-non-traditional-glass-glass modules-TU Delft-Industrial Ecology-Master thesis of Fulvia Ianotta.pdf",
+  "epd_url": "https://biosphere-solar.github.io/docs/eol-TOPCon410.pdf",
   "hs_code": null,
   "origin": "EU",
   "compliance": ["Reg. (EU) 2024/1781 framework", "IEC 61215", "IEC 61730"],
