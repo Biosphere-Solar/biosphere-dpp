@@ -31,9 +31,9 @@
     "Busbar wire": 4
   },
   "chemical_composition_pct": {
-    "Copper (cu)": 0.45,
+    "Copper (cu)": 0.30,
     "Phosphorus (po)": 0.23,
-    "Silicon (si)": 0.34,
+    "Silicon (si)": 0.40,
     "Lead (Pb)": 0.08
   },
 
