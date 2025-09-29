@@ -89,7 +89,7 @@
           {
             "label": "Product drawings",
             "datatype": "file",
-            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/design/solar-cell-datasheet.pdf"],
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/design/final-sample-panel-datasheet.pdf"],
             "comments": " "
           },
           {
@@ -144,8 +144,8 @@
           {
             "label": "Product drawings",
             "datatype": "file",
-            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
-            "comments": "Rev B, 2025-07-01"
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/design/solar-cell-datasheet.pdf"],
+            "comments": " "
           },
           {
             "label": "Production sheets",
