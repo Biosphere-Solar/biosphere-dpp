@@ -577,48 +577,47 @@
     }
   }
 ], 
+      
+"extra_categories": {
+  "General composition": {
+    "Spacer Dot": {
+      "Resin system": [
+        { "label": "Resin details", "value": "Acrylate Resin mixture", "datatype": "text" }
+      ],
+      "Fibre": [
+        { "label": "Fibre type", "value": null, "datatype": "text" }
+      ]
+    }
+  },
   
-    
-  "extra_categories": {
-    "General composition": {
-      "Spacer Dot": {
-        "Resin system": [
-          { "label": "Resin details", "value": "Acrylate Resin mixture", "datatype": "text" }
-        ],
-        "Fibre": [
-          { "label": "Fibre type", "value": null, "datatype": "text" }
-        ]
-      }
-    },
-    
-    "Use": {
-      "Final sample panel": {
-        "Instructions of use and assembly": [
-          {
-            "label": "Instructions (PDF)",
-            "datatype": "file",
-            "files": [
-              "https://biosphere-solar.github.io/biosphere-dpp/files/use_and_assembly_instructions.pdf"
-            ],
-            "description": "Installation & assembly guidance"
-          }
-        ],
-        "Usage data": [
-          {
-            "label": "Power generation (kWh)",
-            "value": null,
-            "datatype": "text",
-            "note": "Per module; optionally record kWh/day, /week, /month, /year"
-          },
-          {
-            "label": "System/Plant Operation",
-            "value": null,
-            "datatype": "text",
-            "note": "Will only be present after installation"
-          }
-        ]
-      }
-    },
+  "Use": {
+    "Final sample panel": {
+      "Instructions of use and assembly": [
+        {
+          "label": "Instructions (PDF)",
+          "datatype": "file",
+          "files": [
+            "https://biosphere-solar.github.io/biosphere-dpp/files/use_and_assembly_instructions.pdf"
+          ],
+          "description": "Installation & assembly guidance"
+        }
+      ],
+      "Usage data": [
+        {
+          "label": "Power generation (kWh)",
+          "value": null,
+          "datatype": "text",
+          "note": "Per module; optionally record kWh/day, /week, /month, /year"
+        },
+        {
+          "label": "System/Plant Operation",
+          "value": null,
+          "datatype": "text",
+          "note": "Will only be present after installation"
+        }
+      ]
+    }
+  },
     
   "End of life (EoL)": {
     "Final sample panel": {
