@@ -231,9 +231,8 @@
         <h3 id="materials">Composition & Materials</h3>
         <table id="materialsTable"></table>
     
-        <!-- remove the old extraCats block -->
-        <!-- <h3>General composition</h3> -->
-        <!-- <div id="extraCats"></div> -->
+        <<h3 id="gcTitle">General composition</h3>
+        <<div id="extraCats"></div>
     
         <h3>Instructions & Documents</h3>
         <table id="docsTable"></table>
@@ -772,7 +771,7 @@
       // NEW: Explorer
       buildExplorer(data);
       buildMechanicalExplorer(data);
-      // renderExtraCategories(data); //
+      renderExtraCategories(data, { only: "General composition" });
     })();
 
 
