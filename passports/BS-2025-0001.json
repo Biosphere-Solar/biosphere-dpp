@@ -10,7 +10,7 @@
   "dimensions_mm": "1952 x 1134 x 35",
   "weight_kg": 26.37,
   "efficiency_pct": 21.6,
-  "co2e_kg": "null",
+  "co2e_kg": null,
   "lifetime_years": 25,
   "warranty_years": 25,
   "certifications": ["In-House Precompliance IEC 61215 Testing", "In-House Precompliance IEC 61730 Testing"],
