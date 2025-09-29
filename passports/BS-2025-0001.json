@@ -606,17 +606,6 @@
           "description": "Installation & assembly guidance"
         }
       ],
-    "Edge seal":{
-      "Upload any file": [
-        {
-          "label": "Technical Information",
-          "datatype": "file",
-          "files": [
-            "https://biosphere-solar.github.io/biosphere-dpp/files/use/Edge-seal-HeliosealPVS101-Technical Information.pdf"
-          ],
-          "description": "Technical Information"
-        }
-      ],
       
       "Usage data": [
         {
@@ -634,6 +623,18 @@
       ]
     }
   },
+
+  "Edge seal":{
+  "Upload any file": [
+    {
+      "label": "Technical Information",
+      "datatype": "file",
+      "files": [
+        "https://biosphere-solar.github.io/biosphere-dpp/files/use/Edge-seal-HeliosealPVS101-Technical-Information.pdf"
+      ],
+      "description": "Technical Information"
+    }
+  ],
     
   "End of life (EoL)": {
     "Final sample panel": {
