@@ -320,17 +320,6 @@
     }
     function colorForLabel(label){ return `hsl(${hueFromString(label)} 70% 55%)`; }
     
-    // Optional: brand overrides for known labels
-    const PALETTE = {
-      "Glass": "#00d18f",
-      "Solar cells": "#6f7dff",
-      "Frame": "#f6c760",
-      "Edge seal": "#f472b6",
-      "Junction Box": "#60a5fa",
-      "Tabbing wire": "#34d399",
-      "Busbar wire": "#f59e0b"
-    };
-
 
     function buildCompositionChart(ctx, comp){
       if (!ctx || !comp || !Object.keys(comp).length) return null;
