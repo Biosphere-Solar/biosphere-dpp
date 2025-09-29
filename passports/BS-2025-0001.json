@@ -199,8 +199,8 @@
           {
             "label": "Product drawings",
             "datatype": "file",
-            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
-            "comments": "Rev B, 2025-07-01"
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/design/front-glass.pdf"],
+            "comments": " "
           },
           {
             "label": "Production sheets",
