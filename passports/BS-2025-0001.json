@@ -22,19 +22,19 @@
     "Junction Box": "Field-replaceable; diodes; halogen-free"
   },
   "material_composition_pct": {
-    "Glass": 40,
-    "Solar cells": 30,
-    "Frame": 12,
-    "Edge seal": 10,
-    "Junction Box": 3,
-    "Tabbing wire": 3,
-    "Busbar wire": 4
+    "glass": 40,
+    "solar cells": 30,
+    "frame": 12,
+    "edge seal": 10,
+    "junction Box": 3,
+    "tabbing wire": 3,
+    "busbar wire": 4
   },
   "chemical_composition_pct": {
-    "Copper (cu)": 0.30,
-    "Phosphorus (po)": 0.23,
-    "Silicon (si)": 0.40,
-    "Lead (Pb)": 0.08
+    "copper (cu)": 0.30,
+    "phosphorus (po)": 0.23,
+    "silicon (si)": 0.40,
+    "lead (Pb)": 0.08
   },
 
   "datasheet_url": "https://biosphere-solar.github.io/datasheets/TOPCon410.pdf",
