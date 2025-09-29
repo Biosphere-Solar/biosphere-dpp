@@ -313,6 +313,88 @@
       }
     }
 
+    // ---- Color helpers (distinct + stable) ----
+    const BASE_PALETTE = [
+      "#22c55e","#3b82f6","#f59e0b","#ef4444","#a855f7",
+      "#06b6d4","#10b981","#f472b6","#eab308","#8b5cf6","#14b8a6","#f97316"
+    ];
+    
+    const MATERIAL_MAP = {            // case-insensitive lookup (we'll normalize keys)
+      "glass":"#00d18f",
+      "solar cells":"#6f7dff",
+      "frame":"#f6c760",
+      "edge seal":"#f472b6",
+      "junction box":"#60a5fa",
+      "tabbing wire":"#34d399",
+      "busbar wire":"#f59e0b"
+    };
+    
+    const CHEMICAL_MAP = {
+      "lead (pb)":"#ef4444",
+      "silicon (si)":"#a855f7",
+      "copper (cu)":"#22c55e",
+      "phosphorus (po)":"#06b6d4"
+    };
+    
+    function norm(s){ return String(s||"").toLowerCase().trim(); }
+    
+    // Fallback: stable color from label string
+    function hueFromString(str){
+      let h = 0;
+      for(let i=0;i<str.length;i++) h = (h*31 + str.charCodeAt(i)) >>> 0;
+      return h % 360;
+    }
+    function colorFromHash(label){ return `hsl(${hueFromString(label)} 70% 55%)`; }
+    
+    // Hex → H in HSL (0–360)
+    function hexToHue(hex){
+      const m = hex.replace('#','');
+      const r = parseInt(m.substring(0,2),16)/255;
+      const g = parseInt(m.substring(2,4),16)/255;
+      const b = parseInt(m.substring(4,6),16)/255;
+      const max = Math.max(r,g,b), min = Math.min(r,g,b);
+      const d = max - min;
+      if (d === 0) return 0;
+      let h;
+      switch(max){
+        case r: h = (g-b)/d + (g<b ? 6:0); break;
+        case g: h = (b-r)/d + 2; break;
+        default: h = (r-g)/d + 4; break;
+      }
+      return Math.round(h*60);
+    }
+    
+    // Pick distinct colors for a list of labels.
+    // `kind` is "material" or "chemical" for curated maps.
+    function pickColors(labels, kind){
+      const map = (kind === "chemical") ? CHEMICAL_MAP : MATERIAL_MAP;
+      const usedHues = [];
+      const minSep = 18; // degrees of minimum hue separation within a single chart
+    
+      return labels.map((label, i) => {
+        const n = norm(label);
+    
+        // 1) curated map (case-insensitive)
+        let col = map[n];
+    
+        // 2) try BASE_PALETTE with a hash-based start index to avoid always picking the same few
+        if (!col) {
+          const start = hueFromString(n) % BASE_PALETTE.length;
+          for (let k=0; k<BASE_PALETTE.length; k++){
+            const candidate = BASE_PALETTE[(start+k) % BASE_PALETTE.length];
+            const h = hexToHue(candidate);
+            if (usedHues.every(u => Math.abs(h-u) >= minSep)) { col = candidate; break; }
+          }
+        }
+    
+        // 3) final fallback: hash color (HSL), if still nothing distinct found
+        if (!col) col = colorFromHash(n);
+    
+        usedHues.push(hexToHue(col));
+        return col;
+      });
+    }
+
     // Stable color per label (same label → same color across charts)
     function hueFromString(str){
       let h = 0;
@@ -332,25 +414,17 @@
       "Busbar wire": "#f59e0b"
     };
     
-    function buildCompositionChart(ctx, comp){
+    function buildCompositionChart(ctx, comp, opts = {}){
       if (!ctx || !comp || !Object.keys(comp).length) return null;
       const labels = Object.keys(comp);
       const values = Object.values(comp).map(v => pctToNumber(v));
       if (values.some(v => v == null)) return null;
     
-      // Pick a color for each label (use brand palette if available, else generated)
-      const colors = labels.map(l => PALETTE[l] || colorForLabel(l));
+      const colors = pickColors(labels, opts.kind || "material");
     
       return new Chart(ctx, {
         type: 'doughnut',
-        data: {
-          labels,
-          datasets: [{
-            data: values,
-            backgroundColor: colors,
-            borderWidth: 2
-          }]
-        },
+        data: { labels, datasets: [{ data: values, backgroundColor: colors, borderWidth: 2 }] },
         options: {
           responsive: true,
           maintainAspectRatio: false,
@@ -726,6 +800,12 @@
           canvas.parentElement.style.display = '';
         }
       }
+      // Material
+      donut = buildCompositionChart(canvas, mat, { kind: 'material' });
+      
+      // Chemical
+      donut = buildCompositionChart(canvas, chem, { kind: 'chemical' });
+
 
       btnMat.addEventListener('click', () => {
         btnMat.classList.add('active'); btnChem.classList.remove('active');
