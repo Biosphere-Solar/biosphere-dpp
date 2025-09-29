@@ -1,14 +1,14 @@
 {
   "uid": "urn:bs:pv:BS-2025-0001",
-  "version": "1.1",
-  "last_updated": "2025-09-12",
-  "model": "TOPCon 410W",
+  "version": "1.3",
+  "last_updated": "2025-09-29",
+  "model": "Bifacial TOPCon 410W",
   "manufacturer": "Biosphere Solar",
   "manufacture_date": "2025-07-03",
   "power_w": 392,
   "cell_type": "TOPCon",
   "dimensions_mm": "1722 x 1134 x 30",
-  "weight_kg": 19.8,
+  "weight_kg": 26.37,
   "efficiency_pct": 21.3,
   "co2e_kg": 450,
   "lifetime_years": 25,
@@ -709,8 +709,8 @@
         { "label": "Efficiency",                 "value": 21.3, "unit": "%",  "datatype": "number" }
       ],
       "Process info": [
-        { "label": "Machine used",         "value": "Lamination line #2", "datatype": "text" },
-        { "label": "Operator responsible", "value": "J. Doe",              "datatype": "text" },
+        { "label": "Machine used",         "value": "Stringer, laminator, junction box potting machine, frame machine", "datatype": "text" },
+        { "label": "Operator responsible", "value": "Zola Fung-A-Jou",              "datatype": "text" },
         { "label": "Manufacturing time",   "value": "2025-07-03 10:15",    "datatype": "text" }
       ]
     },
@@ -729,9 +729,9 @@
         { "label": "Efficiency (cell)",            "value": 24.0, "unit": "%",  "datatype": "number" }
       ],
       "Process info": [
-        { "label": "Machine used",         "value": "Stringer S-300", "datatype": "text" },
-        { "label": "Operator responsible", "value": "A. Smith",       "datatype": "text" },
-        { "label": "Manufacturing time",   "value": "2025-06-28 14:40","datatype": "text" }
+        { "label": "Machine used",         "value": "Diamond wire cutter", "datatype": "text" },
+        { "label": "Operator responsible", "value": "Sunpower",       "datatype": "text" },
+        { "label": "Manufacturing time",   "value": "null","datatype": "text" }
         ]
       }
     },
