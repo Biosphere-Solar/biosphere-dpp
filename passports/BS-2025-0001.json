@@ -23,7 +23,7 @@
   },
   "material_composition_pct": {
     "Glass": 40,
-    "Solar Cells": 30,
+    "Solar cells": 30,
     "Frame": 12,
     "Edge seal": 10,
     "Junction Box": 3,
