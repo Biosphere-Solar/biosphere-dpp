@@ -2,24 +2,28 @@
   "uid": "urn:bs:pv:BS-2025-0001",
   "version": "1.3",
   "last_updated": "2025-09-29",
-  "model": "Bifacial TOPCon 410W",
-  "manufacturer": "Biosphere Solar",
-  "manufacture_date": "2025-07-03",
+  "model": "Bifacial TOPCon",
+  "manufacturer": "Einnova and Kameleon Solar",
+  "manufacture_date": "2025-01-07",
   "power_w": 392,
   "cell_type": "TOPCon",
-  "dimensions_mm": "1722 x 1134 x 30",
+  "dimensions_mm": "1952 x 1134 x 35",
   "weight_kg": 26.37,
-  "efficiency_pct": 21.3,
-  "co2e_kg": 450,
+  "efficiency_pct": 21.6,
+  "co2e_kg": null,
   "lifetime_years": 25,
   "warranty_years": 25,
-  "certifications": ["IEC 61215", "IEC 61730"],
+  "certifications": ["In-House Precompliance IEC 61215 Testing", "In-House Precompliance IEC 61730 Testing"],
   "materials": {
-    "Glass": "Tempered low-iron (≥30% recycled)",
-    "Cells": "Monocrystalline TOPCon (Germany, 30% recycled silicon mix)",
-    "Frame": "Aluminium (Italy, 70% recycled)",
-    "Encapsulant": "Liquid encapsulation (reversible sealing)",
-    "Junction Box": "Field-replaceable; diodes; halogen-free"
+    "Glass": "Low iron semi tempered soda lime glass",
+    "Cells": "Bifacial TOPCON cell technology",
+    "Frame": "Reinforced anodize aluminum alloy 6005",
+    "Edge Seal": "Dessicated PIB",
+    "Spacer Dot": null,
+    "Junction Box": "Copper and PPO",
+    "Tabbing wire": "Copper, tin and lead",
+    "Busbar wire": "Copper, tin and lead"
+    
   },
   "material_composition_pct": {
     "glass": 40,
@@ -34,14 +38,14 @@
     "copper (cu)": 0.30,
     "phosphorus (po)": 0.23,
     "silicon (si)": 0.40,
-    "lead (Pb)": 0.08
+    "lead (pb)": 0.08
   },
 
   "datasheet_url": "https://biosphere-solar.github.io/datasheets/TOPCon410.pdf",
   "installation_manual_url": "https://biosphere-solar.github.io/docs/installation-TOPCon410.pdf",
   "disassembly_guide_url": "https://biosphere-solar.github.io/docs/disassembly-TOPCon410.pdf",
   "eol_guidance_url": "https://biosphere-solar.github.io/docs/eol-TOPCon410.pdf",
-  "hs_code": "8541.43",
+  "hs_code": null,
   "origin": "EU",
   "compliance": ["Reg. (EU) 2024/1781 framework", "IEC 61215", "IEC 61730"],
   "hazardous_substances": ["Lead solder (SnPb) <0.1%", "No PFAS in encapsulant"],
@@ -597,11 +601,23 @@
           "label": "Instructions (PDF)",
           "datatype": "file",
           "files": [
-            "https://biosphere-solar.github.io/biosphere-dpp/files/use_and_assembly_instructions.pdf"
+            "https://biosphere-solar.github.io/biosphere-dpp/files/use/use-and-assembly-instructions.pdf"
           ],
           "description": "Installation & assembly guidance"
         }
       ],
+    "Edge seal":{
+      "Upload any file": [
+        {
+          "label": "Technical Information",
+          "datatype": "file",
+          "files": [
+            "https://biosphere-solar.github.io/biosphere-dpp/files/use/Edge-seal-HeliosealPVS101-Technical Information.pdf"
+          ],
+          "description": "Technical Information"
+        }
+      ],
+      
       "Usage data": [
         {
           "label": "Power generation (kWh)",
@@ -626,6 +642,7 @@
           "label": "Party/organization that decommissions the module",
           "value": "—",
           "datatype": "text"
+          "note": "Dutch Solar Tech"
         }
       ],
       "Reuse": [
@@ -640,7 +657,7 @@
           "label": "Reuse information (PDF)",
           "datatype": "file",
           "files": [
-            "https://biosphere-solar.github.io/biosphere-dpp/files/reuse_information.pdf"
+            "https://biosphere-solar.github.io/biosphere-dpp/files/EoL/Disassembly-Manual-Biosphere-SolarV1.4.pdf"
           ]
         }
       ],
@@ -649,13 +666,13 @@
           "label": "Instructions for disassembly (PDF)",
           "datatype": "file",
           "files": [
-            "https://biosphere-solar.github.io/biosphere-dpp/files/reuse_information.pdf"
+            "https://biosphere-solar.github.io/biosphere-dpp/files//EoL/Disassembly-Manual-Biosphere-SolarV1.4.pdf"
           ],
           "comments": "Same document as Reuse information"
         }
       ],
       "Recycling": [
-        { "label": "Recycler name", "value": "—", "datatype": "text" },
+        { "label": "Recycler name", "value": "Solar2Cycle", "datatype": "text" },
   
         { "label": "Can the product be mechanically recycled?", "value": true,  "datatype": "boolean" },
         { "label": "Can the product be chemically recycled?",   "value": true,  "datatype": "boolean" },
