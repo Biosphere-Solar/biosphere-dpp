@@ -578,39 +578,39 @@
   }
 ], 
   
-"extra_categories": {
-  "General composition": {
-    "Spacer Dot": {
-      "Resin system": [
-        { "label": "Resin details", "value": "Acrylate Resin mixture", "datatype": "text" }
-      ],
-      "Fibre": [
-        { "label": "Fibre type", "value": null, "datatype": "text" }
-      ]
-    }
-  }
-},
-
-      "Sourcing composition": {
-        "—": [
-          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
-          { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
-          { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
-          { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+  "extra_categories": {
+    "General composition": {
+      "Spacer Dot": {
+        "Resin system": [
+          { "label": "Resin details", "value": "Acrylate Resin mixture", "datatype": "text" }
+        ],
+        "Fibre": [
+          { "label": "Fibre type", "value": null, "datatype": "text" }
         ]
-      },
-  
-"extra_categories": {
-  "General composition": {
-    "Spacer Dot": {
-      "Resin system": [
-        { "label": "Resin details", "value": "Acrylate Resin mixture", "datatype": "text" }
-      ],
-      "Fibre": [
-        { "label": "Fibre type", "value": null, "datatype": "text" }
-      ]
+      }
     }
   },
+  
+        "Sourcing composition": {
+          "—": [
+            { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+            { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
+            { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
+            { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+          ]
+        },
+    
+  "extra_categories": {
+    "General composition": {
+      "Spacer Dot": {
+        "Resin system": [
+          { "label": "Resin details", "value": "Acrylate Resin mixture", "datatype": "text" }
+        ],
+        "Fibre": [
+          { "label": "Fibre type", "value": null, "datatype": "text" }
+        ]
+      }
+    },
   
     "Use": {
     "Final sample panel": {
