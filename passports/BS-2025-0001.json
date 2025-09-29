@@ -22,10 +22,13 @@
     "Junction Box": "Field-replaceable; diodes; halogen-free"
   },
   "material_composition_pct": {
-    "Glass": 65,
-    "Cells": 20,
+    "Glass": 40,
+    "Solar Cells": 30,
     "Frame": 12,
-    "Junction Box": 3
+    "Edge seal": 10,
+    "Junction Box": 3,
+    "Tabbing wire": 3,
+    "Busbar wire": 4
   },
   "chemical_composition_pct": {
     "Lead (Pb)": 0.08,
