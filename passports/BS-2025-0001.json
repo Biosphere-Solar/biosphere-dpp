@@ -10,7 +10,7 @@
   "dimensions_mm": "1952 x 1134 x 35",
   "weight_kg": 26.37,
   "efficiency_pct": 21.6,
-  "co2e_kg": null,
+  "co2e_kg": "null",
   "lifetime_years": 25,
   "warranty_years": 25,
   "certifications": ["In-House Precompliance IEC 61215 Testing", "In-House Precompliance IEC 61730 Testing"],
@@ -19,7 +19,7 @@
     "Cells": "Bifacial TOPCON cell technology",
     "Frame": "Reinforced anodize aluminum alloy 6005",
     "Edge Seal": "Dessicated PIB",
-    "Spacer Dot": null,
+    "Spacer Dot": "null",
     "Junction Box": "Copper and PPO",
     "Tabbing wire": "Copper, tin and lead",
     "Busbar wire": "Copper, tin and lead"
@@ -45,7 +45,7 @@
   "installation_manual_url": "https://biosphere-solar.github.io/docs/installation-TOPCon410.pdf",
   "disassembly_guide_url": "https://biosphere-solar.github.io/docs/disassembly-TOPCon410.pdf",
   "eol_guidance_url": "https://biosphere-solar.github.io/docs/eol-TOPCon410.pdf",
-  "hs_code": null,
+  "hs_code": "null",
   "origin": "EU",
   "compliance": ["Reg. (EU) 2024/1781 framework", "IEC 61215", "IEC 61730"],
   "hazardous_substances": ["Lead solder (SnPb) <0.1%", "No PFAS in encapsulant"],
@@ -641,7 +641,7 @@
         {
           "label": "Party/organization that decommissions the module",
           "value": "—",
-          "datatype": "text"
+          "datatype": "text",
           "note": "Dutch Solar Tech"
         }
       ],
