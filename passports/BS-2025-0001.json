@@ -278,7 +278,7 @@
       "Component/Specimen information": {
         "Part details": [
           { "label": "Length", "value": 1764, "unit": "mm", "datatype": "number" },
-          { "label": "Width",  "value": 0, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 12, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 30, "unit": "mm", "datatype": "number" }
         ]
       },
@@ -333,7 +333,7 @@
       "Component/Specimen information": {
         "Part details": [
           { "label": "Length", "value": 1046, "unit": "mm", "datatype": "number" },
-          { "label": "Width",  "value": 0, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 12, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 30, "unit": "mm", "datatype": "number" }
         ]
       },
@@ -389,7 +389,7 @@
         "Part details": [
           { "label": "Length", "value": 5600, "unit": "mm", "datatype": "number" },
           { "label": "Width",  "value": 11, "unit": "mm", "datatype": "number" },
-          { "label": "Height", "value": 0, "unit": "mm", "datatype": "number" }
+          { "label": "Height", "value": 1, "unit": "mm", "datatype": "number" }
         ]
       },
       "Chemical composition": {
@@ -510,9 +510,9 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": 0, "unit": "", "datatype": "text" },
-          { "label": "Width",  "value": 0, "unit": "mm", "datatype": "number" },
-          { "label": "Height", "value": 0, "unit": "mm", "datatype": "number" }
+          { "label": "Length", "value": null, "unit": "mm", "datatype": "text" },
+          { "label": "Width",  "value": null, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": null, "unit": "mm", "datatype": "number" }
         ]
       },
       "Chemical composition": {
@@ -544,7 +544,7 @@
     "categories": {
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": 0, "unit": "", "datatype": "text" },
+          { "label": "Length", "value": 0, "unit": "mm", "datatype": "text" },
           { "label": "Width",  "value": 5, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 0.4, "unit": "mm", "datatype": "number" }
         ]
