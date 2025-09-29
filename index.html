@@ -313,12 +313,24 @@
       }
     }
 
+    // Stable color per label (same label → same color across charts)
     function hueFromString(str){
       let h = 0;
       for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0;
       return h % 360;
     }
-    function colorForLabel(label){ return `hsl(${hueFromString(label)}, 70%, 55%)`; }
+    function colorForLabel(label){ return `hsl(${hueFromString(label)} 70% 55%)`; }
+    
+    // Optional: brand overrides for known labels
+    const PALETTE = {
+      "Glass": "#00d18f",
+      "Solar cells": "#6f7dff",
+      "Frame": "#f6c760",
+      "Edge seal": "#f472b6",
+      "Junction Box": "#60a5fa",
+      "Tabbing wire": "#34d399",
+      "Busbar wire": "#f59e0b"
+    };
     
     function buildCompositionChart(ctx, comp){
       if (!ctx || !comp || !Object.keys(comp).length) return null;
@@ -326,11 +338,19 @@
       const values = Object.values(comp).map(v => pctToNumber(v));
       if (values.some(v => v == null)) return null;
     
-      const colors = labels.map(colorForLabel);
+      // Pick a color for each label (use brand palette if available, else generated)
+      const colors = labels.map(l => PALETTE[l] || colorForLabel(l));
     
       return new Chart(ctx, {
         type: 'doughnut',
-        data: { labels, datasets: [{ data: values, backgroundColor: colors, borderWidth: 2 }] },
+        data: {
+          labels,
+          datasets: [{
+            data: values,
+            backgroundColor: colors,
+            borderWidth: 2
+          }]
+        },
         options: {
           responsive: true,
           maintainAspectRatio: false,
