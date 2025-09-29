@@ -312,50 +312,25 @@
         bars.appendChild(row);
       }
     }
-    // Stable color per label (same label → same color across charts)
+
     function hueFromString(str){
       let h = 0;
       for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0;
       return h % 360;
     }
-    function colorForLabel(label){ return `hsl(${hueFromString(label)} 70% 55%)`; }
+    function colorForLabel(label){ return `hsl(${hueFromString(label)}, 70%, 55%)`; }
     
-    // Optional brand palette (used when label matches a key below)
-    const PALETTE = {
-      "Glass": "#00d18f",
-      "Solar cells": "#6f7dff",
-      "Frame": "#f6c760",
-      "Edge seal": "#f472b6",
-      "Junction Box": "#60a5fa",
-      "Tabbing wire": "#34d399",
-      "Busbar wire": "#f59e0b",
-    
-      // chemical labels (optional)
-      "Copper (Cu)": "#ef4444",
-      "Phosphorus (P)": "#8b5cf6",
-      "Silicon (Si)": "#22c55e",
-      "Lead (Pb)": "#eab308"
-    };
-
     function buildCompositionChart(ctx, comp){
       if (!ctx || !comp || !Object.keys(comp).length) return null;
       const labels = Object.keys(comp);
       const values = Object.values(comp).map(v => pctToNumber(v));
       if (values.some(v => v == null)) return null;
-
-      // Pick a color for each label (use brand palette if available, else generated)
-      const colors = labels.map(l => PALETTE[l] || colorForLabel(l));
+    
+      const colors = labels.map(colorForLabel);
     
       return new Chart(ctx, {
         type: 'doughnut',
-        data: {
-          labels,
-          datasets: [{
-            data: values,
-            backgroundColor: colors,
-            borderWidth: 2
-          }]
-        },
+        data: { labels, datasets: [{ data: values, backgroundColor: colors, borderWidth: 2 }] },
         options: {
           responsive: true,
           maintainAspectRatio: false,
