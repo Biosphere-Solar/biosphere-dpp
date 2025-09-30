@@ -43,8 +43,8 @@
 
   "safety_datasheet_url": "https://biosphere-solar.github.io/biosphere-dpp/files/safety-datasheet.pdf",
   "esg_statement_url": "https://biosphere-solar.github.io/biosphere-dpp/files/statement-on-esg.docx.pdf",
-  "lca_report_url": "https://biosphere-solar.github.io/files/LCA-of-traditional-and-non-traditional-glass-glass modules-TU Delft-Industrial Ecology-Master thesis of Fulvia Ianotta.pdf",
-  "epd_url": "https://biosphere-solar.github.io/docs/eol-TOPCon410.pdf",
+  "lca_report_url": "https://biosphere-solar.github.io/biosphere-dpp/files/lca.pdf",
+  "epd_url": "https://biosphere-solar.github.io/biosphere-dpp/files/eol-TOPCon410.pdf",
   "hs_code": null,
   "origin": "EU",
   "compliance": ["Reg. (EU) 2024/1781 framework", "IEC 61215", "IEC 61730"],
