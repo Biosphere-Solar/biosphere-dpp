@@ -627,23 +627,43 @@
             <td style="padding:8px 6px">${val}${unit}${extraTxt?`<div class="muted" style="margin-top:6px">${extraTxt}</div>`:''}</td>
           </tr>`;
         }
-      
+        
+        function normalizeFields(groupVal){
+          // Expect an array of fields; if it's a single object -> wrap; if bad -> empty array
+          if (Array.isArray(groupVal)) return groupVal;
+          if (groupVal && typeof groupVal === 'object') return [groupVal];
+          return [];
+        }
+    
         function render(){
-          const compObj = (extra[currentCat] || {})[currentComp] || {};
+          const catObj   = extra[currentCat] || {};
+          const compObj  = catObj[currentComp] || {};
+          const groupIds = Object.keys(compObj);
+    
           pane.innerHTML = '';
-          Object.keys(compObj).forEach(groupName => {
-            const fields = compObj[groupName] || [];
+    
+          if (!groupIds.length){
+            pane.innerHTML = `<div class="muted">No data for <b>${esc(currentComp||'—')}</b> in <b>${esc(currentCat)}</b>.</div>`;
+            return;
+          }
+    
+          groupIds.forEach(groupName => {
+            const fields = normalizeFields(compObj[groupName]);
             const det = document.createElement('details');
             det.open = true;
             det.innerHTML = `
               <summary><b>${esc(groupName === '—' ? 'Details' : groupName)}</b></summary>
-              <table style="width:100%;border-collapse:collapse;margin-top:6px">
-                ${fields.map(row).join('')}
-              </table>
+              ${
+                fields.length
+                  ? `<table style="width:100%;border-collapse:collapse;margin-top:6px">
+                       ${fields.map(row).join('')}
+                     </table>`
+                  : `<div class="muted" style="margin-top:6px">No fields in this group.</div>`
+              }
             `;
             pane.appendChild(det);
-          });
-        }
+          });   
+
       
         function fillComp(){
           const comps = listComps(currentCat);
