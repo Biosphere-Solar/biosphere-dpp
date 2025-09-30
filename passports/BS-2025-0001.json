@@ -606,7 +606,6 @@
           "description": "Installation & assembly guidance"
         }
       ],
-      
       "Usage data": [
         {
           "label": "Power generation (kWh)",
@@ -621,8 +620,7 @@
           "note": "Will only be present after installation"
         }
       ]
-    }
-  },
+    },
 
     "Edge seal":{
       "Upload any file": [
@@ -762,98 +760,99 @@
       }
     },
     
-  "Regulations": {
-    "Final sample panel": {
-      "REACH": [
-        {
-          "label": "REACH status",
-          "value": "For now we don't have 3rd party certification",
-          "datatype": "text",
-          "note": "Internal declaration only"
-        },
-        {
-          "label": "REACH statement (PDF)",
-          "datatype": "file",
-          "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/reach_statement.pdf"]
-        }
-      ],
-      "RoHS": [
-        {
-          "label": "RoHS status",
-          "value": "Compliant per design; third-party certification pending",
-          "datatype": "text"
-        },
-        {
-          "label": "RoHS statement (PDF)",
-          "datatype": "file",
-          "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/rohs_statement.pdf"]
-        }
-      ],
-      "DNV": [
-        {
-          "label": "DNV certification",
-          "value": "No",
-          "datatype": "text",
-          "comments": "No DNV certificate available at this time"
-        },
-        {
-          "label": "DNV certificate (PDF)",
-          "datatype": "file",
-          "files": []
-        }
-      ]
-    },
-  
-    "Spacer Dot": {
-      "REACH": [
-        {
-          "label": "REACH note",
-          "value": "This substance does not meet the PBT/vPvB criteria of REACH, annex XIII.",
-          "datatype": "text"
-        }
-      ]
-    }
-  },
-  "Environment": {
-    "Final sample panel": {
-      "LCA data": [
-        {
-          "label": "Energy Use",
-          "value": "450–730",
-          "unit": "kWh/kWp",
-          "datatype": "text",
-          "note": "Not certified, manufacturer's own estimation"
-        },
-        {
-          "label": "Carbon footprint",
-          "value": "225–390",
-          "unit": "kg/kWp",
-          "datatype": "text",
-          "comments": "Cradle to gate",
-          "note": "Not certified, manufacturer's own estimation"
-        },
-        { "label": "Acidification",                   "value": null, "unit": "mol H+ eq/kg",      "datatype": "number" },
-        { "label": "Eutrophication, freshwater",      "value": null, "unit": "kg PO4-eq/kg",      "datatype": "number" },
-        { "label": "Eutrophication, marine",          "value": null, "unit": "kg P eq/kg",        "datatype": "number" },
-        { "label": "Ecotoxicity, freshwater",         "value": null, "unit": "CTUe/kg",           "datatype": "number" },
-        { "label": "Human toxicity, cancer",          "value": null, "unit": "CTUh/kg",           "datatype": "number" },
-        { "label": "Climate change",                  "value": null, "unit": "CO2-eq/kg",         "datatype": "number" },
-        { "label": "Climate change - biogenic",       "value": null, "unit": "CO2-eq/kg",         "datatype": "number" },
-        { "label": "Climate change - fossil",         "value": null, "unit": "CO2-eq/kg",         "datatype": "number" },
-        { "label": "Ionising radiation, human health","value": null, "unit": "kBq U-235 eq/kg",   "datatype": "number" },
-        { "label": "Water use",                       "value": null, "unit": "m3 water-eq",       "datatype": "number" }
-      ]
-    },
+    "Regulations": {
+      "Final sample panel": {
+        "REACH": [
+          {
+            "label": "REACH status",
+            "value": "For now we don't have 3rd party certification",
+            "datatype": "text",
+            "note": "Internal declaration only"
+          },
+          {
+            "label": "REACH statement (PDF)",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/reach_statement.pdf"]
+          }
+        ],
+        "RoHS": [
+          {
+            "label": "RoHS status",
+            "value": "Compliant per design; third-party certification pending",
+            "datatype": "text"
+          },
+          {
+            "label": "RoHS statement (PDF)",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/rohs_statement.pdf"]
+          }
+        ],
+        "DNV": [
+          {
+            "label": "DNV certification",
+            "value": "No",
+            "datatype": "text",
+            "comments": "No DNV certificate available at this time"
+          },
+          {
+            "label": "DNV certificate (PDF)",
+            "datatype": "file",
+            "files": []
+          }
+        ]
+      },
     
-    "Solar cells":   { "LCA data": [] },
-    "Front glass":   { "LCA data": [] },
-    "Back glass":    { "LCA data": [] },
-    "Long frame":    { "LCA data": [] },
-    "Short frame":   { "LCA data": [] },
-    "Edge seal":     { "LCA data": [] },
-    "Spacer Dot":    { "LCA data": [] },
-    "Junction Box":  { "LCA data": [] },
-    "Tabbing wire":  { "LCA data": [] },
-    "Busbar wire":   { "LCA data": [] }
+      "Spacer Dot": {
+        "REACH": [
+          {
+            "label": "REACH note",
+            "value": "This substance does not meet the PBT/vPvB criteria of REACH, annex XIII.",
+            "datatype": "text"
+          }
+        ]
+      }
+    },
+    "Environment": {
+      "Final sample panel": {
+        "LCA data": [
+          {
+            "label": "Energy Use",
+            "value": "450–730",
+            "unit": "kWh/kWp",
+            "datatype": "text",
+            "note": "Not certified, manufacturer's own estimation"
+          },
+          {
+            "label": "Carbon footprint",
+            "value": "225–390",
+            "unit": "kg/kWp",
+            "datatype": "text",
+            "comments": "Cradle to gate",
+            "note": "Not certified, manufacturer's own estimation"
+          },
+          { "label": "Acidification",                   "value": null, "unit": "mol H+ eq/kg",      "datatype": "number" },
+          { "label": "Eutrophication, freshwater",      "value": null, "unit": "kg PO4-eq/kg",      "datatype": "number" },
+          { "label": "Eutrophication, marine",          "value": null, "unit": "kg P eq/kg",        "datatype": "number" },
+          { "label": "Ecotoxicity, freshwater",         "value": null, "unit": "CTUe/kg",           "datatype": "number" },
+          { "label": "Human toxicity, cancer",          "value": null, "unit": "CTUh/kg",           "datatype": "number" },
+          { "label": "Climate change",                  "value": null, "unit": "CO2-eq/kg",         "datatype": "number" },
+          { "label": "Climate change - biogenic",       "value": null, "unit": "CO2-eq/kg",         "datatype": "number" },
+          { "label": "Climate change - fossil",         "value": null, "unit": "CO2-eq/kg",         "datatype": "number" },
+          { "label": "Ionising radiation, human health","value": null, "unit": "kBq U-235 eq/kg",   "datatype": "number" },
+          { "label": "Water use",                       "value": null, "unit": "m3 water-eq",       "datatype": "number" }
+        ]
+      },
+      
+      "Solar cells":   { "LCA data": [] },
+      "Front glass":   { "LCA data": [] },
+      "Back glass":    { "LCA data": [] },
+      "Long frame":    { "LCA data": [] },
+      "Short frame":   { "LCA data": [] },
+      "Edge seal":     { "LCA data": [] },
+      "Spacer Dot":    { "LCA data": [] },
+      "Junction Box":  { "LCA data": [] },
+      "Tabbing wire":  { "LCA data": [] },
+      "Busbar wire":   { "LCA data": [] }
+     }
    }
-  }
+}
