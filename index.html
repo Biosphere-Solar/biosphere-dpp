@@ -177,6 +177,42 @@
       .chartBox{ max-width: 100%; height: 260px; }
     }
 
+    /* prevent surprise horizontal scroll */
+    html, body { max-width: 100%; overflow-x: hidden; }
+    
+    /* make the toolbar stack on phones */
+    .toolbar{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin: 8px 0 12px;
+    }
+    @media (max-width: 600px){
+      .toolbar{ flex-direction: column; align-items: stretch; gap: 6px; }
+    }
+    
+    /* selects shouldn’t force width */
+    .select{ width: 100%; max-width: 100%; }
+    
+    /* tabs: allow wrapping on small screens (or keep overflow:auto if you prefer) */
+    @media (max-width: 600px){
+      .tabs{ flex-wrap: wrap; }
+    }
+    
+    /* tables inside explorers: wrap long content, don’t blow out width */
+    #specExplorer table, #mechExplorer table{
+      width: 100%;
+      table-layout: fixed;     /* makes wrapping predictable */
+    }
+    #specExplorer th, #specExplorer td,
+    #mechExplorer th, #mechExplorer td{
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    
+    /* make sure small chips don’t force width */
+    .pill, .badge, .tag{ min-width: 0; }
+
 
   </style>
 </head>
@@ -402,14 +438,14 @@
 
         root.innerHTML = `
           <h3>Component Explorer</h3>
-          <div style="display:flex;gap:10px;align-items:center;margin:8px 0 12px">
+          <div class="toolbar">
             <label class="muted">Component</label>
             <select id="compSel" class="select"></select>
           </div>
           <div id="catTabs" class="tabs"></div>
           <div id="catPane" class="accordion"></div>
         `;
-      
+
         const sel = root.querySelector('#compSel');
         comps.forEach(n => { const o=document.createElement('option'); o.value=o.textContent=n; sel.appendChild(o); });
         sel.addEventListener('change', () => { currentComp = sel.value; renderTabs(); });
@@ -582,11 +618,11 @@
         const ALLOWED = ["Mechanical properties", "Use", "End of life (EoL)", "Sorting", "Regulations", "Environment"];
         let catNames = Object.keys(extra).filter(n => ALLOWED.includes(n));
         if (!catNames.length){ root.style.display = 'none'; return; }
-      
+
         root.innerHTML = `
           <h3 style="margin-top:0">Mechanical properties</h3>
           <div id="meTabs" class="tabs"></div>
-          <div style="display:flex;gap:10px;align-items:center;margin:8px 0 12px">
+          <div class="toolbar">
             <label class="muted">Component</label>
             <select id="meComp" class="select"></select>
           </div>
