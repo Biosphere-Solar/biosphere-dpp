@@ -699,40 +699,40 @@
     "Final sample panel": {
       "—": [
         { "label": "Loading history", "value": "NA", "datatype": "text" },
-        { "label": "Tensile strength", "value": 120, "unit": "MPa", "datatype": "number" }
+        { "label": "Tensile strength", "value": 0.0024, "unit": "MPa", "datatype": "number" }
       ],
       "Electrical information": [
-        { "label": "Power",                      "value": 410,  "unit": "W",  "datatype": "number" },
-        { "label": "Open circuit voltage",       "value": 41.2, "unit": "V",  "datatype": "number" },
-        { "label": "Short circuit current",      "value": 10.1, "unit": "A",  "datatype": "number" },
-        { "label": "Maximum power voltage",      "value": 34.5, "unit": "V",  "datatype": "number" },
-        { "label": "Maximum power current",      "value": 9.55, "unit": "A",  "datatype": "number" },
-        { "label": "Efficiency",                 "value": 21.3, "unit": "%",  "datatype": "number" }
+        { "label": "Power",                      "value": 392,  "unit": "W",  "datatype": "number" },
+        { "label": "Open circuit voltage",       "value": 43.68, "unit": "V",  "datatype": "number" },
+        { "label": "Short circuit current",      "value": 10.108511, "unit": "A",  "datatype": "number" },
+        { "label": "Maximum power voltage",      "value": 36.72, "unit": "V",  "datatype": "number" },
+        { "label": "Maximum power current",      "value": 9.412284, "unit": "A",  "datatype": "number" },
+        { "label": "Efficiency",                 "value": 21.06, "unit": "%",  "datatype": "number" }
       ],
       "Process info": [
         { "label": "Machine used",         "value": "Stringer, laminator, junction box potting machine, frame machine", "datatype": "text" },
         { "label": "Operator responsible", "value": "Zola Fung-A-Jou",              "datatype": "text" },
-        { "label": "Manufacturing time",   "value": "2025-07-03 10:15",    "datatype": "text" }
+        { "label": "Manufacturing time",   "value": null,    "datatype": "text" }
       ]
     },
       
     "Solar cells": {
       "—": [
         { "label": "Loading history", "value": "NA", "datatype": "text" },
-        { "label": "Tensile strength", "value": 180, "unit": "MPa", "datatype": "number" }
+        { "label": "Tensile strength", "value": null, "unit": "MPa", "datatype": "number" }
       ],
       "Electrical information": [
-        { "label": "Power (per cell)",             "value": 6.8,  "unit": "W",  "datatype": "number" },
-        { "label": "Open circuit voltage (cell)",  "value": 0.70, "unit": "V",  "datatype": "number" },
-        { "label": "Short circuit current (cell)", "value": 12.2, "unit": "A",  "datatype": "number" },
-        { "label": "Maximum power voltage (cell)", "value": 0.58, "unit": "V",  "datatype": "number" },
-        { "label": "Maximum power current (cell)", "value": 11.7, "unit": "A",  "datatype": "number" },
-        { "label": "Efficiency (cell)",            "value": 24.0, "unit": "%",  "datatype": "number" }
+        { "label": "Power (per cell)",             "value": 6.54,  "unit": "W",  "datatype": "number" },
+        { "label": "Open circuit voltage (cell)",  "value": 0.728, "unit": "V",  "datatype": "number" },
+        { "label": "Short circuit current (cell)", "value": 11.47, "unit": "A",  "datatype": "number" },
+        { "label": "Maximum power voltage (cell)", "value": 0.612, "unit": "V",  "datatype": "number" },
+        { "label": "Maximum power current (cell)", "value": 10.68, "unit": "A",  "datatype": "number" },
+        { "label": "Efficiency (cell)",            "value": 23.9, "unit": "%",  "datatype": "number" }
       ],
       "Process info": [
         { "label": "Machine used",         "value": "Diamond wire cutter", "datatype": "text" },
         { "label": "Operator responsible", "value": "Sunpower",       "datatype": "text" },
-        { "label": "Manufacturing time",   "value": "null","datatype": "text" }
+        { "label": "Manufacturing time",   "value": null,"datatype": "text" }
         ]
       }
     },
