@@ -293,7 +293,6 @@
           <h3>Passport Info</h3>
           <table>
             <tr><th>UID</th><td id="pi_uid">—</td></tr>
-            <tr><th>HS / CN Code</th><td id="pi_hs">—</td></tr>
             <tr><th>Country of Origin</th><td id="pi_origin">—</td></tr>
             <tr><th>Compliance</th><td id="pi_compliance">—</td></tr>
             <tr><th>Hazardous Substances</th><td id="pi_haz">—</td></tr>
@@ -369,8 +368,8 @@
       "solar cells":"#6f7dff",
       "frame":"#f6c760",
       "edge seal":"#f472b6",
-      "junction box":"#60a5fa",
-      "tabbing wire":"#34d399",
+      "junction box":"#1d4ed8",
+      "tabbing wire":"#9333ea",
       "busbar wire":"#f59e0b"
     };
     
@@ -414,24 +413,51 @@
         return col;
       });
     }
-    
-    // Build chart
+
+    // Build chart (drop-in replacement)
     function buildCompositionChart(ctx, comp, opts = {}){
       if (!ctx || !comp || !Object.keys(comp).length) return null;
       const labels = Object.keys(comp);
       const values = Object.values(comp).map(v => pctToNumber(v));
       if (values.some(v => v == null)) return null;
+    
       const colors = pickColors(labels, opts.kind || "material");
+    
+      // border color that works in both themes
+      const isLight = document.documentElement.dataset.theme === 'light';
+      const borderCol = isLight ? '#ffffff' : '#0b0e1a';
+    
       return new Chart(ctx, {
         type: 'doughnut',
-        data: { labels, datasets: [{ data: values, backgroundColor: colors, borderWidth: 2 }] },
+        data: {
+          labels,
+          datasets: [{
+            data: values,
+            backgroundColor: colors,
+            borderColor: borderCol,  // clearer separation
+            borderWidth: 2,
+            spacing: 2,              // tiny gap between slices
+            hoverOffset: 6
+          }]
+        },
         options: {
-          responsive: true, maintainAspectRatio: false, cutout: '68%', layout: { padding: 8 },
-          plugins: { legend:{ position:'bottom', labels:{ color:'#cdd6f4' } },
-                     tooltip:{ callbacks:{ label: (tt)=> `${tt.label}: ${tt.formattedValue}%` } } }
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '68%',
+          layout: { padding: 8 },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { color: '#cdd6f4', usePointStyle: true, pointStyle: 'circle' }
+            },
+            tooltip: {
+              callbacks: { label: (tt)=> `${tt.label}: ${tt.formattedValue}%` }
+            }
+          }
         }
       });
     }
+
 
 
     /* NEW: Component Explorer */
