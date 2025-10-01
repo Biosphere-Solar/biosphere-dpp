@@ -320,54 +320,6 @@
       white-space: nowrap;        /* avoid wrapping the serial */
     }
 
-    /* === Green theme overrides (apply to all cards/explorers) === */
-    :root{
-      /* palette */
-      --bg1:#222d1b;         /* dark green */
-      --bg2:#aabf7b;         /* soft olive */
-      --card:#11190e;        /* card background */
-      --line:#2f3f25;        /* borders / dividers */
-      --text:#f1f5eb;        /* main text */
-      --muted:#c7d3b8;       /* muted text */
-    
-      --chip:#1a2614;        /* pills/badges background */
-      --chipActive:#2a3b1c;  /* active pill */
-      --chipBorder:#3a4c2a;  /* pill/badge border */
-    }
-
-    /* cards + phone */
-    .card{ background: var(--card); border-color: var(--line); }
-    .phone{ background: linear-gradient(180deg, #162212, var(--card)); border-color: var(--line); }
-    .phone .card{ background: var(--card); border-color: var(--line); }
-    
-    /* accordions inside explorers */
-    .accordion details{ background: var(--card); border-color: var(--line); }
-    
-    /* tables & dividers inside cards */
-    th, td{ border-bottom: 1px dashed var(--line); }
-    .card h3{ color: var(--text); }
-    
-    /* pills, badges, tags, selects */
-    .pill, .badge, .tag{
-      background: var(--chip);
-      border: 1px solid var(--chipBorder);
-      color: var(--text);
-    }
-    .pill.active{
-      background: var(--chipActive);
-      border-color: var(--chipBorder);
-      color: var(--text);
-    }
-    .select{ background: var(--chip); color: var(--text); border:1px solid var(--line); }
-    
-    /* make explorer tables wrap nicely without stretching */
-    #specExplorer table, #mechExplorer table{ table-layout: fixed; }
-    #specExplorer th, #specExplorer td,
-    #mechExplorer th, #mechExplorer td{
-      word-break: break-word; overflow-wrap: anywhere;
-    }
-
-
   </style>
 </head>
 <body>
