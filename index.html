@@ -256,6 +256,7 @@
           <div class="tabs" style="margin-bottom:8px">
             <button id="btnMat"  class="pill active">Material</button>
             <button id="btnChem" class="pill">Chemical</button>
+            <button id="btnValue" class="pill">Value</button>
           </div>
         
           <!-- NEW: sized wrapper -->
@@ -420,50 +421,80 @@
       });
     }
 
-    // Build chart (drop-in replacement)
+    // Parse money strings like "€120.00" -> 120 (prefer numbers in JSON if possible)
+    function moneyToNumber(v){
+      if (typeof v === 'number') return v;
+      if (v == null) return null;
+      const s = String(v).trim();
+      // keep digits, dot and comma; drop currency symbols/spaces
+      let t = s.replace(/[^0-9.,-]/g, '');
+      // if both , and . exist, assume . is decimal and remove thousands commas
+      if (t.includes('.') && t.includes(',')) t = t.replace(/,/g, '');
+      else t = t.replace(',', '.');
+      const n = parseFloat(t);
+      return Number.isFinite(n) ? n : null;
+    }
+    
+    // Build a value breakdown (percentages + raw €)
+    function toValuePercentages(obj){
+      const rows = Object.entries(obj || {})
+        .map(([k,v]) => [k, moneyToNumber(v)])
+        .filter(([,n]) => n != null && n > 0);
+      const total = rows.reduce((s,[,n]) => s+n, 0);
+      if (!total) return null;
+      const labels = rows.map(([k]) => k);
+      const raw    = rows.map(([,n]) => n);
+      const values = raw.map(n => (n / total) * 100);
+      return { labels, values, raw, total };
+    }
+
     function buildCompositionChart(ctx, comp, opts = {}){
-      if (!ctx || !comp || !Object.keys(comp).length) return null;
-      const labels = Object.keys(comp);
-      const values = Object.values(comp).map(v => pctToNumber(v));
-      if (values.some(v => v == null)) return null;
+      if (!ctx || !comp) return null;
     
-      const colors = pickColors(labels, opts.kind || "material");
+      let labels, values, rawEuros = null, kind = opts.kind || 'material';
     
-      // border color that works in both themes
-      const isLight = document.documentElement.dataset.theme === 'light';
-      const borderCol = isLight ? '#ffffff' : '#0b0e1a';
+      if (kind === 'value'){                  // comp = cost_breakdown_eur
+        const val = toValuePercentages(comp);
+        if (!val) return null;
+        labels = val.labels;
+        values = val.values;
+        rawEuros = val.raw;                   // for tooltips
+      } else {
+        if (!Object.keys(comp).length) return null;
+        labels = Object.keys(comp);
+        values = Object.values(comp).map(v => pctToNumber(v));
+        if (values.some(v => v == null)) return null;
+      }
+    
+      const colors = pickColors(labels, kind);
     
       return new Chart(ctx, {
         type: 'doughnut',
-        data: {
-          labels,
-          datasets: [{
-            data: values,
-            backgroundColor: colors,
-            borderColor: borderCol,  // clearer separation
-            borderWidth: 2,
-            spacing: 2,              // tiny gap between slices
-            hoverOffset: 6
-          }]
-        },
+        data: { labels, datasets: [{
+          data: values,
+          backgroundColor: colors,
+          borderWidth: 2
+        }] },
         options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          cutout: '68%',
-          layout: { padding: 8 },
+          responsive: true, maintainAspectRatio: false, cutout: '68%', layout: { padding: 8 },
           plugins: {
-            legend: {
-              position: 'bottom',
-              labels: { color: '#cdd6f4', usePointStyle: true, pointStyle: 'circle' }
-            },
-            tooltip: {
-              callbacks: { label: (tt)=> `${tt.label}: ${tt.formattedValue}%` }
+            legend:{ position:'bottom', labels:{ color:'#cdd6f4' } },
+            tooltip:{
+              callbacks:{
+                label: (tt) => {
+                  if (kind === 'value' && rawEuros){
+                    const eur = rawEuros[tt.dataIndex];
+                    const pct = tt.formattedValue; // percentage
+                    return `${tt.label}: €${eur.toFixed(2)} (${pct}%)`;
+                  }
+                  return `${tt.label}: ${tt.formattedValue}%`;
+                }
+              }
             }
           }
         }
       });
     }
-
 
 
     /* NEW: Component Explorer */
@@ -846,8 +877,12 @@
       const labelEl = document.getElementById('compLabel');
       const btnMat = document.getElementById('btnMat');
       const btnChem = document.getElementById('btnChem');
+      const price = data.cost_breakdown_eur || null;
+      const btnValue = document.getElementById('btnValue');
+
       
       let donut;
+
       function show(dataset, label, kind='material'){
         if (!canvas) return;
         if (donut) donut.destroy();
@@ -857,25 +892,28 @@
       }
       
       btnMat.addEventListener('click', ()=>{
-        btnMat.classList.add('active'); btnChem.classList.remove('active');
-        show(mat, 'Material composition', 'material');
+        btnMat.classList.add('active'); btnChem.classList.remove('active'); btnValue.classList.remove('active');
+        show(mat, 'Material composition (%)', 'material');
       });
       btnChem.addEventListener('click', ()=>{
-        btnChem.classList.add('active'); btnMat.classList.remove('active');
-        show(chem, 'Chemical composition', 'chemical');
+        btnChem.classList.add('active'); btnMat.classList.remove('active'); btnValue.classList.remove('active');
+        show(chem, 'Chemical composition (%)', 'chemical');
+      });
+      btnValue.addEventListener('click', ()=>{
+        btnValue.classList.add('active'); btnMat.classList.remove('active'); btnChem.classList.remove('active');
+        show(price, 'Value breakdown (by price, €)', 'value');
       });
       
-      // initial render
-      if (mat){
-        btnMat.classList.add('active');
-        show(mat, 'Material composition', 'material');
+      // initial render preference: Value if present, else Material, else Chemical
+      if (price){
+        btnValue.classList.add('active'); show(price, 'Value breakdown (by price, €)', 'value');
+      } else if (mat){
+        btnMat.classList.add('active');   show(mat, 'Material composition (%)', 'material');
       } else if (chem){
-        btnChem.classList.add('active');
-        show(chem, 'Chemical composition', 'chemical');
+        btnChem.classList.add('active');  show(chem, 'Chemical composition (%)', 'chemical');
       } else {
         canvas.parentElement.style.display = 'none';
       }
-
 
 
       // NEW: Explorer
