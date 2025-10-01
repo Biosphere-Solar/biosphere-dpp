@@ -213,6 +213,17 @@
     /* make sure small chips don’t force width */
     .pill, .badge, .tag{ min-width: 0; }
 
+    /* Center text perfectly inside the pill */
+    .badge{
+      display: inline-flex;
+      align-items: center;        /* vertical center */
+      justify-content: center;    /* horizontal center */
+      padding: 8px 12px;          /* tweak as you like */
+      border-radius: 999px;
+      line-height: 1;             /* remove extra leading from the font */
+      white-space: nowrap;        /* avoid wrapping the serial */
+    }
+
 
   </style>
 </head>
@@ -221,7 +232,7 @@
   <div class="wrap">
     <section class="hero">
       <div>
-        <h1>Digital product passports for SiR Solar Panels- ESPR compliance</h1>
+        <h1>Digital Product Passport - ESPR compliance</h1>
         <p>The EU Ecodesign for Sustainable Products Regulation (ESPR) requires transparent, durable, repairable products. Biosphere’s DPP shares verified specs, circularity metrics, and end-of-life guidance per panel.</p>
         <div class="cta">
           <a id="openDatasheet" class="btn" href="#" target="_blank" rel="noopener">Open datasheet</a>
