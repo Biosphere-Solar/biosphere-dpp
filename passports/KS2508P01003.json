@@ -41,6 +41,19 @@
     "lead (pb)": 0.08
   },
 
+  "cost_breakdown_eur": {
+    "glass": 120,
+    "cells": 51,
+    "edge seal": 0.8,
+    "dog bone": 0.02,
+    "bus bars": 0.21,
+    "adhesive dots": 89,
+    "potting gel": 21.49,
+    "junction box, cables, MC4": 3.40,
+    "frames": 12
+  }
+
+
   "safety_datasheet_url": "https://biosphere-solar.github.io/biosphere-dpp/files/safety-datasheet.pdf",
   "esg_statement_url": "https://biosphere-solar.github.io/biosphere-dpp/files/statement-on-esg.docx.pdf",
   "lca_report_url": "https://biosphere-solar.github.io/biosphere-dpp/files/lca.pdf",
