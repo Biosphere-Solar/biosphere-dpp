@@ -103,6 +103,15 @@
     .phone .title{font-weight:800; font-size:22px;}
     .phone .card{background:#0c1020; border:1px solid #1b2250; border-radius:16px; padding:12px; margin-top:10px}
 
+    .pill-brand{ display:inline-flex; align-items:center; gap:8px; padding:6px 10px; }
+    .pill-brand .logo-small{ height:14px; width:auto; display:block; }
+    
+    /* if you flip to light mode, the pill already has a border; 
+       add a faint dark backing only when needed */
+    :root[data-theme="light"] .pill-brand{
+      background: rgba(15,23,42,.06);
+    }
+
     .grid{display:grid; grid-template-columns:2fr 1fr; gap:24px; margin-top:26px}
     .card{background:rgba(8,12,28,.7); border:1px solid var(--line); border-radius:18px; padding:18px; backdrop-filter: blur(6px);}
     .card h3{margin:0 0 10px; font-size:16px; color:#dce3f1; letter-spacing:.2px}
@@ -299,7 +308,16 @@
       </div>
 
       <div class="phone">
-        <div class="pill">Biosphere • DPP</div>
+        <div class="pill pill-brand">
+          <img
+            src="assets/biosphere-logo-white.png"
+            srcset="assets/biosphere-logo-white@2x.png 2x"
+            alt=""
+            class="logo-small"
+          >
+          <span>Biosphere DPP</span>
+        </div>
+
         <div class="title" style="margin:8px 0 6px" id="modelTitle">—</div>
         <div class="muted" id="countryYear">—</div>
 
