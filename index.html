@@ -340,22 +340,28 @@
       const wrap = document.createElement('div');
       wrap.innerHTML = `<h3>Circularity</h3><div class="bars" id="circBars"></div>`;
       side.appendChild(wrap);
+      
       const bars = wrap.querySelector('#circBars');
+      
       const recyc = pctToNumber(data.recyclability);
       if(recyc!=null){
         const row = document.createElement('div');
         row.innerHTML = `<div class="muted" style="margin:4px 0 6px">Recyclability</div><div class="bar"><div class="fill" style="width:${recyc}%;"></div></div>`;
         bars.appendChild(row);
       }
-      const rc = data.recycled_content || {};
-      for(const [k,v] of Object.entries(rc)){
-        const p = pctToNumber(v);
-        if(p==null) continue;
-        const row = document.createElement('div');
-        row.innerHTML = `<div class="muted" style="margin:8px 0 6px">${k} (recycled)</div><div class="bar"><div class="fill" style="width:${p}%;"></div></div>`;
-        bars.appendChild(row);
+
+        // Recycled content — only show if > 0
+        const rc = data.recycled_content || {};
+        for (const [k, v] of Object.entries(rc)) {
+          const p = pctToNumber(v);
+          if (p == null || p <= 0) continue;  // <-- ignore zero/empty
+          const row = document.createElement('div');
+          row.innerHTML = `
+            <div class="muted" style="margin:8px 0 6px">${k} (recycled)</div>
+            <div class="bar"><div class="fill" style="width:${p}%;"></div></div>`;
+          bars.appendChild(row);
+        }
       }
-    }
 
     // ---- Color helpers (distinct + stable) ----
     const BASE_PALETTE = [
@@ -819,7 +825,13 @@
       setText('#pi_compliance', Array.isArray(data.compliance)? data.compliance.join(', ') : (data.compliance||'—'));
       setText('#pi_haz', Array.isArray(data.hazardous_substances)? data.hazardous_substances.join(', ') : (data.hazardous_substances||'—'));
       const rc = data.recycled_content || {};
-      const rcText = Object.keys(rc).length ? Object.entries(rc).map(([k,v])=>`${k}: ${v}`).join(', ') : '—';
+      const rcEntries = Object.entries(rc).filter(([_, v]) => {
+        const p = pctToNumber(v);
+        return p != null && p > 0;   // keep only positive values
+      });
+      const rcText = rcEntries.length
+        ? rcEntries.map(([k, v]) => `${k}: ${v}`).join(', ')
+        : '—'; // show dash when none
       setText('#pi_recycled', rcText);
       setText('#pi_recyclability', data.recyclability || '—');
 
