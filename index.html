@@ -103,14 +103,49 @@
     .phone .title{font-weight:800; font-size:22px;}
     .phone .card{background:#0c1020; border:1px solid #1b2250; border-radius:16px; padding:12px; margin-top:10px}
 
-    .pill-brand{ display:inline-flex; align-items:center; gap:8px; padding:6px 10px; }
-    .pill-brand .logo-small{ height:14px; width:auto; display:block; }
+
+    /* Brand pill sizing knobs */
+    .pill-brand{
+      --logo-size: 22px;        /* desktop logo height */
+      --gap: 10px;
+      --px: 14px;               /* horizontal padding */
+      --py: 8px;                /* vertical padding */
     
-    /* if you flip to light mode, the pill already has a border; 
-       add a faint dark backing only when needed */
-    :root[data-theme="light"] .pill-brand{
-      background: rgba(15,23,42,.06);
+      display:inline-flex;
+      align-items:center;
+      gap:var(--gap);
+      padding: var(--py) var(--px);
+      border-radius: 999px;
     }
+    
+    /* make the logo visibly larger */
+    .pill-brand .brand-logo{
+      height: var(--logo-size);
+      width: auto;
+      display: block;           /* avoids baseline misalignment */
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,.35));
+    }
+    
+    /* just “DPP” with your title font */
+    .pill-brand .brand-abbrev{
+      font-family: var(--font-title);
+      font-weight: 800;
+      letter-spacing: .10em;
+      font-size: 14px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    
+    /* Slightly smaller on narrow phones */
+    @media (max-width: 480px){
+      .pill-brand{ --logo-size: 18px; --px: 12px; --py: 6px; --gap: 8px; }
+    }
+    
+    /* If light mode makes the white logo fade, give it a faint dark chip */
+    :root[data-theme="light"] .pill-brand{
+      background: rgba(15,23,42,.08);
+    }
+
 
     .grid{display:grid; grid-template-columns:2fr 1fr; gap:24px; margin-top:26px}
     .card{background:rgba(8,12,28,.7); border:1px solid var(--line); border-radius:18px; padding:18px; backdrop-filter: blur(6px);}
@@ -308,14 +343,14 @@
       </div>
 
       <div class="phone">
-        <div class="pill pill-brand">
+        <div class="pill pill-brand" aria-label="Biosphere Solar DPP">
           <img
             src="assets/biosphere-logo-white.png"
-            srcset="assets/biosphere-logo-white@2x.png 2x"
-            alt=""
-            class="logo-small"
-          >
-          <span>Biosphere DPP</span>
+            srcset="assets/biosphere-logo-white@2x.png 2x, assets/biosphere-logo-white@3x.png 3x"
+            alt="Biosphere Solar"
+            class="brand-logo"
+          />
+          <span class="brand-abbrev">DPP</span>
         </div>
 
         <div class="title" style="margin:8px 0 6px" id="modelTitle">—</div>
