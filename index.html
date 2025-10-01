@@ -370,6 +370,30 @@
     /* dropdown text color */
     .select{ color: var(--text); }
 
+    /* === Fix text visibility in light mode (also works in dark) === */
+
+    /* headings inside cards/accordions */
+    .card h3,
+    #specExplorer h4,
+    #mechExplorer h4 { color: var(--text); }
+    
+    /* table text */
+    th, td { color: var(--text); }
+    
+    /* chips/badges/tags and selects */
+    .pill, .badge, .tag, .select { color: var(--text); }
+    
+    /* active pills too */
+    .pill.active { color: var(--text); }
+    
+    /* stat numbers & phone title inherit readable ink */
+    .phone .title, .stat .k { color: var(--text); }
+    
+    /* link color that adapts to theme */
+    a { color: color-mix(in oklab, var(--brand-2) 70%, var(--text) 30%); }
+    
+    /* (optional) soften “muted” to theme */
+    .muted { color: var(--muted); }
 
   </style>
 </head>
