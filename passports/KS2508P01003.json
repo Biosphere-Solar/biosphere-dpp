@@ -48,12 +48,12 @@
   "hs_code": null,
   "origin": "EU",
   "compliance": ["Reg. (EU) 2024/1781 framework", "IEC 61215", "IEC 61730"],
-  "hazardous_substances": ["Lead solder (SnPb) <0.1%", "No PFAS in encapsulant"],
+  "hazardous_substances": ["Lead solder (SnPb) <0.1%", "PFAS-Free"],
   "recycled_content": {
-    "Glass": "30%",
-    "Aluminium frame": "70%"
+    "Glass": "0%",
+    "Aluminium frame": "0%"
   },
-  "recyclability": "≥90% by weight via standard PV recycling with disassembly route",
+  "recyclability": " >99% recyclable, including high-value recycling capability",
   "updates": [
      null
   ],
