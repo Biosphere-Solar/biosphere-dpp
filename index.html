@@ -604,7 +604,7 @@
     
     (async function(){
       const params = new URLSearchParams(location.search);
-      const serial = (params.get('serial')||'BS-2025-0001').toUpperCase();
+      const serial = (params.get('serial')||'KS2508P01003').toUpperCase();
       setText('#serialBadge', `Serial: ${serial}`);
 
       const jsonUrl = new URL(`passports/${encodeURIComponent(serial)}.json`, document.baseURI);
