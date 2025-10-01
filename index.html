@@ -125,6 +125,15 @@
       display: block;                 /* avoids baseline misalignment */
       filter: drop-shadow(0 1px 1px rgba(0,0,0,.35));
     }
+    /* show white logo by default (dark theme) */
+    .brand-logo--light{ display: none; }
+    
+    /* in light theme: hide white, show dark */
+    :root[data-theme="light"] .brand-logo--dark{ display: none; }
+    :root[data-theme="light"] .brand-logo--light{ display: block; }
+    
+    /* if the dark logo looks too heavy in light mode, you can drop the shadow there */
+    :root[data-theme="light"] .brand-logo--light{ filter: none; }
     
     /* “DPP” text */
     .pill-brand .brand-abbrev{
@@ -412,15 +421,19 @@
       </div>
 
       <div class="phone">
+        
         <!-- inside your .cta or header -->
+        
         <div class="pill pill-brand">
-          <img
-            src="./assets/biosphere-logo-white.png"
-            alt="Biosphere Solar"
-            class="brand-logo"
-            onerror="this.remove()" />
+          <!-- shows in dark theme -->
+          <img src="biosphere-dpp/assets/biosphere-logo-white.png"
+               alt="Biosphere Solar" class="brand-logo brand-logo--dark">
+          <!-- shows in light theme -->
+          <img src="biosphere-dpp/assets/biosphere-logo-dark.png"
+               alt="" aria-hidden="true" class="brand-logo brand-logo--light">
           <span class="brand-abbrev">DPP</span>
         </div>
+
 
         <div class="title" style="margin:8px 0 6px" id="modelTitle">—</div>
         <div class="muted" id="countryYear">—</div>
