@@ -104,29 +104,29 @@
     .phone .card{background:#0c1020; border:1px solid #1b2250; border-radius:16px; padding:12px; margin-top:10px}
 
 
-    /* Brand pill sizing knobs */
-    .pill-brand{
-      --logo-size: 30px;        /* desktop logo height */
-      --gap: 10px;
-      --px: 14px;               /* horizontal padding */
-      --py: 8px;                /* vertical padding */
+    /* size scales automatically: ~18px on phones up to 30px on desktop */
+    :root{ --logo-size: clamp(18px, 6vw, 30px); }
     
-      display:inline-flex;
-      align-items:center;
-      gap:var(--gap);
-      padding: var(--py) var(--px);
+    /* brand pill */
+    .pill-brand{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
       border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(8,12,28,.5);
     }
     
-    /* make the logo visibly larger */
-    .pill-brand .brand-logo{
+    /* logo image */
+    .brand-logo{
       height: var(--logo-size);
       width: auto;
-      display: block;           /* avoids baseline misalignment */
+      display: block;                 /* avoids baseline misalignment */
       filter: drop-shadow(0 1px 1px rgba(0,0,0,.35));
     }
     
-    /* just “DPP” with your title font */
+    /* “DPP” text */
     .pill-brand .brand-abbrev{
       font-family: var(--font-title);
       font-weight: 800;
@@ -136,15 +136,11 @@
       text-transform: uppercase;
     }
     
-    /* Slightly smaller on narrow phones */
-    @media (max-width: 480px){
-      .pill-brand{ --logo-size: 18px; --px: 12px; --py: 6px; --gap: 8px; }
-    }
-    
-    /* If light mode makes the white logo fade, give it a faint dark chip */
+    /* lighten a touch in light mode */
     :root[data-theme="light"] .pill-brand{
       background: rgba(15,23,42,.08);
     }
+
 
 
     .grid{display:grid; grid-template-columns:2fr 1fr; gap:24px; margin-top:26px}
@@ -343,10 +339,10 @@
       </div>
 
       <div class="phone">
-        <div class="pill pill-brand" aria-label="Biosphere Solar DPP">
+        <!-- inside your .cta or header -->
+        <div class="pill pill-brand">
           <img
-            src="assets/biosphere-logo-white.png"
-            srcset="assets/biosphere-logo-white@2x.png 2x, assets/biosphere-logo-white@3x.png 3x"
+            src="./assets/biosphere-logo-white@3x.png?v=2"   <!-- make sure this exact file exists -->
             alt="Biosphere Solar"
             class="brand-logo"
           />
