@@ -26,6 +26,18 @@
     
   },
 
+  "material_composition_pct": {
+    "glass": 45,
+    "cells": 15,
+    "edge seal": 3,
+    "dog bone": 1,
+    "bus bars": 2,
+    "adhesive dots": 9,
+    "potting gel": 8,
+    "junction box, cables, MC4": 5,
+    "frames": 10
+  },
+
   "chemical_composition_pct": {
     "copper (cu)": 0.30,
     "phosphorus (p)": 0.23,
