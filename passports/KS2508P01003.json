@@ -25,15 +25,7 @@
     "Busbar wire": "Copper, tin and lead"
     
   },
-  "material_composition_pct": {
-    "glass": 40,
-    "solar cells": 30,
-    "frame": 12,
-    "edge seal": 10,
-    "junction box": 3,
-    "tabbing wire": 3,
-    "busbar wire": 4
-  },
+
   "chemical_composition_pct": {
     "copper (cu)": 0.30,
     "phosphorus (p)": 0.23,
