@@ -320,6 +320,57 @@
       white-space: nowrap;        /* avoid wrapping the serial */
     }
 
+    /* ==== THEME OVERRIDES: make all panels use vars instead of hard-coded blues ==== */
+
+    /* tables: use theme border color */
+    table th, table td{
+      border-bottom: 1px dashed color-mix(in oklab, var(--line) 85%, transparent);
+    }
+    
+    /* cards + inner cards */
+    .card,
+    .phone .card,
+    .accordion details,
+    .stat,
+    .bar{
+      background: color-mix(in oklab, var(--card) 92%, transparent);
+      border: 1px solid var(--line);
+    }
+    
+    /* the phone panel */
+    .phone{
+      background: linear-gradient(
+        180deg,
+        color-mix(in oklab, var(--card) 96%, transparent),
+        color-mix(in oklab, var(--card) 84%, transparent)
+      );
+      border: 1px solid var(--line);
+    }
+    
+    /* pills, tags, selects */
+    .pill, .tag, .badge, .select{
+      background: color-mix(in oklab, var(--card) 85%, transparent);
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+    
+    /* active pill state -> brand-tinted */
+    .pill.active{
+      background: color-mix(in oklab, var(--brand) 30%, var(--card) 70%);
+      border-color: color-mix(in oklab, var(--brand) 55%, var(--line) 45%);
+      color: var(--text);
+    }
+    
+    /* accordion header text color */
+    .accordion h4{ color: var(--text); }
+    
+    /* progress bar background */
+    .bar{ background: color-mix(in oklab, var(--card) 92%, transparent); }
+    
+    /* dropdown text color */
+    .select{ color: var(--text); }
+
+
   </style>
 </head>
 <body>
