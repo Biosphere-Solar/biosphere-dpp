@@ -506,46 +506,47 @@
     }
 
     function buildCompositionChart(ctx, comp, opts = {}){
-      if (!ctx || !comp) return null;
+      if (!ctx || !comp || !Object.keys(comp).length) return null;
+      const labels = Object.keys(comp);
+      const values = Object.values(comp).map(v => pctToNumber(v));
+      if (values.some(v => v == null)) return null;
     
-      let labels, values, rawEuros = null, kind = opts.kind || 'material';
+      const colors = pickColors(labels, opts.kind || "material");
     
-      if (kind === 'value'){                  // comp = cost_breakdown_eur
-        const val = toValuePercentages(comp);
-        if (!val) return null;
-        labels = val.labels;
-        values = val.values;
-        rawEuros = val.raw;                   // for tooltips
-      } else {
-        if (!Object.keys(comp).length) return null;
-        labels = Object.keys(comp);
-        values = Object.values(comp).map(v => pctToNumber(v));
-        if (values.some(v => v == null)) return null;
-      }
-    
-      const colors = pickColors(labels, kind);
+      // theme-aware border (falls back if CSS vars missing)
+      const css = getComputedStyle(document.documentElement);
+      const arcBorder =
+        (css.getPropertyValue('--line') || css.getPropertyValue('--bg1') || '#0a1024').trim();
+      const textColor = (css.getPropertyValue('--text') || '#cdd6f4').trim();
     
       return new Chart(ctx, {
         type: 'doughnut',
-        data: { labels, datasets: [{
-          data: values,
-          backgroundColor: colors,
-          borderWidth: 2
-        }] },
+        data: {
+          labels,
+          datasets: [{
+            data: values,
+            backgroundColor: colors,
+            borderColor: arcBorder,   // darker outline
+            borderWidth: 2.5,
+            spacing: 2,               // tiny gap between slices (Chart.js v4)
+            hoverBorderWidth: 3,
+            hoverOffset: 4
+          }]
+        },
         options: {
-          responsive: true, maintainAspectRatio: false, cutout: '68%', layout: { padding: 8 },
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '68%',
+          layout: { padding: 8 },
           plugins: {
-            legend:{ position:'bottom', labels:{ color:'#cdd6f4' } },
-            tooltip:{
-              callbacks:{
-                label: (tt) => {
-                  if (kind === 'value' && rawEuros){
-                    const eur = rawEuros[tt.dataIndex];
-                    const pct = tt.formattedValue; // percentage
-                    return `${tt.label}: €${eur.toFixed(2)} (${pct}%)`;
-                  }
-                  return `${tt.label}: ${tt.formattedValue}%`;
-                }
+            legend: {
+              position: 'bottom',
+              labels: { color: textColor, usePointStyle: true, pointStyle: 'rectRounded', boxWidth: 10 }
+            },
+            tooltip: {
+              callbacks: {
+                // If you're showing € values, switch this to your money formatter
+                label: (tt) => `${tt.label}: ${tt.formattedValue}`
               }
             }
           }
