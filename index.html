@@ -1057,7 +1057,18 @@
 
       // UID & buttons
       setText('#uid', data.uid || `urn:bs:pv:${serial}`);
-      $('#openDatasheet').href = data.datasheet_url || '#';
+
+      const dsBtn = document.querySelector('#openDatasheet');
+      const dsUrl = data.datasheet_url || data.safety_datasheet_url || null;
+      
+      if (dsUrl) {
+        dsBtn.href = dsUrl;
+        dsBtn.target = '_blank';
+        dsBtn.rel = 'noopener';
+        dsBtn.style.display = '';
+      } else {
+        dsBtn.style.display = 'none';   // just hide it
+      }
 
 
       // General table
