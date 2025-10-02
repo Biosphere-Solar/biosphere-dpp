@@ -157,8 +157,9 @@
 
     table{width:100%; border-collapse:collapse;}
     th,td{border-bottom:1px dashed #263057; padding:10px 6px; text-align:left; vertical-align:top}
-    th{color:#9fb1d9; font-weight:600; width:38%}
-    td{color:#e8ecf7}
+    th{ color: var(--muted); font-weight:600; width:38%; }
+    td{ color: var(--text); }
+
 
     .row{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px}
     .stat{padding:14px; background:#0c1022; border:1px solid #1b2250; border-radius:14px}
@@ -789,7 +790,7 @@
           ].filter(Boolean).join('<br>');
         
           return `<tr>
-            <th style="text-align:left;padding:8px 6px;color:#9fb1d9;width:38%">${label}${tip}</th>
+            <th style="text-align:left;padding:8px 6px;width:38%;color:var(--muted)">${label}${tip}</th>
             <td style="padding:8px 6px">${valueHtml}${unitHtml}${extra ? `<div class="muted" style="margin-top:6px">${extra}</div>`:''}</td>
           </tr>`;
         }
@@ -864,7 +865,7 @@
         const extras = [files && `Files: ${files}`, f.comments && `Comments: ${esc(f.comments)}`, f.note && `Note: ${esc(f.note)}`]
                         .filter(Boolean).join('<br>');
         return `<tr>
-          <th style="text-align:left;padding:8px 6px;color:#9fb1d9;width:38%">${label}${tip}</th>
+          <th style="text-align:left;padding:8px 6px;width:38%;color:var(--muted)">${label}${tip}</th>
           <td style="padding:8px 6px">${val}${unit}${extras ? `<div class="muted" style="margin-top:6px">${extras}</div>`:''}</td>
         </tr>`;
       }
@@ -971,7 +972,7 @@
           const unit  = f.unit ? ` <span class="muted">${esc(f.unit)}</span>` : '';
           const tip   = f.description ? `<span title="${esc(f.description)}" style="margin-left:6px;color:#9fb1d9">ℹ️</span>` : '';
           return `<tr>
-            <th style="text-align:left;padding:8px 6px;color:#9fb1d9;width:38%">${label}${tip}</th>
+            <th style="text-align:left;padding:8px 6px;width:38%;color:var(--muted)">${label}${tip}</th>
             <td style="padding:8px 6px">${val}${unit}${extraTxt?`<div class="muted" style="margin-top:6px">${extraTxt}</div>`:''}</td>
           </tr>`;
         }
