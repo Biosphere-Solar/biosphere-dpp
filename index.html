@@ -442,13 +442,6 @@
       background: color-mix(in oklab, var(--text) 8%, transparent);
     }
 
-    /* Disabled button state for “Open datasheet” when no URL available */
-    .btn.is-disabled{
-      opacity: .5;
-      cursor: not-allowed;
-      pointer-events: none; /* make it non-clickable */
-    }
-
     
     /* Details boxes inside accordions (so dark/light looks correct) */
     .accordion details{
@@ -1064,25 +1057,8 @@
 
       // UID & buttons
       setText('#uid', data.uid || `urn:bs:pv:${serial}`);
+      $('#openDatasheet').href = data.datasheet_url || '#';
 
-      const dsBtn = document.querySelector('#openDatasheet');
-      const dsUrl = data.datasheet_url || data.safety_datasheet_url || null;
-      
-      if (dsUrl) {
-        dsBtn.textContent = 'Open datasheet';
-        dsBtn.href = dsUrl;
-        dsBtn.target = '_blank';
-        dsBtn.rel = 'noopener';
-        dsBtn.classList.remove('is-disabled');
-        dsBtn.removeAttribute('aria-disabled');
-        dsBtn.removeAttribute('title');
-      } else {
-        dsBtn.textContent = 'Datasheet (coming soon)';
-        dsBtn.removeAttribute('href');
-        dsBtn.removeAttribute('target');
-        dsBtn.classList.add('is-disabled');
-        dsBtn.setAttribute('aria-disabled','true');
-        dsBtn.setAttribute('title','Datasheet will be added soon');
 
       // General table
       $('#generalTable').innerHTML = table({
