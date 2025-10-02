@@ -1056,7 +1056,7 @@
 
       // UID & buttons
       setText('#uid', data.uid || `urn:bs:pv:${serial}`);
-      $('#openDatasheet').href = data.safety_datasheet_url || '#';
+      $('#openDatasheet').href = null || '#';
 
       // General table
       $('#generalTable').innerHTML = table({
