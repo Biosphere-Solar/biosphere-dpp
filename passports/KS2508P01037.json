@@ -1,0 +1,875 @@
+{
+  "uid": "KS2508P01003",
+  "version": "1.4",
+  "last_updated": "2025-09-29",
+  "model": "V1.4 IBC",
+  "manufacturer": "Biosphere Solar and Kameleon Solar",
+  "manufacture_date": "2025-08-22",
+  "power_w": 392,
+  "cell_type": "IBC",
+  "dimensions_mm": "1759 x 1041 x 32",
+  "weight_kg": 32.01,
+  "efficiency_pct": 21.6,
+  "co2e_kg": null,
+  "lifetime_years": 25,
+  "warranty_years": 25,
+  "certifications": ["In-House Precompliance IEC 61215 Testing", "In-House Precompliance IEC 61730 Testing"],
+  "materials": {
+    "Glass": "Planibel Clearvision (Thermally toughened Soda Lime Silicate safety glass)",
+    "Cells": "Bifacial IBC MAXEON Gen 6",
+    "Frame": "Reinforced anodize aluminum alloy 6005",
+    "Edge Seal": "PolyIsoButylene (PIB)",
+    "Spacer Dot": null,
+    "Junction Box": "Copper and PPO",
+    "Tabbing wire": "Copper, tin and lead",
+    "Busbar wire": "Copper, tin and lead"
+    
+  },
+
+  "material_composition_pct": {
+    "glass": 45,
+    "cells": 15,
+    "edge seal": 3,
+    "dog bone": 1,
+    "bus bars": 2,
+    "adhesive dots": 9,
+    "potting gel": 8,
+    "junction box, cables, MC4": 5,
+    "frames": 10
+  },
+
+  "chemical_composition_pct": {
+    "copper (cu)": 0.30,
+    "phosphorus (p)": 0.23,
+    "silicon (si)": 0.40,
+    "lead (pb)": 0.08
+  },
+
+  "cost_breakdown_eur": {
+    "glass": 120,
+    "cells": 51,
+    "edge seal": 0.8,
+    "dog bone": 0.02,
+    "bus bars": 0.21,
+    "adhesive dots": 89,
+    "potting gel": 21.49,
+    "junction box, cables, MC4": 3.40,
+    "frames": 11
+  },
+
+
+  "safety_datasheet_url": "https://biosphere-solar.github.io/biosphere-dpp/files/safety-datasheet.pdf",
+  "esg_statement_url": "https://biosphere-solar.github.io/biosphere-dpp/files/statement-on-esg.docx.pdf",
+  "lca_report_url": "https://biosphere-solar.github.io/biosphere-dpp/files/lca.pdf",
+  "epd_url": "Not Available",
+  "hs_code": null,
+  "origin": "EU",
+  "compliance": ["Reg. (EU) 2024/1781 framework", "IEC 61215", "IEC 61730"],
+  "hazardous_substances": ["Lead solder (SnPb) <0.1%", "PFAS-Free"],
+  "recycled_content": {
+    "Glass": "0%",
+    "Aluminium frame": "0%"
+  },
+  "recyclability": " >99% recyclable, including high-value recycling capability",
+  "updates": [
+     null
+  ],
+
+  "components": [
+  {
+    "name": "Final sample panel",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 1952, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 1134, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 35,   "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean"},
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "Lead" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100,  "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      },
+    
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/design/final-sample-panel-datasheet.pdf"],
+            "comments": " "
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Solar cells",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 166,   "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 166,   "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 0.152, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 30, "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/design/solar-cell-datasheet.pdf"],
+            "comments": " "
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Front glass",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 1759, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 1041, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 3.2, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0, "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/design/front-glass.pdf"],
+            "comments": " "
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Back glass",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 1759, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 1041, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 3.2, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0, "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files//design/front-glass.pdf"],
+            "comments": " "
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Long frame",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 1764, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 12, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 30, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0, "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
+            "comments": "Rev B, 2025-07-01"
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Short frame",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 1046, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 12, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 30, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0, "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,  "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,  "unit": "%", "datatype": "number" }
+        ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
+            "comments": "Rev B, 2025-07-01"
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Edge seal",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 5600, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 11, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 1, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+        ]
+      },
+
+      "Design": {
+        "Lay up scheme": [
+          {
+            "label": "Product drawings",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_drawing_v1.pdf"],
+            "comments": "Rev B, 2025-07-01"
+          },
+          {
+            "label": "Production sheets",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_prod_sheet.pdf"]
+          },
+          {
+            "label": "Manufacturing sequence",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/panel_mfg_sequence.pdf"]
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Spacer Dot",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 4, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 4, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 2, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Junction Box",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 66.5, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 24.8, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 13.5, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Tabbing wire",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": null, "unit": "mm", "datatype": "text" },
+          { "label": "Width",  "value": null, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": null, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "Lead" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  },
+
+  {
+    "name": "Busbar wire",
+    "categories": {
+      "Component/Specimen information": {
+        "Part details": [
+          { "label": "Length", "value": 0, "unit": "mm", "datatype": "text" },
+          { "label": "Width",  "value": 5, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 0.4, "unit": "mm", "datatype": "number" }
+        ]
+      },
+      "Chemical composition": {
+        "Presence (Yes/No)": [
+          { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
+          { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
+          { "label": "Additives",                              "value": false,  "datatype": "boolean" },
+          { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "Lead" },
+          { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
+          { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+        ]
+      },
+      "Sourcing composition": {
+        "—": [
+          { "label": "Virgin/Fossil (%)",                   "value": 100, "unit": "%", "datatype": "number" },
+          { "label": "Pre-consumer recycled material (%)",  "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Post-consumer recycled material (%)", "value": 0,   "unit": "%", "datatype": "number" },
+          { "label": "Renewable (%)",                       "value": 0,   "unit": "%", "datatype": "number" }
+        ]
+      }
+    }
+  }
+], 
+      
+"extra_categories": {
+  "General composition": {
+    "Spacer Dot": {
+      "Resin system": [
+        { "label": "Resin details", "value": "Acrylate Resin mixture", "datatype": "text" }
+      ],
+      "Fibre": [
+        { "label": "Fibre type", "value": null, "datatype": "text" }
+      ]
+    }
+  },
+  
+  "Use": {
+    "Final sample panel": {
+      "Instructions of use and assembly": [
+        {
+          "label": "Instructions (PDF)",
+          "datatype": "file",
+          "files": [
+            "https://biosphere-solar.github.io/biosphere-dpp/files/use/use-and-assembly-instructions.pdf"
+          ],
+          "description": "Installation & assembly guidance"
+        }
+      ],
+      "Usage data": [
+        {
+          "label": "Power generation (kWh)",
+          "value": null,
+          "datatype": "text",
+          "note": "Per module; optionally record kWh/day, /week, /month, /year"
+        },
+        {
+          "label": "System/Plant Operation",
+          "value": null,
+          "datatype": "text",
+          "note": "Will only be present after installation"
+        }
+      ]
+    },
+
+    "Edge seal":{
+      "Upload any file": [
+        {
+          "label": "Technical Information",
+          "datatype": "file",
+          "files": [
+            "https://biosphere-solar.github.io/biosphere-dpp/files/use/Edge-seal-HeliosealPVS101-Technical-Information.pdf"
+          ],
+          "description": "Technical Information"
+        }
+      ]
+    }
+  },
+    
+  "End of life (EoL)": {
+    "Final sample panel": {
+      "Decommissioning": [
+        {
+          "label": "Party/organization that decommissions the module",
+          "value": "—",
+          "datatype": "text",
+          "note": "Dutch Solar Tech"
+        }
+      ],
+      "Reuse": [
+        {
+          "label": "Power (W)",
+          "value": null,
+          "unit": "W",
+          "datatype": "number",
+          "note": "Power after X years of usage to check for reusability"
+        },
+        {
+          "label": "Reuse information (PDF)",
+          "datatype": "file",
+          "files": [
+            "https://biosphere-solar.github.io/biosphere-dpp/files/EoL/Disassembly-Manual-Biosphere-SolarV1.4.pdf"
+          ]
+        }
+      ],
+      "Disassembly": [
+        {
+          "label": "Instructions for disassembly (PDF)",
+          "datatype": "file",
+          "files": [
+            "https://biosphere-solar.github.io/biosphere-dpp/files//EoL/Disassembly-Manual-Biosphere-SolarV1.4.pdf"
+          ],
+          "comments": "Same document as Reuse information"
+        }
+      ],
+      "Recycling": [
+        { "label": "Recycler name", "value": "Solar2Cycle", "datatype": "text" },
+  
+        { "label": "Can the product be mechanically recycled?", "value": true,  "datatype": "boolean" },
+        { "label": "Can the product be chemically recycled?",   "value": true,  "datatype": "boolean" },
+  
+        { "label": "Name(s) of chemical input", "value": null,  "datatype": "text" },
+        { "label": "Mass of chemical input",    "value": null,  "unit": "kg",  "datatype": "number" },
+        { "label": "Process electricity input", "value": null,  "unit": "kWh", "datatype": "number" },
+        { "label": "Process electricity renewable energy ratio", "value": null, "unit": "%", "datatype": "number" }
+      ],
+      "Other": [
+        {
+          "label": "Waste prevention benefits",
+          "value": "Repairable and upgradable module design. Hypothesis: hyper value recovered and lower cost for recycling",
+          "datatype": "text",
+          "note": "Repairable and upgradable module design. Hypothesis: hyper value recovered and lower cost for recycling"
+        }
+      ]
+    }
+  },
+
+
+  "Mechanical properties": {
+    "Final sample panel": {
+      "—": [
+        { "label": "Loading history", "value": "NA", "datatype": "text" },
+        { "label": "Tensile strength", "value": 0.0024, "unit": "MPa", "datatype": "number" }
+      ],
+      "Electrical information": [
+        { "label": "Power",                      "value": 392,  "unit": "W",  "datatype": "number" },
+        { "label": "Open circuit voltage",       "value": 43.68, "unit": "V",  "datatype": "number" },
+        { "label": "Short circuit current",      "value": 10.108511, "unit": "A",  "datatype": "number" },
+        { "label": "Maximum power voltage",      "value": 36.72, "unit": "V",  "datatype": "number" },
+        { "label": "Maximum power current",      "value": 9.412284, "unit": "A",  "datatype": "number" },
+        { "label": "Efficiency",                 "value": 21.06, "unit": "%",  "datatype": "number" }
+      ],
+      "Process info": [
+        { "label": "Machine used",         "value": "Stringer, laminator, junction box potting machine, frame machine", "datatype": "text" },
+        { "label": "Operator responsible", "value": "Zola Fung-A-Jou",              "datatype": "text" },
+        { "label": "Manufacturing time",   "value": null,    "datatype": "text" }
+      ]
+    },
+      
+    "Solar cells": {
+      "—": [
+        { "label": "Loading history", "value": "NA", "datatype": "text" },
+        { "label": "Tensile strength", "value": null, "unit": "MPa", "datatype": "number" }
+      ],
+      "Electrical information": [
+        { "label": "Power (per cell)",             "value": 6.54,  "unit": "W",  "datatype": "number" },
+        { "label": "Open circuit voltage (cell)",  "value": 0.728, "unit": "V",  "datatype": "number" },
+        { "label": "Short circuit current (cell)", "value": 11.47, "unit": "A",  "datatype": "number" },
+        { "label": "Maximum power voltage (cell)", "value": 0.612, "unit": "V",  "datatype": "number" },
+        { "label": "Maximum power current (cell)", "value": 10.68, "unit": "A",  "datatype": "number" },
+        { "label": "Efficiency (cell)",            "value": 23.9, "unit": "%",  "datatype": "number" }
+      ],
+      "Process info": [
+        { "label": "Machine used",         "value": "Diamond wire cutter", "datatype": "text" },
+        { "label": "Operator responsible", "value": "Sunpower",       "datatype": "text" },
+        { "label": "Manufacturing time",   "value": null,"datatype": "text" }
+        ]
+      }
+    },
+  
+    "Sorting": {
+      "Final sample panel": {
+        "NDT Results": [
+          { "label": "NDT", "value": "Yes", "datatype": "text" },
+          { "label": "Which tests were performed?", "value": "A flash test and electroluminescence test have been done", "datatype": "text" },
+          { "label": "Were there any defects found?", "value": "PER PANEL, TO ADD", "datatype": "text" }
+        ],
+        "DT Results": [
+          { "label": "Was there any destructive testing performed?", "value": "Yes", "datatype": "text" },
+          { "label": "Which destructive tests were performed?", "value": "Static mechanical load test; Breakage test", "datatype": "text" },
+          {
+            "label": "Test data path",
+            "value": null,
+            "datatype": "text",
+            "description": "Please include the link for the test results and further information"
+          }
+        ],
+        "Test Overview": [
+          { "label": "Indicate any further tests", "value": "Other IEC 61215 and IEC 61730 tests", "datatype": "text" }
+        ]
+      }
+    },
+    
+    "Regulations": {
+      "Final sample panel": {
+        "REACH": [
+          {
+            "label": "REACH status",
+            "value": "For now we don't have 3rd party certification",
+            "datatype": "text",
+            "note": "Internal declaration only"
+          },
+          {
+            "label": "REACH statement (PDF)",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/reach_statement.pdf"]
+          }
+        ],
+        "RoHS": [
+          {
+            "label": "RoHS status",
+            "value": "Compliant per design; third-party certification pending",
+            "datatype": "text"
+          },
+          {
+            "label": "RoHS statement (PDF)",
+            "datatype": "file",
+            "files": ["https://biosphere-solar.github.io/biosphere-dpp/files/rohs_statement.pdf"]
+          }
+        ],
+        "DNV": [
+          {
+            "label": "DNV certification",
+            "value": "No",
+            "datatype": "text",
+            "comments": "No DNV certificate available at this time"
+          },
+          {
+            "label": "DNV certificate (PDF)",
+            "datatype": "file",
+            "files": []
+          }
+        ]
+      },
+    
+      "Spacer Dot": {
+        "REACH": [
+          {
+            "label": "REACH note",
+            "value": "This substance does not meet the PBT/vPvB criteria of REACH, annex XIII.",
+            "datatype": "text"
+          }
+        ]
+      }
+    },
+    "Environment": {
+      "Final sample panel": {
+        "LCA data": [
+          {
+            "label": "Energy Use",
+            "value": "450–730",
+            "unit": "kWh/kWp",
+            "datatype": "text",
+            "note": "Not certified, manufacturer's own estimation"
+          },
+          {
+            "label": "Carbon footprint",
+            "value": "225–390",
+            "unit": "kg/kWp",
+            "datatype": "text",
+            "comments": "Cradle to gate",
+            "note": "Not certified, manufacturer's own estimation"
+          },
+          { "label": "Acidification",                   "value": null, "unit": "mol H+ eq/kg",      "datatype": "number" },
+          { "label": "Eutrophication, freshwater",      "value": null, "unit": "kg PO4-eq/kg",      "datatype": "number" },
+          { "label": "Eutrophication, marine",          "value": null, "unit": "kg P eq/kg",        "datatype": "number" },
+          { "label": "Ecotoxicity, freshwater",         "value": null, "unit": "CTUe/kg",           "datatype": "number" },
+          { "label": "Human toxicity, cancer",          "value": null, "unit": "CTUh/kg",           "datatype": "number" },
+          { "label": "Climate change",                  "value": null, "unit": "CO2-eq/kg",         "datatype": "number" },
+          { "label": "Climate change - biogenic",       "value": null, "unit": "CO2-eq/kg",         "datatype": "number" },
+          { "label": "Climate change - fossil",         "value": null, "unit": "CO2-eq/kg",         "datatype": "number" },
+          { "label": "Ionising radiation, human health","value": null, "unit": "kBq U-235 eq/kg",   "datatype": "number" },
+          { "label": "Water use",                       "value": null, "unit": "m3 water-eq",       "datatype": "number" }
+        ]
+      },
+      
+      "Solar cells":   { "LCA data": [] },
+      "Front glass":   { "LCA data": [] },
+      "Back glass":    { "LCA data": [] },
+      "Long frame":    { "LCA data": [] },
+      "Short frame":   { "LCA data": [] },
+      "Edge seal":     { "LCA data": [] },
+      "Spacer Dot":    { "LCA data": [] },
+      "Junction Box":  { "LCA data": [] },
+      "Tabbing wire":  { "LCA data": [] },
+      "Busbar wire":   { "LCA data": [] }
+     }
+   }
+}
