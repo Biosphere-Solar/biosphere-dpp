@@ -1059,15 +1059,17 @@
       setText('#uid', data.uid || `urn:bs:pv:${serial}`);
 
       const dsBtn = document.querySelector('#openDatasheet');
-      const dsUrl = data.datasheet_url || data.safety_datasheet_url || null;
+      const dsUrl = data.datasheet_url ?? null;
       
       if (dsUrl) {
         dsBtn.href = dsUrl;
         dsBtn.target = '_blank';
         dsBtn.rel = 'noopener';
-        dsBtn.style.display = '';
+        dsBtn.style.display = '';            // show it
       } else {
-        dsBtn.style.display = 'none';   // just hide it
+        dsBtn.removeAttribute('href');
+        dsBtn.removeAttribute('target');
+        dsBtn.style.display = 'none';        // hide it entirely
       }
 
 
