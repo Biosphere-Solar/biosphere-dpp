@@ -52,7 +52,7 @@ repo-root/
 
 ### GitHub Pages
 
-- Settings → Pages → Source: main (or your default branch) → Root.
+- Settings → Pages → Source: main (or our default branch) → Root.
 
 - Public URL will be something like:
 
@@ -188,9 +188,9 @@ Put a file in passports/<SERIAL>.json. Keep keys consistent with examples below.
   
 - **Keys & labels**:
   
-- Our color map uses normalized labels (“glass”, “cells”, “frame”…). If you change a label (e.g., "junction box, cables, MC4" vs "junction box"), the chart still renders, but it’ll use a fallback color. Keep names consistent or extend the color map in index.html (MATERIAL_MAP) to include your new label.
+- Our color map uses normalized labels (“glass”, “cells”, “frame”…). If you change a label (e.g., "junction box, cables, MC4" vs "junction box"), the chart still renders, but it’ll use a fallback color. Keep names consistent or extend the color map in index.html (MATERIAL_MAP) to include our new label.
   
-- For **Chemical** keys, we normalize lower-case but your JSON should still be consistent (e.g., phosphorus (p) vs phosphorus (po)).
+- For **Chemical** keys, we normalize lower-case but our JSON should still be consistent (e.g., phosphorus (p) vs phosphorus (po)).
   
 - **Hide empty tabs automatically**:
   
@@ -232,7 +232,7 @@ Put a file in passports/<SERIAL>.json. Keep keys consistent with examples below.
     **```“Mechanical properties”```,** **```“Use”```,** **```“End of life (EoL)”```,** **```“Sorting”```,** **```“Regulations”```,** **```“Environment”```.**
   
   - Put them inside ```extra_categories``` (not top-level).
-    This is a common mistake that hides your content.
+    This is a common mistake that hides the content.
 
 
 ## 7) Theming & branding
@@ -334,8 +334,8 @@ Any QR generator is fine (Adobe, QRCode Monkey, etc.). Save as SVG/PNG; test wit
 - **Material tab shows but no chart**: one of the values is not numeric.
   Fix: ensure every value in ```*_composition_pct``` is a number (or string that contains only a number/percent).
   
-- **Wrong colors or duplicated colors**: your labels don’t match the color map.
-  Fix: stick to our names (```glass```, ```cells```, ```frame```, ```edge seal```, ```junction box```, ```tabbing wire```, ```bus bars```, ```frames```) or add your label to ```MATERIAL_MAP``` in ```index.html```.
+- **Wrong colors or duplicated colors**: labels don’t match the color map.
+  Fix: stick to our names (```glass```, ```cells```, ```frame```, ```edge seal```, ```junction box```, ```tabbing wire```, ```bus bars```, ```frames```) or add the label to ```MATERIAL_MAP``` in ```index.html```.
   
 - **Mechanical/EoL missing**: you placed those categories at the root of the JSON.
   Fix: move them under **extra_categories**.
@@ -343,7 +343,7 @@ Any QR generator is fine (Adobe, QRCode Monkey, etc.). Save as SVG/PNG; test wit
 - **Logo shows “broken image” on mobile**: wrong path.
   Fix: ```src="assets/<file>"``` (relative to ```index.html```) and commit the file.
 
-## 11) Style changes your teammates may want
+## 11) Style changes if needed
 
 - **Background**: change ```--bg1``` / ```--bg2``` in ```:root``` and ```:root[data-theme="light"]```.
   
