@@ -394,3 +394,13 @@ Any QR generator is fine (Adobe, QRCode Monkey, etc.). Save as SVG/PNG; test wit
   \text{% of item} = \frac{\text{cost}_i}{\sum \text{costs}} \times 100
   
 - You can still keep **Material** (% by mass) and **Chemical** (% by element) if you have those; otherwise, remove the section to hide the tab.
+
+## License
+- Code: [MIT](./LICENSE)
+- Data & docs (JSON, README, PDFs, images except logo): [CC BY 4.0](./LICENSE-DATA.md)
+- Logos in `/assets`: [All rights reserved](./assets/LOGO-LICENSE.md)
+
+Third-party:
+- Chart.js (MIT)
+- Google Fonts (OFL 1.1)
+
