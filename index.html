@@ -404,6 +404,50 @@
     /* (optional) soften “muted” to theme */
     .muted { color: var(--muted); }
 
+    /* === Theme-aware text + controls (put at END of <style>) === */
+
+    /* Link color that works in both themes */
+    :root{ --link:#9cc7ff; }
+    :root[data-theme="light"]{ --link:#0b57d0; }
+    a{ color: var(--link); }
+    
+    /* Headings inside cards/accordions */
+    .card h3,
+    .accordion h4 { color: var(--text); }
+    
+    /* Tables in Component Explorer, Mechanical props, General composition */
+    #specExplorer th, #mechExplorer th, #extraCats th { color: var(--muted); }
+    #specExplorer td, #mechExplorer td, #extraCats td { color: var(--text); }
+    
+    /* Pills (category tabs) */
+    .pill{ 
+      color: var(--muted);
+      border: 1px solid var(--line);
+      background: transparent;
+    }
+    .pill.active{
+      color: var(--text);
+      border-color: color-mix(in oklab, var(--brand) 45%, var(--line));
+      background: color-mix(in oklab, var(--brand) 22%, var(--card));
+    }
+    
+    /* Outline button (“View materials”) */
+    .btn.outline{
+      color: var(--text);
+      border: 1px solid color-mix(in oklab, var(--text) 22%, var(--line));
+      background: transparent;
+    }
+    .btn.outline:hover{
+      background: color-mix(in oklab, var(--text) 8%, transparent);
+    }
+    
+    /* Details boxes inside accordions (so dark/light looks correct) */
+    .accordion details{
+      background: var(--card);
+      border-color: var(--line);
+    }
+
+
   </style>
 </head>
 <body>
