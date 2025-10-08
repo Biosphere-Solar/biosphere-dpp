@@ -736,6 +736,18 @@
         }
       });
     }
+    <!-- IV curve card (auto-hides if no iv_summary) -->
+    <div id="ivCard" class="card rightcol-item" style="display:none">
+      <h3 style="margin-top:0">
+        IV Curve (flash test)
+        <span class="muted" style="font-weight:400;font-size:12px">approximate when raw points are missing</span>
+      </h3>
+      <div class="chartBox" style="height:260px;max-width:520px;margin:0 auto">
+        <canvas id="ivChart"></canvas>
+      </div>
+      <table id="ivKpis" style="margin-top:8px"></table>
+    </div>
+
 
 
     /* NEW: Component Explorer */
@@ -1047,6 +1059,49 @@
         render();
       }
 
+      // ---- IV curve + KPIs ----
+      (function renderIV(){
+        const card  = document.getElementById('ivCard');
+        if (!card) return;
+      
+        const iv = data.iv_summary;
+        if (!iv) { card.style.display = 'none'; return; }
+      
+        // Prefer raw points if you later include them
+        let pts = Array.isArray(iv.points) ? iv.points : null;
+        if (!pts) {
+          pts = synthesizeIVPoints({
+            Isc_A: iv.Isc_A, Voc_V: iv.Voc_V, Imp_A: iv.Imp_A, Vmp_V: iv.Vmp_V
+          });
+        }
+        if (!pts) { card.style.display = 'none'; return; }
+      
+        // Chart
+        const canvas = document.getElementById('ivChart');
+        buildIVChart(canvas, pts);
+      
+        // KPIs table
+        const kv = {
+          'Pmp (W)': iv.Pmp_W,
+          'Pmp (corrected, W)': iv.Pmp_corrected_W,
+          'FF (%)': iv.FF_pct,
+          'Isc (A)': iv.Isc_A,
+          'Voc (V)': iv.Voc_V,
+          'Imp (A)': iv.Imp_A,
+          'Vmp (V)': iv.Vmp_V,
+          'Cell efficiency (%)': iv.eff_cell_pct,
+          'Module efficiency (%)': iv.eff_module_pct,
+          'CTM efficiency (%)': iv.ctm_eff_pct,
+          'CTM power (%)': iv.ctm_power_pct,
+          'Source': iv.source || '—'
+        };
+        document.getElementById('ivKpis').innerHTML =
+          Object.entries(kv).map(([k,v]) => `<tr><th>${k}</th><td>${v ?? '—'}</td></tr>`).join('');
+      
+        card.style.display = '';
+      })();
+
+
 
       // Header bits
       setText('#modelTitle', data.model || '—');
@@ -1168,6 +1223,75 @@
         btnChem.classList.add('active');  show(chem, 'Chemical composition (%)', 'chemical');
       } else {
         canvas.parentElement.style.display = 'none';
+      }
+
+            // Build synthetic IV points if only summary metrics exist
+      function synthesizeIVPoints({Isc_A, Voc_V, Imp_A, Vmp_V}, n = 120){
+        if (![Isc_A, Voc_V, Imp_A, Vmp_V].every(x => typeof x === 'number' && x > 0)) return null;
+      
+        const pts = [];
+        const leftN  = Math.max(3, Math.round(n * (Vmp_V / Voc_V)));
+        const rightN = Math.max(3, n - leftN);
+      
+        // Left branch: 0..Vmp (gentle concave, hits Isc at 0 and Imp at Vmp)
+        const a = 1 - (Imp_A / Isc_A);
+        const bl = 1.6; // curvature
+        for (let i = 0; i < leftN; i++){
+          const V = (Vmp_V * i) / (leftN - 1);
+          const t = (Vmp_V === 0) ? 0 : (V / Vmp_V);
+          let I = Isc_A * (1 - a * Math.pow(t, bl));
+          if (i === leftN - 1) I = Imp_A;         // pin exactly
+          if (i === 0) I = Isc_A;                 // pin exactly
+          pts.push([V, Math.max(I, 0)]);
+        }
+      
+        // Right branch: Vmp..Voc (drops to 0 at Voc)
+        const br = 1.3; // curvature
+        for (let j = 1; j < rightN; j++){
+          const V = Vmp_V + (Voc_V - Vmp_V) * (j / (rightN - 1));
+          const u = (Voc_V === Vmp_V) ? 1 : (V - Vmp_V) / (Voc_V - Vmp_V);
+          let I = Imp_A * (1 - Math.pow(u, br));
+          if (j === rightN - 1) I = 0;            // pin exactly
+          pts.push([V, Math.max(I, 0)]);
+        }
+      
+        return pts;
+      }
+      
+      function buildIVChart(canvas, points, themeColor = '#22c55e'){
+        if (!canvas || !points?.length) return null;
+        const labels = points.map(p => p[0]);
+        const data   = points.map(p => p[1]);
+      
+        const css = getComputedStyle(document.documentElement);
+        const grid = (css.getPropertyValue('--line') || '#233').trim();
+        const text = (css.getPropertyValue('--text') || '#cdd6f4').trim();
+      
+        return new Chart(canvas, {
+          type: 'line',
+          data: { labels, datasets: [{
+            label: 'I (A)',
+            data,
+            borderColor: themeColor,
+            backgroundColor: 'transparent',
+            borderWidth: 2,
+            pointRadius: 0,
+            tension: 0.2
+          }]},
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            scales: {
+              x: { title:{display:true, text:'Voltage (V)', color:text}, ticks:{color:text}, grid:{color:grid} },
+              y: { title:{display:true, text:'Current (A)', color:text}, ticks:{color:text}, grid:{color:grid} }
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: { label: (ctx)=> `I=${ctx.parsed.y.toFixed(2)} A @ V=${ctx.parsed.x.toFixed(2)} V` }
+              }
+            }
+          }
+        });
       }
 
 
