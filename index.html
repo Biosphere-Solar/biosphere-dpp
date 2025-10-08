@@ -547,8 +547,19 @@
         <!-- Mechanical properties explorer -->
         <div id="mechExplorer" class="card"></div>
       </div>
-    </section>
 
+        <!-- IV curve card (auto-hides if no iv_summary) -->
+        <div id="ivCard" class="card rightcol-item" style="display:none">
+          <h3 style="margin-top:0">
+            IV Curve (flash test)
+            <span class="muted" style="font-weight:400;font-size:12px">approximate when raw points are missing</span>
+          </h3>
+          <div class="chartBox" style="height:260px;max-width:520px;margin:0 auto">
+            <canvas id="ivChart"></canvas>
+          </div>
+          <table id="ivKpis" style="margin-top:8px"></table>
+        </div>
+    </section>
     
   </div>
 
@@ -736,19 +747,6 @@
         }
       });
     }
-    <!-- IV curve card (auto-hides if no iv_summary) -->
-    <div id="ivCard" class="card rightcol-item" style="display:none">
-      <h3 style="margin-top:0">
-        IV Curve (flash test)
-        <span class="muted" style="font-weight:400;font-size:12px">approximate when raw points are missing</span>
-      </h3>
-      <div class="chartBox" style="height:260px;max-width:520px;margin:0 auto">
-        <canvas id="ivChart"></canvas>
-      </div>
-      <table id="ivKpis" style="margin-top:8px"></table>
-    </div>
-
-
 
     /* NEW: Component Explorer */
 
