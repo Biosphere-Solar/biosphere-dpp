@@ -912,6 +912,7 @@
         return `<h4 style="margin:12px 0 6px">${esc(catName)}</h4>${compBlocks || `<div class="muted">No data.</div>`}`;
       }).join('');
     }
+    
     // Build synthetic IV points if only summary metrics exist
     function synthesizeIVPoints({ Isc_A, Voc_V, Imp_A, Vmp_V }, n = 120){
       if (![Isc_A, Voc_V, Imp_A, Vmp_V].every(x => typeof x === 'number' && x > 0)) return null;
@@ -1408,6 +1409,7 @@
       
         card.style.display = '';
       })();
+    
     })();
 
     (() => {
