@@ -57,6 +57,23 @@
     "frames": 11
   },
 
+  "iv_summary": {
+    "source": "Flash test — Lab XYZ",
+    "Pmp_W": 307.10,
+    "Pmp_corrected_W": 347.03,
+    "FF_pct": 71.89,
+    "Isc_A": 9.93,
+    "Imp_A": 9.36,
+    "Voc_V": 43.00,
+    "Vmp_V": 32.80,
+    "eff_cell_pct": 21.03,
+    "eff_module_pct": 16.77,
+    "ctm_eff_pct": 79.74,
+    "ctm_power_pct": 86.20
+    /* If you later export the raw sweep:
+    "points": [[0,9.93],[...],[43,0]]
+    */
+  }
 
   "safety_datasheet_url": "https://biosphere-solar.github.io/biosphere-dpp/files/safety-datasheet.pdf",
   "esg_statement_url": "https://biosphere-solar.github.io/biosphere-dpp/files/statement-on-esg.docx.pdf",
