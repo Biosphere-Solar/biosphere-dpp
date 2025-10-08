@@ -1053,7 +1053,7 @@
           if (f.datatype === 'boolean'){
             const yes = !!f.value;
             return `<tr>
-              <th style="text-align:left;padding:8px 6px;color:#9fb1d9;width:38%">${esc(f.label||'')}</th>
+              <th style="text-align:left;padding:8px 6px;width:38%;color:var(--muted)">${esc(f.label||'')}</th>
               <td style="padding:8px 6px"><span class="badge bool ${yes?'yes':'no'}">${yes?'Yes':'No'}</span>${extraTxt?`<div class="muted" style="margin-top:6px">${extraTxt}</div>`:''}</td>
             </tr>`;
           }
@@ -1259,101 +1259,6 @@
       } else {
         canvas.parentElement.style.display = 'none';
       }
-
-     
-        // Theme-aware colors
-        const css = getComputedStyle(document.documentElement);
-        const textColor = (css.getPropertyValue('--text') || '#e5e9f0').trim();
-        const gridColor = (css.getPropertyValue('--line') || '#243056').trim();
-        const chipBg    = (css.getPropertyValue('--card') || '#0f1326').trim();
-      
-        // Little plugin to draw label chips near the three markers
-        const ivLabelsPlugin = {
-          id: 'ivLabels',
-          afterDatasetsDraw(chart){
-            const {ctx} = chart;
-            const meta = chart.getDatasetMeta(1); // markers dataset
-            if (!meta || !meta.data) return;
-      
-            ctx.save();
-            ctx.font = '12px ' + getComputedStyle(document.body).fontFamily;
-            ctx.textBaseline = 'middle';
-      
-            meta.data.forEach((pt, i)=>{
-              const d = chart.data.datasets[1].data[i];
-              if (!d || !d._label) return;
-      
-              const pad=6, h=20, x = pt.x + 8, y = pt.y - 12;
-              const w = ctx.measureText(d._label).width + pad*2;
-              ctx.fillStyle = chipBg; ctx.globalAlpha=.92;
-              ctx.fillRect(x, y - h/2, w, h);
-              ctx.globalAlpha=1; ctx.strokeStyle = gridColor;
-              ctx.strokeRect(x, y - h/2, w, h);
-              ctx.fillStyle = textColor;
-              ctx.fillText(d._label, x + pad, y);
-            });
-      
-            ctx.restore();
-          }
-        };
-      
-        // Build chart
-        return new Chart(canvas.getContext('2d'), {
-          type: 'line',
-          data: {
-            datasets: [
-              { // I–V curve
-                label: 'I–V',
-                parsing: false,
-                data: V.map((v,i)=> ({x:v, y:I[i]})),
-                borderColor: '#22c55e',
-                borderWidth: 2,
-                tension: .25,
-                pointRadius: 0
-              },
-              { // three key points
-                label: 'Markers',
-                type: 'scatter',
-                parsing: false,
-                data: [
-                  { x: 0,   y: Isc, _label: (Number.isFinite(Isc)? `Isc ${Isc} A` : '') },
-                  { x: Vmp, y: Imp, _label: (Number.isFinite(Vmp)&&Number.isFinite(Imp)?
-                                              `Pmax ${Pmp ?? (Vmp*Imp)} W` : '') },
-                  { x: Voc, y: 0,   _label: (Number.isFinite(Voc)? `Voc ${Voc} V` : '') }
-                ],
-                pointRadius: 4,
-                pointHoverRadius: 5,
-                pointBackgroundColor: '#fff',
-                pointBorderColor: '#22c55e',
-                pointBorderWidth: 2
-              }
-            ]
-          },
-          options: {
-            parsing:false,
-            maintainAspectRatio:false,
-            plugins:{
-              legend:{ display:false },
-              tooltip:{
-                callbacks:{
-                  label: (tt)=>{
-                    const d = tt.raw;
-                    return (d && d._label) ? d._label : `V ${tt.parsed.x.toFixed(2)} V, I ${tt.parsed.y.toFixed(2)} A`;
-                  }
-                }
-              }
-            },
-            scales:{
-              x:{ type:'linear', title:{display:true, text:'Voltage (V)', color:textColor},
-                  ticks:{ color:textColor }, grid:{ color: gridColor } },
-              y:{ title:{display:true, text:'Current (A)', color:textColor},
-                  ticks:{ color:textColor }, grid:{ color: gridColor } }
-            }
-          },
-          plugins:[ivLabelsPlugin]
-        });
-      }
-
 
 
       // NEW: Explorer
