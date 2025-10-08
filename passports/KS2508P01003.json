@@ -73,7 +73,7 @@
     /* If you later export the raw sweep:
     "points": [[0,9.93],[...],[43,0]]
     */
-  }
+  },
 
   "safety_datasheet_url": "https://biosphere-solar.github.io/biosphere-dpp/files/safety-datasheet.pdf",
   "esg_statement_url": "https://biosphere-solar.github.io/biosphere-dpp/files/statement-on-esg.docx.pdf",
