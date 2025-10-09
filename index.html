@@ -623,7 +623,7 @@
       "cells":"#6f7dff",
       "edge seal":"#f472b6",
       "dog bone":"#ffa800",
-      "bus bar":"#f59e0b",
+      "bus bars":"#f59e0b",
       "adhesive dots":"#aabf7b",
       "potting gel":"#222d1b",
       "junction box, cables, MC4":"#1d4ed8",
@@ -1279,14 +1279,58 @@
         btnChem.classList.add('active'); btnMat.classList.remove('active'); btnValue.classList.remove('active');
         show(chem, 'Chemical composition (%)', 'chemical');
       });
+
+      const pricePctObj  = data.cost_breakdown_pct || null;
+      const priceEuroObj = data.cost_breakdown_eur || null;
+      
       btnValue.addEventListener('click', ()=>{
         btnValue.classList.add('active'); btnMat.classList.remove('active'); btnChem.classList.remove('active');
-        show(price, 'Value breakdown (by price, €)', 'value');
-      });
       
-      // initial render preference: Value if present, else Material, else Chemical
-      if (price){
-        btnValue.classList.add('active'); show(price, 'Value breakdown (by price, €)', 'value');
+        if (pricePctObj) {
+          if (donut) donut.destroy();
+          donut = buildCompositionChart(canvas, pricePctObj, { kind: 'value' });
+          labelEl.textContent = 'Value breakdown (%)';
+          canvas.parentElement.style.display = '';
+        } else if (priceEuroObj) {
+          const vp = toValuePercentages(priceEuroObj);
+          if (!vp) { canvas.parentElement.style.display = 'none'; return; }
+          const percentObj = Object.fromEntries(vp.labels.map((l,i)=>[l, +vp.values[i].toFixed(2)]));
+          if (donut) donut.destroy();
+          donut = buildCompositionChart(canvas, percentObj, { kind:'value' });
+          labelEl.textContent = `Value breakdown (% of €${vp.total.toFixed(2)})`;
+          donut.options.plugins.tooltip.callbacks.label = (tt)=>{
+            const i = tt.dataIndex; const euro = vp.raw[i];
+            return `${tt.label}: ${tt.formattedValue}% (€${euro.toFixed(2)})`;
+          };
+          donut.update();
+        } else {
+          canvas.parentElement.style.display = 'none';
+        }
+      });
+
+      
+      // initial render: prefer % block, else compute from euros, else fall back to mat/chem
+      if (pricePctObj) {
+        btnValue.classList.add('active');
+        if (donut) donut.destroy();
+        donut = buildCompositionChart(canvas, pricePctObj, { kind: 'value' });
+        labelEl.textContent = 'Value breakdown (%)';
+      } else if (priceEuroObj) {
+        const vp = toValuePercentages(priceEuroObj);
+        if (vp) {
+          const percentObj = Object.fromEntries(vp.labels.map((l,i)=>[l, +vp.values[i].toFixed(2)]));
+          btnValue.classList.add('active');
+          if (donut) donut.destroy();
+          donut = buildCompositionChart(canvas, percentObj, { kind:'value' });
+          labelEl.textContent = `Value breakdown (% of €${vp.total.toFixed(2)})`;
+          donut.options.plugins.tooltip.callbacks.label = (tt)=>{
+            const i = tt.dataIndex; const euro = vp.raw[i];
+            return `${tt.label}: ${tt.formattedValue}% (€${euro.toFixed(2)})`;
+          };
+          donut.update();
+        } else {
+          canvas.parentElement.style.display = 'none';
+        }
       } else if (mat){
         btnMat.classList.add('active');   show(mat, 'Material composition (%)', 'material');
       } else if (chem){
