@@ -34,7 +34,7 @@
     "bus bars": 2,
     "adhesive dots": 9,
     "potting gel": 8,
-    "junction box, cables, MC4": 5,
+    "junction box, cables, mc4": 5,
     "frames": 10
   },
 
@@ -53,7 +53,7 @@
     "bus bars": 0.21,
     "adhesive dots": 89,
     "potting gel": 21.49,
-    "junction box, cables, MC4": 3.40,
+    "junction box, cables, mc4": 3.40,
     "frames": 11
   },
 
