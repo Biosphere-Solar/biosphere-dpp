@@ -636,7 +636,19 @@
       "silicon (si)":"#22c55e",
       "lead (pb)":"#06b6d4"
     };
-    
+
+    const VALUE_MAP = {
+      "glass":"#00d18f",
+      "cells":"#6f7dff",
+      "edge seal":"#f472b6",
+      "dog bone":"#ffa800",
+      "bus bar":"#f59e0b",
+      "adhesive dots":"#aabf7b",
+      "potting gel":"#222d1b",
+      "junction box, cables, mc4":"#1d4ed8",  // keep lower-case to match your JSON
+      "frames":"#f6c760"
+    };
+
     function norm(s){ return String(s||"").toLowerCase().trim(); }
     function hueFromString(str){
       let h = 0; for(let i=0;i<str.length;i++) h = (h*31 + str.charCodeAt(i)) >>> 0;
@@ -651,25 +663,32 @@
       let h; switch(max){ case r: h=(g-b)/d + (g<b?6:0); break; case g: h=(b-r)/d + 2; break; default: h=(r-g)/d + 4; }
       return Math.round(h*60);
     }
+
     function pickColors(labels, kind){
-      const map = (kind === "chemical") ? CHEMICAL_MAP : MATERIAL_MAP;
-      const usedHues = []; const minSep = 18;
+      const maps = { material: MATERIAL_MAP, chemical: CHEMICAL_MAP, value: VALUE_MAP };
+      const map = maps[kind] || MATERIAL_MAP;
+    
+      const usedHues = [];
+      const minSep = 18;
+    
       return labels.map(label => {
-        const key = norm(label);
-        let col = map[key];
+        const key = norm(label);                 // lower-case, trimmed
+        let col = map[key];                      // try exact from the selected map
         if (!col){
+          // fallback: choose a distinct color from base palette
           const start = hueFromString(key) % BASE_PALETTE.length;
           for (let k=0;k<BASE_PALETTE.length;k++){
-            const cand = BASE_PALETTE[(start+k)%BASE_PALETTE.length];
+            const cand = BASE_PALETTE[(start+k) % BASE_PALETTE.length];
             const h = hexToHue(cand);
             if (usedHues.every(u => Math.abs(h-u) >= minSep)){ col = cand; break; }
           }
         }
-        if (!col) col = colorFromHash(key);
+        if (!col) col = colorFromHash(key);      // final fallback
         usedHues.push(hexToHue(col));
         return col;
       });
     }
+
 
     // Parse money strings like "€120.00" -> 120 (prefer numbers in JSON if possible)
     function moneyToNumber(v){
