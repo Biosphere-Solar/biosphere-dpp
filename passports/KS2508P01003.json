@@ -76,7 +76,10 @@
   "esg_statement_url": "https://biosphere-solar.github.io/biosphere-dpp/files/statement-on-esg.docx.pdf",
   "lca_report_url": "https://biosphere-solar.github.io/biosphere-dpp/files/lca.pdf",
   "epd_url": "Not Available",
-  "el_url": "https://biosphere-solar.github.io/biosphere-dpp/assets/el/KS2508P01003.jpg",
+  "el_url": [
+    "https://biosphere-solar.github.io/biosphere-dpp/assets/el/KS2508P01003-1.jpg",
+    "https://biosphere-solar.github.io/biosphere-dpp/assets/el/KS2508P01003-2.jpg"
+  ],
   "hs_code": null,
   "origin": "EU",
   "compliance": ["Reg. (EU) 2024/1781 framework", "IEC 61215", "IEC 61730"],
