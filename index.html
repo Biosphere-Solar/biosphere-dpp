@@ -1182,49 +1182,47 @@
       // Materials
       $('#materialsTable').innerHTML = table(data.materials || {});
 
-      // Docs
-      const elLinks = (() => {
-      // Accept: el_url as string or array, or el_images as array
-      const urls =
+      // --- Docs (place this INSIDE the main async function, after materials table) ---
+      const elUrls =
         Array.isArray(data.el_url)     ? data.el_url :
         Array.isArray(data.el_images)  ? data.el_images :
         data.el_url                    ? [data.el_url] : [];
-    
-      if (!urls.length) return '—';
-      return urls
-        .filter(Boolean)
-        .map((u, i) => `<a href="${u}" target="_blank" rel="noopener">EL image ${i+1}</a>`)
-        .join(' · ');
-    })();
+      
+      const elLinks = elUrls.length
+        ? elUrls.map((u,i)=> `<a href="${u}" target="_blank" rel="noopener">EL image ${i+1}</a>`).join(' · ')
+        : '—';
       
       $('#docsTable').innerHTML = table({
         'Safety Datasheet': data.safety_datasheet_url,
         'ESG Statement': data.esg_statement_url,
         'LCA report': data.lca_report_url,
         'EPD (Environmental Product Declaration)': data.epd_url,
-        'Electroluminescence (EL) Testing': data.el_url,
+        'Electroluminescence (EL) Testing': elLinks
       });
-
-      // --- Optional: add a thumbnail row under the Docs table ---
+      
+      // Optional thumbnails row
       if (elUrls.length){
         const tbl = document.getElementById('docsTable');
-        const row = document.createElement('tr');
-        row.innerHTML = `
-          <th style="text-align:left;padding:8px 6px;width:38%;color:var(--muted)">EL thumbnails</th>
-          <td style="padding:8px 6px">
-            <div style="display:flex;gap:10px;flex-wrap:wrap">
-              ${elUrls.map(u => `
-                <a href="${u}" target="_blank" rel="noopener"
-                   style="display:inline-block;border:1px solid var(--line);border-radius:8px;overflow:hidden">
-                  <img src="${u}" alt="EL preview"
-                       style="display:block;height:72px;width:auto;max-width:140px;object-fit:cover" />
-                </a>
-              `).join('')}
-            </div>
-          </td>
-        `;
-        tbl.appendChild(row);
+        if (tbl){
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <th style="text-align:left;padding:8px 6px;width:38%;color:var(--muted)">EL thumbnails</th>
+            <td style="padding:8px 6px">
+              <div style="display:flex;gap:10px;flex-wrap:wrap">
+                ${elUrls.map(u => `
+                  <a href="${u}" target="_blank" rel="noopener"
+                     style="display:inline-block;border:1px solid var(--line);border-radius:8px;overflow:hidden">
+                    <img src="${u}" alt="EL preview"
+                         style="display:block;height:72px;width:auto;max-width:140px;object-fit:cover" />
+                  </a>
+                `).join('')}
+              </div>
+            </td>
+          `;
+          tbl.appendChild(row);
+        }
       }
+
             
 
       // Updates
