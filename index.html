@@ -1205,6 +1205,28 @@
         'Electroluminescence (EL) Testing': data.el_url,
       });
 
+      // --- Optional: add a thumbnail row under the Docs table ---
+      if (elUrls.length){
+        const tbl = document.getElementById('docsTable');
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <th style="text-align:left;padding:8px 6px;width:38%;color:var(--muted)">EL thumbnails</th>
+          <td style="padding:8px 6px">
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              ${elUrls.map(u => `
+                <a href="${u}" target="_blank" rel="noopener"
+                   style="display:inline-block;border:1px solid var(--line);border-radius:8px;overflow:hidden">
+                  <img src="${u}" alt="EL preview"
+                       style="display:block;height:72px;width:auto;max-width:140px;object-fit:cover" />
+                </a>
+              `).join('')}
+            </div>
+          </td>
+        `;
+        tbl.appendChild(row);
+      }
+            
+
       // Updates
       const updates = Array.isArray(data.updates) ? data.updates : [];
       $('#updatesList').innerHTML = updates.length ? updates.map(u=>`<li>${format(u)}</li>`).join('') : '<li>No updates yet.</li>';
