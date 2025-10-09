@@ -45,7 +45,7 @@
     "lead (pb)": 0.08
   },
 
-  "value_breakdown_pct": {
+  "cost_breakdown_pct": {
     "glass": 40.41,
     "cells": 17.18,
     "edge seal": 0.27,
