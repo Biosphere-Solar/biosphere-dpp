@@ -1183,6 +1183,20 @@
       $('#materialsTable').innerHTML = table(data.materials || {});
 
       // Docs
+      const elLinks = (() => {
+      // Accept: el_url as string or array, or el_images as array
+      const urls =
+        Array.isArray(data.el_url)     ? data.el_url :
+        Array.isArray(data.el_images)  ? data.el_images :
+        data.el_url                    ? [data.el_url] : [];
+    
+      if (!urls.length) return '—';
+      return urls
+        .filter(Boolean)
+        .map((u, i) => `<a href="${u}" target="_blank" rel="noopener">EL image ${i+1}</a>`)
+        .join(' · ');
+    })();
+      
       $('#docsTable').innerHTML = table({
         'Safety Datasheet': data.safety_datasheet_url,
         'ESG Statement': data.esg_statement_url,
