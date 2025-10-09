@@ -57,11 +57,27 @@
     "frames": 11
   },
 
+  "iv_summary": {
+    "source": "Flash test — Biosphere Solar",
+    "Pmp_W": 306.754,
+    "Pmp_corrected_W": 346.632,
+    "FF_pct": 71.400,
+    "Isc_A": 9.99,
+    "Imp_A": 9.36,
+    "Voc_V": 43.01,
+    "Vmp_V": 32.76,
+    "eff_cell_pct": 21.008,
+    "eff_module_pct": 16.752,
+    "ctm_eff_pct": 79.74,
+    "ctm_power_pct": 86.10
+  },
+
 
   "safety_datasheet_url": "https://biosphere-solar.github.io/biosphere-dpp/files/safety-datasheet.pdf",
   "esg_statement_url": "https://biosphere-solar.github.io/biosphere-dpp/files/statement-on-esg.docx.pdf",
   "lca_report_url": "https://biosphere-solar.github.io/biosphere-dpp/files/lca.pdf",
   "epd_url": "Not Available",
+  "el_url": "https://biosphere-solar.github.io/biosphere-dpp/assets/el/KS2508P01041.jpg",
   "hs_code": null,
   "origin": "EU",
   "compliance": ["Reg. (EU) 2024/1781 framework", "IEC 61215", "IEC 61730"],
