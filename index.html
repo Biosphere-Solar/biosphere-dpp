@@ -1017,10 +1017,16 @@
     
     (async function(){
       const params = new URLSearchParams(location.search);
-      const serial = (params.get('serial')||'KS2508P01003').toUpperCase();
-      setText('#serialBadge', `Serial: ${serial}`);
-
-      const jsonUrl = new URL(`passports/${encodeURIComponent(serial)}.json`, document.baseURI);
+      const project = params.get('project') || 'sir';
+      const uid = (params.get('uid') || 'KS2508P01003').toUpperCase();
+      
+      setText('#serialBadge', `Serial: ${uid}`);
+      setText('#projectBadge', `Project: ${project}`);
+      
+      const jsonUrl = new URL(
+        `data/projects/${encodeURIComponent(project)}/${encodeURIComponent(uid)}.json`,
+        document.baseURI
+      );
       let data;
       try{
         const res = await fetch(jsonUrl, { cache:'no-store' });
