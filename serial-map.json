@@ -1,12 +1,12 @@
 {
-  "KS2508P01003": { "projects": "sir" },
-  "KS2508P01004": { "projects": "sir" },
-  "KS2508P01013": { "projects": "sir" },
-  "KS2508P01033": { "projects": "sir" },
-  "KS2508P01035": { "projects": "sir" },
-  "KS2508P01036": { "projects": "sir" },
-  "KS2508P01037": { "projects": "sir" },
-  "KS2508P01038": { "projects": "sir" },
-  "KS2508P01040": { "projects": "sir" },
-  "KS2508P01041": { "projects": "sir" }
+  "KS2508P01003": { "project": "sir" },
+  "KS2508P01004": { "project": "sir" },
+  "KS2508P01013": { "project": "sir" },
+  "KS2508P01033": { "project": "sir" },
+  "KS2508P01035": { "project": "sir" },
+  "KS2508P01036": { "project": "sir" },
+  "KS2508P01037": { "project": "sir" },
+  "KS2508P01038": { "project": "sir" },
+  "KS2508P01040": { "project": "sir" },
+  "KS2508P01041": { "project": "sir" }
 }
