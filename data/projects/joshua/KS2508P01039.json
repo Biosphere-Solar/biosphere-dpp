@@ -121,7 +121,7 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
-          { "label": "Critical/Strategic Raw Material", "value": Copper, phosphorus, silicon, "datatype": "text" },
+          { "label": "Critical/Strategic Raw Material", "value": true, "datatype": "boolean", "comments": "Copper, phosphorus, silicon" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean"},
@@ -191,7 +191,7 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
-          { "label": "Critical/Strategic Raw Material", "value": Silicon, "datatype": "text" },
+          { "label": "Critical/Strategic Raw Material", "value": true, "datatype": "boolean", "comments": "Silicon" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
@@ -396,7 +396,7 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
-          { "label": "Critical/Strategic Raw Material", "value": Silicon(<1%), "datatype": "text" },
+          { "label": "Critical/Strategic Raw Material", "value": true, "datatype": "boolean", "comments": "Silicon(<1%)" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
@@ -465,7 +465,7 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
-          { "label": "Critical/Strategic Raw Material", "value": Silicon(<1%), "datatype": "text" },
+          { "label": "Critical/Strategic Raw Material", "value": true, "datatype": "boolean", "comments": "Silicon(<1%)" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
@@ -520,7 +520,7 @@
           { "label": "Product name", "value": "HelioSeal PVS101", "datatype": "text" },
           { "label": "Manufacturer name", "value": "HB Fuller Kömmerling", "datatype": "text" },
           { "label": "Weight", "value": 0.091, "unit": "kg", "datatype": "number" },
-          { "label": "Quantity/Amount", "value": N/A, "unit": "", "datatype": "text" }
+          { "label": "Quantity/Amount", "value": null, "unit": null, "datatype": "text" }
         ]
       },
 
@@ -645,7 +645,7 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
-          { "label": "Critical/Strategic Raw Material", "value": Copper, "datatype": "text" },
+          { "label": "Critical/Strategic Raw Material", "value": true, "datatype": "boolean", "comments": "Copper" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
@@ -679,7 +679,7 @@
           { "label": "Product name", "value": "-", "datatype": "text" },
           { "label": "Manufacturer name", "value": "-", "datatype": "text" },
           { "label": "Weight", "value": 0.18, "unit": "kg", "datatype": "number" },
-          { "label": "Quantity/Amount", "value": N/A, "unit": "", "datatype": "text" }
+          { "label": "Quantity/Amount", "value": null, "unit": null, "datatype": "text" }
         ]
       },
 
@@ -693,7 +693,7 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
-          { "label": "Critical/Strategic Raw Material", "value": Copper, "datatype": "text" },
+          { "label": "Critical/Strategic Raw Material", "value": true , "datatype": "boolean", "comment": "Copper" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
@@ -727,7 +727,7 @@
           { "label": "Product name", "value": "-", "datatype": "text" },
           { "label": "Manufacturer name", "value": "-", "datatype": "text" }
           { "label": "Weight", "value": 0.01, "unit": "kg", "datatype": "number" },
-          { "label": "Quantity/Amount", "value": N/A, "unit": "", "datatype": "text" }
+          { "label": "Quantity/Amount", "value": null, "unit": null, "datatype": "text" }
         ]
       },
 
@@ -741,7 +741,7 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
-          { "label": "Critical/Strategic Raw Material", "value": Copper, "datatype": "text" },
+          { "label": "Critical/Strategic Raw Material", "value": true, "datatype": "boolean", "comment": "Copper" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
