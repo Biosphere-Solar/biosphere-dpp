@@ -2,17 +2,21 @@
   "uid": "KS2508P01039", 
   "version": "1.4",
   "last_updated": "2026-01-12",
-  "model": "V1.4 IBC",
-  "manufacturer": "Biosphere Solar and Kameleon Solar",
-  "manufacture_date": "2025-08-22",
-  "power_w": 331.76,
-  "cell_type": "IBC",
-  "dimensions_mm": "1759 x 1041 x 32",
-  "weight_kg": "38",
-  "module_efficiency_pct": 16.03,
+  "Product name": "Biosphere Solar V1.4-IBC",
+  "manufacturer name": "Biosphere Solar and Kameleon Solar",
+  "site name": "Kameleon Solar",
+  "site address": "Belder 1, 4704 RK Roosendaal",
+  "site country": "Netherlands",
+  "manufacture_date": "2025-09-01",
+  "power_w": 293.595,
+  "cell_type": "IBC Cells",
+  "dimensions_mm": "",
+  "weight_kg": "32.01",
+  "module_efficiency_pct": 16.034,
   "co2e_kg": null,
-  "lifetime_years": 25,
-  "warranty_years": 20,
+  "life expectancy_years": 50,
+  "product warranty_years": 10,
+  "power warranty_years": 30,
   "certifications": ["In-House Precompliance IEC 61215 Testing", "In-House Precompliance IEC 61730 Testing"],
   "materials": {
     "Glass": "Thermally toughened Soda Lime Silicate safety glass",
@@ -59,17 +63,17 @@
 
   "iv_summary": {
     "source": "Flash test — Biosphere Solar",
-    "Pmp_W": 307.104,
-    "Pmp_corrected_W": 347.028,
-    "FF_pct": 71.89,
-    "Isc_A": 9.93,
-    "Imp_A": 9.36,
-    "Voc_V": 43.00,
-    "Vmp_V": 32.80,
-    "eff_cell_pct": 21.032,
-    "eff_module_pct": 16.771,
+    "Pmp_W": 293.595,
+    "Pmp_corrected_W": 331.762,
+    "FF_pct": 68.737,
+    "Isc_A": 9.96,
+    "Imp_A": 8.99,
+    "Voc_V": 42.89,
+    "Vmp_V": 32.65,
+    "eff_cell_pct": 20.107,
+    "eff_module_pct": 16.034,
     "ctm_eff_pct": 79.74,
-    "ctm_power_pct": 86.20
+    "ctm_power_pct": 82.40
   },
   
   "datasheet_url": "https://docs.google.com/document/d/1Rd_zgmQGxwB2iAzmJ-Z_cZwRZVhODoji-npdsQPg5tw/edit?tab=t.0",
@@ -98,6 +102,16 @@
   {
     "name": "Final sample panel",
     "categories": {
+
+      "Overview": {
+        "Part details": [
+          { "label": "Product name", "value": "Biosphere Solar V1.4-IBC", "datatype": "text" },
+          { "label": "Manufacturer name", "value": "Biosphere Solar & Kameleon Solar", "datatype": "text" },
+          { "label": "Weight", "value": 1.2, "unit": "kg", "datatype": "number" },
+          { "label": "Quantity/Amount", "value": 60, "unit": "", "datatype": "number" }
+        ]
+      },
+      
       "Component/Specimen information": {
         "Part details": [
           { "label": "Length", "value": 1952, "unit": "mm", "datatype": "number" },
@@ -107,15 +121,18 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
+          { "label": "Critical/Strategic Raw Material", "value": Copper, phosphorus, silicon, "datatype": "text" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean"},
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
-          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "Lead" },
+          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "Lead, TPO diphenyl(2,4,6-trime thylbenzoyl) Phosphine oxide" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Phtalates",                              "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
-          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
+          { "label": "High Value Material",                    "value": false, "datatype": "boolean" }
         ]
       },
 
@@ -154,6 +171,17 @@
   {
     "name": "Solar cells",
     "categories": {
+
+      "Overview": {
+        "Part details": [
+          { "label": "Product name", "value": "IBC Cells", "datatype": "text" },
+          { "label": "Manufacturer name", "value": "Maxeon Cells", "datatype": "text" },
+          { "label": "Weight", "value": 1.2, "unit": "kg", "datatype": "number" },
+          { "label": "Quantity/Amount", "value": 60, "unit": "", "datatype": "number" }
+        ]
+      },
+
+      
       "Component/Specimen information": {
         "Part details": [
           { "label": "Length", "value": 166,   "unit": "mm", "datatype": "number" },
@@ -163,15 +191,18 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
+          { "label": "Critical/Strategic Raw Material", "value": Silicon, "datatype": "text" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Phtalates",                              "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
-          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
+          { "label": "High Value Material",                    "value": true, "datatype": "boolean", "comments": "Ag" }
         ]
       },
       "Sourcing composition": {
@@ -209,11 +240,22 @@
   {
     "name": "Front glass",
     "categories": {
+
+      "Overview": {
+        "Part details": [
+          { "label": "Product name", "value": "Solar glass front side 3 mm", "datatype": "text" },
+          { "label": "Manufacturer name", "value": "AGC", "datatype": "text" },
+          { "label": "Weight", "value": 10.77, "unit": "kg", "datatype": "number" },
+          { "label": "Quantity/Amount", "value": 1, "unit": "", "datatype": "number" }
+        ]
+      },
+
+      
       "Component/Specimen information": {
         "Part details": [
           { "label": "Length", "value": 1759, "unit": "mm", "datatype": "number" },
           { "label": "Width",  "value": 1041, "unit": "mm", "datatype": "number" },
-          { "label": "Height", "value": 3.2, "unit": "mm", "datatype": "number" }
+          { "label": "Height", "value": 3, "unit": "mm", "datatype": "number" }
         ]
       },
       "Chemical composition": {
@@ -224,9 +266,11 @@
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Phtalates",                               "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
-          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
+          { "label": "High Value Material",                    "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -264,11 +308,22 @@
   {
     "name": "Back glass",
     "categories": {
+
+      "Overview": {
+        "Part details": [
+          { "label": "Product name", "value": "Solar glass front side 3 mm", "datatype": "text" },
+          { "label": "Manufacturer name", "value": "AGC", "datatype": "text" },
+          { "label": "Weight", "value": 10.77, "unit": "kg", "datatype": "number" },
+          { "label": "Quantity/Amount", "value": 1, "unit": "", "datatype": "number" }
+        ]
+      },
+
+      
       "Component/Specimen information": {
         "Part details": [
           { "label": "Length", "value": 1759, "unit": "mm", "datatype": "number" },
           { "label": "Width",  "value": 1041, "unit": "mm", "datatype": "number" },
-          { "label": "Height", "value": 3.2, "unit": "mm", "datatype": "number" }
+          { "label": "Height", "value": 3, "unit": "mm", "datatype": "number" }
         ]
       },
       "Chemical composition": {
@@ -279,9 +334,11 @@
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Phtalates",                              "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
-          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
+          { "label": "High Value Material",                    "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -319,24 +376,38 @@
   {
     "name": "Long frame",
     "categories": {
+
+      "Overview": {
+        "Part details": [
+          { "label": "Product name", "value": "-", "datatype": "text" },
+          { "label": "Manufacturer name", "value": "-", "datatype": "text" },
+          { "label": "Weight", "value": 0.75, "unit": "kg", "datatype": "number" },
+          { "label": "Quantity/Amount", "value": 2, "unit": "", "datatype": "number" }
+        ]
+      },
+
+      
       "Component/Specimen information": {
         "Part details": [
           { "label": "Length", "value": 1764, "unit": "mm", "datatype": "number" },
-          { "label": "Width",  "value": 12, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 0, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 30, "unit": "mm", "datatype": "number" }
         ]
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
+          { "label": "Critical/Strategic Raw Material", "value": Silicon(<1%), "datatype": "text" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Phtalates",                              "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
-          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
+          { "label": "High Value Material",                    "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -374,24 +445,38 @@
   {
     "name": "Short frame",
     "categories": {
+
+      "Overview": {
+        "Part details": [
+          { "label": "Product name", "value": "-", "datatype": "text" },
+          { "label": "Manufacturer name", "value": "-", "datatype": "text" },
+          { "label": "Weight", "value": 0.36, "unit": "kg", "datatype": "number" },
+          { "label": "Quantity/Amount", "value": 2, "unit": "", "datatype": "number" }
+        ]
+      },
+
+      
       "Component/Specimen information": {
         "Part details": [
           { "label": "Length", "value": 1046, "unit": "mm", "datatype": "number" },
-          { "label": "Width",  "value": 12, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 0, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 30, "unit": "mm", "datatype": "number" }
         ]
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
+          { "label": "Critical/Strategic Raw Material", "value": Silicon(<1%), "datatype": "text" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Phtalates",                              "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
-          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
+          { "label": "High Value Material",                    "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -429,9 +514,20 @@
   {
     "name": "Edge seal",
     "categories": {
+
+      "Overview": {
+        "Part details": [
+          { "label": "Product name", "value": "HelioSeal PVS101", "datatype": "text" },
+          { "label": "Manufacturer name", "value": "HB Fuller Kömmerling", "datatype": "text" },
+          { "label": "Weight", "value": 0.091, "unit": "kg", "datatype": "number" },
+          { "label": "Quantity/Amount", "value": N/A, "unit": "", "datatype": "text" }
+        ]
+      },
+
+      
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": 5600, "unit": "mm", "datatype": "number" },
+          { "label": "Length", "value": 6059.2, "unit": "mm", "datatype": "number" },
           { "label": "Width",  "value": 11, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 1, "unit": "mm", "datatype": "number" }
         ]
@@ -444,9 +540,11 @@
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Phtalates",                              "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
-          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
+          { "label": "High Value Material",                    "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -484,11 +582,20 @@
   {
     "name": "Spacer Dot",
     "categories": {
+
+      "Overview": {
+        "Part details": [
+          { "label": "Product name", "value": "-", "datatype": "text" },
+          { "label": "Manufacturer name", "value": "-", "datatype": "text" }
+        ]
+      },
+
+      
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": 4, "unit": "mm", "datatype": "number" },
-          { "label": "Width",  "value": 4, "unit": "mm", "datatype": "number" },
-          { "label": "Height", "value": 2, "unit": "mm", "datatype": "number" }
+          { "label": "Length", "value": 2, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 2, "unit": "mm", "datatype": "number" },
+          { "label": "Height", "value": 0.8, "unit": "mm", "datatype": "number" }
         ]
       },
       "Chemical composition": {
@@ -497,11 +604,13 @@
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
-          { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
+          { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "≤2% TPO diphenyl(2,4,6-trime thylbenzoyl) Phosphine oxide, although mixture itself is not classified as PBT or vPvB" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Phtalates",                              "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
-          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
+          { "label": "High Value Material",                    "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -518,24 +627,36 @@
   {
     "name": "Junction Box",
     "categories": {
+      "Overview": {
+        "Part details": [
+          { "label": "Product name", "value": "-", "datatype": "text" },
+          { "label": "Manufacturer name", "value": "-", "datatype": "text" },
+          { "label": "Weight", "value": 0.15, "unit": "kg", "datatype": "number" },
+          { "label": "Quantity/Amount", "value": 3, "unit": "", "datatype": "number" }
+        ]
+      },
+      
       "Component/Specimen information": {
         "Part details": [
-          { "label": "Length", "value": 66.5, "unit": "mm", "datatype": "number" },
-          { "label": "Width",  "value": 24.8, "unit": "mm", "datatype": "number" },
+          { "label": "Length", "value": 56, "unit": "mm", "datatype": "number" },
+          { "label": "Width",  "value": 29, "unit": "mm", "datatype": "number" },
           { "label": "Height", "value": 13.5, "unit": "mm", "datatype": "number" }
         ]
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
+          { "label": "Critical/Strategic Raw Material", "value": Copper, "datatype": "text" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": false, "datatype": "boolean" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Phtalates",                              "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
-          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
+          { "label": "High Value Material",                    "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -552,6 +673,17 @@
   {
     "name": "Tabbing wire",
     "categories": {
+
+      "Overview": {
+        "Part details": [
+          { "label": "Product name", "value": "-", "datatype": "text" },
+          { "label": "Manufacturer name", "value": "-", "datatype": "text" },
+          { "label": "Weight", "value": 0.18, "unit": "kg", "datatype": "number" },
+          { "label": "Quantity/Amount", "value": N/A, "unit": "", "datatype": "text" }
+        ]
+      },
+
+      
       "Component/Specimen information": {
         "Part details": [
           { "label": "Length", "value": null, "unit": "mm", "datatype": "text" },
@@ -561,15 +693,18 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
+          { "label": "Critical/Strategic Raw Material", "value": Copper, "datatype": "text" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "Lead" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Phtalates",                              "value": false, "datatype": "boolean" }
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
-          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
+          { "label": "High Value Material",                    "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -586,6 +721,17 @@
   {
     "name": "Busbar wire",
     "categories": {
+
+      "Overview": {
+        "Part details": [
+          { "label": "Product name", "value": "-", "datatype": "text" },
+          { "label": "Manufacturer name", "value": "-", "datatype": "text" }
+          { "label": "Weight", "value": 0.01, "unit": "kg", "datatype": "number" },
+          { "label": "Quantity/Amount", "value": N/A, "unit": "", "datatype": "text" }
+        ]
+      },
+
+      
       "Component/Specimen information": {
         "Part details": [
           { "label": "Length", "value": 0, "unit": "mm", "datatype": "text" },
@@ -595,15 +741,18 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
+          { "label": "Critical/Strategic Raw Material", "value": Copper, "datatype": "text" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "Lead" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
+          { "label": "Phtalates",                              "value": false, "datatype": "boolean" }
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
-          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" }
+          { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
+          { "label": "High Value Material",                    "value": false, "datatype": "boolean" }
         ]
       },
       "Sourcing composition": {
@@ -758,11 +907,11 @@
         { "label": "Tensile strength", "value": null, "unit": "MPa", "datatype": "number" }
       ],
       "Electrical information": [
-        { "label": "Power (per cell)",             "value": 6.54,  "unit": "W",  "datatype": "number" },
-        { "label": "Open circuit voltage (cell)",  "value": 0.728, "unit": "V",  "datatype": "number" },
-        { "label": "Short circuit current (cell)", "value": 11.47, "unit": "A",  "datatype": "number" },
-        { "label": "Maximum power voltage (cell)", "value": 0.612, "unit": "V",  "datatype": "number" },
-        { "label": "Maximum power current (cell)", "value": 10.68, "unit": "A",  "datatype": "number" },
+        { "label": "Power (per cell)",             "value": 6.7,  "unit": "W",  "datatype": "number" },
+        { "label": "Open circuit voltage (cell)",  "value": 0.731, "unit": "V",  "datatype": "number" },
+        { "label": "Short circuit current (cell)", "value": 11.53, "unit": "A",  "datatype": "number" },
+        { "label": "Maximum power voltage (cell)", "value": 0.62, "unit": "V",  "datatype": "number" },
+        { "label": "Maximum power current (cell)", "value": 10.82, "unit": "A",  "datatype": "number" },
         { "label": "Efficiency (cell)",            "value": 23.9, "unit": "%",  "datatype": "number" }
       ],
       "Process info": [
