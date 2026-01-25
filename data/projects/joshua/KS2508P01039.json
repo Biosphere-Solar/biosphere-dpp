@@ -725,7 +725,7 @@
       "Overview": {
         "Part details": [
           { "label": "Product name", "value": "-", "datatype": "text" },
-          { "label": "Manufacturer name", "value": "-", "datatype": "text" }
+          { "label": "Manufacturer name", "value": "-", "datatype": "text" },
           { "label": "Weight", "value": 0.01, "unit": "kg", "datatype": "number" },
           { "label": "Quantity/Amount", "value": null, "unit": null, "datatype": "text" }
         ]
@@ -748,7 +748,7 @@
           { "label": "CMRs and CMR candidates",                "value": false, "datatype": "boolean" },
           { "label": "SVHCs and SVHC candidates",              "value": true, "datatype": "boolean", "comments": "Lead" },
           { "label": "PFAS",                                   "value": false, "datatype": "boolean" },
-          { "label": "Phtalates",                              "value": false, "datatype": "boolean" }
+          { "label": "Phtalates",                              "value": false, "datatype": "boolean" },
           { "label": "Other halogenated compound",             "value": false, "datatype": "boolean" },
           { "label": "Rare earth",                             "value": false, "datatype": "boolean" },
           { "label": "Radioactive material",                   "value": false, "datatype": "boolean" },
