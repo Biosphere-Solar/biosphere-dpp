@@ -230,7 +230,7 @@
             "label": "Manufacturing sequence",
             "datatype": "file",
             "files": []
-          },
+          }
         ]
       }
     }
