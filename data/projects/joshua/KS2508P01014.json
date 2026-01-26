@@ -1004,7 +1004,7 @@
             "value": "-",
             "unit": "kWh/kWp",
             "datatype": "text",
-            "note": "Not certified, manufacturer's own estimation"
+            "note": "Not certified manufacturer's own estimation"
           },
           {
             "label": "Carbon footprint",
