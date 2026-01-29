@@ -1164,7 +1164,7 @@
 
 
       // Header bits
-      setText('#productnamelTitle', data.productname || '—');
+      setText('#productnamelTitle', data.product_name || '—');
       setText('#countryYear', `${data.origin||'—'} • ${ (data.manufacture_date||'—').toString().slice(0,4) }`);
       setText('#powerW', data.power_w!=null ? data.power_w : '—');
       setText('#effPct', data.module_efficiency_pct!=null ? `${data.module_efficiency_pct}%` : '—');
