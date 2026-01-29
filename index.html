@@ -481,12 +481,12 @@
         </div>
 
 
-        <div class="title" style="margin:8px 0 6px" id="modelTitle">—</div>
+        <div class="title" style="margin:8px 0 6px" id="ProductnameTitle">—</div>
         <div class="muted" id="countryYear">—</div>
 
         <div class="row" style="margin-top:14px">
           <div class="stat"><div class="k" id="powerW">—</div><div class="muted">Power (W)</div></div>
-          <div class="stat"><div class="k" id="effPct">—</div><div class="muted">Efficiency</div></div>
+          <div class="stat"><div class="k" id="effPct">—</div><div class="muted">Module Efficiency</div></div>
           <div class="stat"><div class="k" id="co2e">—</div><div class="muted">CO₂e / panel</div></div>
         </div>
         
@@ -1164,10 +1164,10 @@
 
 
       // Header bits
-      setText('#modelTitle', data.model || '—');
+      setText('#productnamelTitle', data.productname || '—');
       setText('#countryYear', `${data.origin||'—'} • ${ (data.manufacture_date||'—').toString().slice(0,4) }`);
       setText('#powerW', data.power_w!=null ? data.power_w : '—');
-      setText('#effPct', data.efficiency_pct!=null ? `${data.efficiency_pct}%` : '—');
+      setText('#effPct', data.module_efficiency_pct!=null ? `${data.module_efficiency_pct}%` : '—');
       setText('#co2e', data.co2e_kg!=null ? `${data.co2e_kg} kg` : '—');
 
       // UID & buttons
@@ -1190,17 +1190,18 @@
 
       // General table
       $('#generalTable').innerHTML = table({
-        Model: data.model,
+        'Product name': data.product_name,
         Manufacturer: data.manufacturer,
         'Manufacture Date': data.manufacture_date,
         'Power Rating (W)': data.power_w,
         'Cell Type': data.cell_type,
         'Dimensions (mm)': data.dimensions_mm,
         'Weight (kg)': data.weight_kg,
-        'Efficiency (%)': data.efficiency_pct,
+        'Module Efficiency (%)': data.module_efficiency_pct,
         'CO₂ eq per panel (kg)': data.co2e_kg,
-        'Lifetime (years)': data.lifetime_years,
-        'Warranty (years)': data.warranty_years,
+        'Life expectancy (years)': data.life_expectancy_years,
+        'Product Warranty (years)': data.product_warranty_years,
+        'Power Warranty (years)': data.power_warranty_years,
         'Certifications': data.certifications,
       });
 
