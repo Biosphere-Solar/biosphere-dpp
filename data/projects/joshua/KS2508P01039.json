@@ -11,7 +11,7 @@
   "power_w": 293.595,
   "cell_type": "IBC Cells",
   "dimensions_mm": "1764 x 1046 x 30",
-  "weight_kg": "32.01",
+  "weight_kg": 32.01,
   "module_efficiency_pct": 16.034,
   "co2e_kg": null,
   "life_expectancy_years": 50,
@@ -24,7 +24,7 @@
     "Maxeon IBC Cells": "Maxeon Gen 6",
     "Edge Seal": "PolyIsoButylene (PIB)",
     "Dog bones": null,
-    "Busbar wire": null"
+    "Busbar wire": null",
     "Adhesive Dots (Eversolar AB-302c)": "UV-curable sealant",
     "Potting gel": null,
     "MC4 Connectors": null,
@@ -98,9 +98,7 @@
     "Aluminium frame": "0%"
   },
   "recyclability": " >99% recyclable, including high-value recycling capability",
-  "updates": [
-     null
-  ],
+  "updates": [null],
 
   "components": [
   {
@@ -697,7 +695,7 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
-          { "label": "Critical/Strategic Raw Material", "value": true , "datatype": "boolean", "comment": "Copper" },
+          { "label": "Critical/Strategic Raw Material", "value": true , "datatype": "boolean", "comments": "Copper" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
@@ -745,7 +743,7 @@
       },
       "Chemical composition": {
         "Presence (Yes/No)": [
-          { "label": "Critical/Strategic Raw Material", "value": true, "datatype": "boolean", "comment": "Copper" },
+          { "label": "Critical/Strategic Raw Material", "value": true, "datatype": "boolean", "comments": "Copper" },
           { "label": "Blow agent",                             "value": false, "datatype": "boolean" },
           { "label": "Flame retardant",                        "value": false, "datatype": "boolean" },
           { "label": "Additives",                              "value": false,  "datatype": "boolean" },
