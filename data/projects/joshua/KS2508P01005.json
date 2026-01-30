@@ -922,7 +922,7 @@
       "Process info": [
         { "label": "Machine used",         "value": null, "datatype": "text" },
         { "label": "Operator responsible", "value": null, "datatype": "text" },
-        { "label": "Manufacturing time",   "value": null, "datatype": "text" }}
+        { "label": "Manufacturing time",   "value": null, "datatype": "text" }
         ]
       }
     },
