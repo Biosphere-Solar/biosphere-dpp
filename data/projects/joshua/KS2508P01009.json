@@ -862,7 +862,7 @@
         }
       ],
       "Recycling": [
-        { "label": "Recycler name", "value": NA, "datatype": "text" },
+        { "label": "Recycler name", "value": "NA", "datatype": "text" },
   
         { "label": "Can the product be mechanically recycled?", "value": true,  "datatype": "boolean" },
         { "label": "Can the product be chemically recycled?",   "value": true,  "datatype": "boolean" },
